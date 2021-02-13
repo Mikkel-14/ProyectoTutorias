@@ -3,6 +3,7 @@
 	<persistence-unit name="ProyectoTutorias" transaction-type="RESOURCE_LOCAL">
 		<class>modelo.entidad.Departamento</class>
 		<class>modelo.entidad.Docente</class>
+		<class>modelo.entidad.Estudiante</class>
 			<properties>
 				<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/tutorias"/>
 				<property name="javax.persistence.jdbc.user" value="root"/>
