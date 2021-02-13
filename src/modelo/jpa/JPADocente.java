@@ -1,6 +1,7 @@
 package modelo.jpa;
 
 import modelo.dao.UsuarioDAO;
+import modelo.entidad.Docente;
 
 public class JPADocente extends JPAGenericDAO<Docente, String> implements UsuarioDAO {
 	public JPADocente() {
