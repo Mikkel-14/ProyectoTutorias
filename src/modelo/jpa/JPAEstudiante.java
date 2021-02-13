@@ -3,7 +3,7 @@ package modelo.jpa;
 import modelo.dao.UsuarioDAO;
 import modelo.entidad.Estudiante;
 
-public class JPAEstudiante extends JPAGenericDAO<Estudiante, String> implements UsuarioDAO {
+public class JPAEstudiante extends JPAGenericDAO<Estudiante, String> implements UsuarioDAO<Estudiante, String> {
 	
 	public JPAEstudiante() {
 		super(Estudiante.class);

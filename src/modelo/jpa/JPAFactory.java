@@ -6,16 +6,24 @@ import modelo.dao.UsuarioDAO;
 
 public class JPAFactory extends DAOFactory {
 	
-
+	public static final String DOCENTE = "profesor";
+	public static final String ESTUDIANTE = "estudiante";
+	
 	@Override
-	public UsuarioDAO crearUsuarioDAO() {
-		// TODO Auto-generated method stub
-		return null;
+	public UsuarioDAO crearUsuarioDAO(String tipo) {
+		if(tipo.equals(DOCENTE)) {
+			return new JPADocente();
+		}
+		else if(tipo.equals(ESTUDIANTE)) {
+			return new JPAEstudiante();
+		}
+		else {
+			return null;
+		}
 	}
 
 	@Override
 	public DepartamentoDAO crearDepartamentoDAO() {
-		// TODO Auto-generated method stub
 		return new JPADepartamento();
 	}
 
