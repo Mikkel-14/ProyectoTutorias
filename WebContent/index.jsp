@@ -4,20 +4,22 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tutorias X</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 <style>
+	html,body{
+		height: 100%;
+	}
 	body {
 		background-color: rgb(251,249,246);
 		font-family: 'Poppins';
-		color: #2f3640;
+		color: #2f3640;	
 	}
 	form{
-		height:70%;
 		width: 30% !important;
-		margin: 10% auto;
 		padding: 2% 5%;
 	}
 	h2, h3, h4{
@@ -29,10 +31,13 @@
 	a{
 		text-decoration: none;
 	}
+	#altura{
+		height: 100%;
+	}
 </style>
 </head>
-<body class="position-relative">
-<div class="container-fluid">
+<body>
+<div class="container-fluid d-flex flex-column justify-content-center" id="altura">
 <form class="bg-white rounded-3 container shadow-sm">
 <div class="row mb-3">
 <h3>Inicio de Sesión</h3>
