@@ -55,11 +55,14 @@ public abstract class JPAGenericDAO <T,ID> implements GenericDAO<T, ID> {
 
 	@Override
 	public void eliminar(T entity) {
+		
 		em.getTransaction().begin();
 		try {
-			em.remove(entity);		
+			T aeliminar = em.merge(entity);
+			em.remove(aeliminar);		
 			em.getTransaction().commit();
 		} catch (Exception e) {
+			e.printStackTrace();
 			System.out.println("Error en Eliminación JPAGenericDAO");
 			if(em.getTransaction().isActive()) {
 				em.getTransaction().rollback();
