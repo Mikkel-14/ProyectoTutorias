@@ -4,7 +4,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
-public class Estudiante implements Serializable {
+@NamedQuery(name = "listarEstudiantes",query = "SELECT e FROM Estudiante e")public class Estudiante implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 

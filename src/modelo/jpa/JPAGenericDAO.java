@@ -1,12 +1,15 @@
 package modelo.jpa;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 import modelo.dao.GenericDAO;
 
-public class JPAGenericDAO <T,ID> implements GenericDAO<T, ID> {
+public abstract class JPAGenericDAO <T,ID> implements GenericDAO<T, ID> {
 	protected EntityManager em;
 	private Class<T> persistenceClass;
 	
@@ -72,8 +75,11 @@ public class JPAGenericDAO <T,ID> implements GenericDAO<T, ID> {
 			this.eliminar(entity);
 		}
 		
-		
-		
 	}
+
+	@Override
+	public abstract List<T> listar();
+	
+	
 
 }
