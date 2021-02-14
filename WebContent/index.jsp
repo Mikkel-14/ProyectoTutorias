@@ -26,13 +26,18 @@
 	h4{
 		color: gray;
 	}
+	a{
+		text-decoration: none;
+	}
 </style>
 </head>
 <body class="position-relative">
 <div class="container-fluid">
 <form class="bg-white rounded-3 container shadow-sm">
+<div class="row mb-3">
 <h3>Inicio de Sesión</h3>
 <h4>Universidad X</h4>
+</div>
 <div class="row px-4">
 <label for="cedula" class="form-label">Cédula</label>
 </div>
@@ -42,8 +47,11 @@
 <div class="row px-4">
 <label for="passwd" class="form-label">Contraseña</label>
 </div>
-<div class="row px-4 mb-4">
+<div class="row px-4 mb-2">
 <input type="password" class="form-control" id="passwd" placeholder="Contraseña">
+</div>
+<div class="row px-4 mb-4">
+<a href="#">¿No tienes cuenta? Regístrate</a>
 </div>
 <div class="row mx-auto">
 <div class="col-5">
