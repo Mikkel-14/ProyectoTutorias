@@ -63,7 +63,7 @@
 				<a href="#" class="btn w-100 py-3">Departamentos</a><br>
 			</div>
 		</div>
-		<div class="col-9 d-flex flex-column justify-content-center">
+		<form class="col-9 d-flex flex-column justify-content-center">
 			<div class="mt-auto mx-5">
 				<h4>Edición de los Datos del Docente</h4>
 			</div>
@@ -95,7 +95,7 @@
 			<div class="m-auto">
 				<button type="submit" class="btn btn-primary">Añadir</button>
 			</div>
-		</div>
+		</form>
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
