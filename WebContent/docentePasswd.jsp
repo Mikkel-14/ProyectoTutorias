@@ -26,7 +26,15 @@
 			color: #2f3640;
 		}
 		
-	
+		.barraTitulo{
+        background-color:  #C4C4C4 ; 
+        height: 50px;
+        margin: 0px;
+       }
+		
+		#altura{
+			padding-top: 50px;
+		}
 		
 		h2, h3, h4 {
 			text-align: center;
@@ -56,16 +64,13 @@
         padding: 5px 0px 5px 5px;
     	}
     	
-    	.barraTitulo{
-        background-color:  #C4C4C4 ; 
-        height: 50px;
-       }
+
 		
 	
 	</style>
 </head>
 <body>
-<div class = "container-fluid barraTitulo fs-3 row position-absolute" >
+<div class = "container-fluid barraTitulo fs-3 row position-fixed" >
         
 	<div class = "col-6 col-md-1 titulo">Tutorias</div>
 	<div class="dropdown col-6 col-md-11 text-end titulo ">Docente
@@ -80,15 +85,15 @@
    
 </div>
 
+	
+<div class="container-fluid d-flex flex-column justify-content-center" id="altura">
+
 	<div class="row my-3 mx-4" >
 		<h7 class >Inicio > información del docente</h7>
 	</div>
 	 <div class="row my-3 mx-4" >
 		<h1> Información  del docente</h1>
 	</div>
-<div class="container-fluid d-flex flex-column justify-content-center" id="altura">
-
-	
 	<div class="row my-3">
 	
 		<div class="bordes bg-white rounded-3 container shadow-sm  col-lg-4 col-md-4 col-sm-8 col-xs-8 " >

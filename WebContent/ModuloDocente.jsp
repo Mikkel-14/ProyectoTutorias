@@ -23,7 +23,8 @@
 		padding: 5px 0px 5px 5px;
 	}
 	.contenedorM{
-		height: 92%;
+		padding-top: 50px;
+		height: 100%;
 	}
 	.modulos{
 		padding: 0px;
@@ -80,6 +81,7 @@
 	  	background-color: #F6C1C1;
 	  	font-size: 20px;
 	  	color: #000000;	
+	  	
 	}
 
 		
@@ -87,7 +89,7 @@
 </style>
 </head>
 <body>
-	<div class = "container-fluid barraTitulo fs-3" >
+	<div class = "container-fluid barraTitulo fs-3 position-fixed" >
 		<div class = "row">
 			<div class = "col-6 col-md-1 titulo">Tutorias</div>  
 			<div class="dropdown col-6 col-md-11 text-end titulo ">Docente
