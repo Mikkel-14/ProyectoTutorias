@@ -109,7 +109,7 @@
 	            Tutorías
 	        </div>
 	        <div class="col-3 d-flex flex-row justify-content-end align-items-center">
-	              <a href="ModuloAdministrador.jsp" class="btn">Administrador</a>			
+	            <a href="ModuloAdministrador.jsp" class="btn">Administrador</a>
 	            <a href="#" class="btn"><i class="fas fa-sign-out-alt is"></i></a>
 	        </div>
 	      </nav>
@@ -129,7 +129,7 @@
 						</div>
 						<div class = "row p-5">
 							<div class = "col-12 text-center" style = "height: 70px;"  >
-								<a class="btn py-4 my-5 text-center text-white bg-primary bg-gradient" id="acciones" href="" name="añadirDocente">Añadir Docente</a>
+								<a class="btn py-4 my-5 text-center text-white bg-primary bg-gradient" id="acciones" href="añadirDocente.jsp" name="añadirDocente">Añadir Docente</a>
 							</div>
 							<div class = "col-12 text-center " >
 								<a class="btn py-4 my-5 text-center text-white bg-primary bg-gradient" id="acciones" href="#" name="añadirDepartamento">Añadir Departamento</a>
