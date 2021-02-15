@@ -50,8 +50,8 @@
 </head>
 <body>
 	<div class="container-fluid d-flex flex-column justify-content-center"
-		id="altura">
-		<form class="bg-white rounded-3 container shadow-sm">
+		id="altura" >
+		<form class="bg-white rounded-3 container shadow-sm" action="loginController" method="POST">
 			<div class="row mb-3">
 				<h3>Inicio de Sesión</h3>
 				<h4>Universidad X</h4>
@@ -61,14 +61,14 @@
 			</div>
 			<div class="row px-4 mb-4">
 				<input type="text" class="form-control" id="cedula"
-					placeholder="Número de cédula">
+					placeholder="Número de cédula" name="usuario" required>
 			</div>
 			<div class="row px-4">
 				<label for="passwd" class="form-label">Contraseña</label>
 			</div>
 			<div class="row px-4 mb-2">
 				<input type="password" class="form-control" id="passwd"
-					placeholder="Contraseña">
+					placeholder="Contraseña" name="password" required>
 			</div>
 			<div class="row px-4 mb-4">
 				<a href="#">¿No tienes cuenta? Regístrate</a>
