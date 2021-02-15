@@ -1,140 +1,139 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Tutorias X</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-<style>
-	html,body{
-		margin:0px;
-		height:100%;
-		font-family: 'Poppins';
-	}
-	.barraTitulo{
-		background-color:  #C4C4C4 ; 
-		height: 50px;
-		font-size: 20px;
-	}
-	
-	.titulo{
-		padding: 5px 0px 5px 0px;
-	}
-	.imgSalida{
-		text-align: right;		
-	}
-	.contenedorM{
-		height: 92%;
-	}
-	.modulos{
-		padding: 0px;
-		height: 100%;
-	}
-	.modulosC{
-		background-color:  #C4C4C4 ; 
-		height: 100%;
-	}
-	li{
-		width: 100%;
-		height: 60px;
-		background-color: #75DFB3 ;
-		display: table;
-	}
-	ul{
-		padding: 20% 0% 20% 0%;
-	}
-	.modulo{
-		color: #000000;	
-		text-align: center;	
-		padding: 0px;
-	  	display: table-cell;
-	  	vertical-align: middle;
-	  	font-size: 18px;
-		
-	}
-	.enunAciones{
-		padding: 10px 0px 10px 0px; 
-	}
-	.accesos{
-		margin-top: 15% ;
-		display: table;
-		height: 70px;
-		padding: 0% 5% 0% 30%;
-	}
-	.accesos0{
-		margin-top: 15% ;
-		display: table;
-		height: 70px;
-		padding: 0% 30% 0% 5%;
-	}
-	.accesos1{
-		margin-top: 5% ;
-		display: table;
-		height: 70px;
-		padding: 0% 30% 0% 30%;
-	}
-	
-	.acceso{
-		display: table-cell;
-	  	vertical-align: middle;
-	  	text-align: center;
-	  	margin: 0px;
-	  	padding:  0px;
-	  	background-color: #F6C1C1;
-	  	font-size: 20px;
-	  	color: #000000;
-	  	
-	}
+	pageEncoding="ISO-8859-1"%>
+	<!DOCTYPE html>
+	<html>
+	<head>
+	    <meta charset="ISO-8859-1">
+	    <title>Administrador: Módulo</title>
+	    <link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+			crossorigin="anonymous">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+			rel="stylesheet">
+	    <script src="https://kit.fontawesome.com/7e57fa7d19.js" ></script>
+	  <style>
+	      html, body{
+	        height: 100%;
+	      }
+	      body {
+	  			background-color: rgb(251, 249, 246);
+	  			font-family: 'Poppins';
+	  			color: #2f3640;
+	  		}
+	      .purpura{
+	        background-color: rgb(87,16,178);
+	        color: white;
+	        font-weight: 600;
+	      }
 
-		
+	      .purpura2{
+	          background-color: rgba(79,12,164,1);
+	      }
+	      nav{
+	        text-align: end;
+	      }
 
-</style>
-</head>
-<body>
-	<div class = "container-fluid barraTitulo" >
-		<div class = "row titulo">
-			<div class = "col-6 col-md-1">Tutorias</div>
-        	<div class = "col-6 col-md-11 imgSalida">Administrador  
-        	<a href="index.jsp"><!-- enlace para salir -->
-        			<img src="https://iconarchive.com/download/i91934/icons8/windows-8/User-Interface-Logout.ico" class="img-fluid" width="35" height="35"> </div>
-			</a>
-		</div>
-	</div>
-	<div class = "container-fluid contenedorM"  >
-		<div class = "row modulos">
-			<div class="col-12 col-md-3 col-lg-2 modulos">
-				<ul class = "nav flex-colum modulosC">
-					<li class = "nav-item es">
-						<a class = "nav-link active modulo" href = "#">Estudiantes</a>
-					</li>
-					<li class = "nav-item">
-						<a class = "nav-link active modulo" href = "#">Docentes</a>
-					</li>
-					<li class = "nav-item">
-						<a class = "nav-link active modulo" href = "#">Departamentos</a>
-					</li>
-				</ul>
-			</div>
-			<div class="col-12 col-md-9 col-lg-10">
-				<div class = "col-12 enunAciones"> <h5>Acciones rápidas</h5></div>
-				<div class = "row" >
-					<div class = "nav flex-column col-6 accesos ">
-						<a class = "nav-link active acceso card" href = "#">Añadir Profesor</a>
-					</div>
-					<div class = "nav flex-column col-6 accesos0 ">
-						<a class = "nav-link active acceso card" href = "#">?????</a>
-					</div>
-					<div class = "nav flex-column col-12 accesos1">
-						<a class = "nav-link active acceso card" href = "#"> Añadir Departamento</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	      a{
+	          color: white !important;
+	      }
+	      a:hover{
+	          background-color: white;
+	          color:black !important;
+	      }
 
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-</body>
-</html>
+	 	table {
+			border-collapse: collapse;
+			overflow: hidden;
+			/*box-shadow: 0 0 20px rgba(0,0,0,0.1);*/
+	        text-align: center;
+	        background-color: white;
+		}
+
+		table tr:hover {
+	    	background-color: #a5c9fe;
+	   		/*cursor: pointer;*/
+	  	}
+
+	    table th{
+	        color:white;
+	    }
+	    table thead tr:hover{
+	        background-color: #0d6efd;
+	        cursor: inherit;
+	    }
+
+	    .btn-primary{
+	        width: 100%;
+	        background-color: rgb(87,16,178);
+	        border-color: rgb(87,16,178);
+	    }
+
+	      .btn-primary:hover{
+	          background-color: rgba(79,12,164,1);
+	          border-color: rgba(79,12,164,1);
+	      }
+	    #altura{
+	      height:100%;
+	    }
+	      .edicion{
+	          background-color: inherit !important;
+	          color:black !important;
+	      }
+	      
+	    #acciones{
+		width: 60%
+	  </style>
+	</head>
+
+
+
+	<body>
+
+	    <div class="container-fluid" id="altura">
+	      <nav class="row purpura" style="height: 6%" >
+	        <div class="col-9 d-flex flex-column justify-content-center align-items-start">
+	            Tutorías
+	        </div>
+	        <div class="col-3 d-flex flex-row justify-content-end align-items-center">
+	            <div>Administrador</div>
+	            <a href="#" class="btn"><i class="fas fa-sign-out-alt is"></i></a>
+	        </div>
+	      </nav>
+
+	      <div class="row" style="height: 94%;">
+	         <!-- una fila con dos columnas: la primera es la navegacion izq
+	        y la segunda el espacio en blanco-->
+		        <div class="col-3 purpura2 d-flex flex-column justify-content-start">
+		          <a class="btn py-3 my-4 text-center" href="#">Estudiante</a>
+		          <a class="btn py-3 my-4 text-center" href="#">Profesor</a>
+		          <a class="btn py-3 my-4 text-center" href="#">Departamento</a>
+		        </div>
+		        <div class ="col-9" id="altura">
+		        	<div class = "col-12 my-3 p-0"  >Acciones Rápidas</div>
+		        	<div class = "row p-5" style = "margin-top: 10%">
+		        		<div class = "col-6 text-center" style = "height: 70px;"  >
+		        			<a class="btn py-4 my-4 text-center text-white bg-primary bg-gradient" id="acciones" href="#">Añadir Docente</a>
+		        		</div>
+		        		<div class = "col-6 text-center " >
+		        			<a class="btn py-4 my-4 text-center text-white bg-primary bg-gradient" id="acciones"  href="#">Añadir Departamento</a>
+		        		</div>
+		        		<div class = "col-12 text-center m5-1">
+		        			<a class="btn py-4 my-4 text-center text-white bg-primary bg-gradient "  style="width: 30%;" href="#">????</a>
+		        		</div>
+		        	</div>		        		
+		        </div>		        			        	
+		</div>		        
+	  </div>
+
+
+
+	    <script
+	    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+	    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+	    crossorigin="anonymous"></script>
+	</body>
+	</html>
