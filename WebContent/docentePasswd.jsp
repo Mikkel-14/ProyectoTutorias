@@ -169,8 +169,7 @@
 					placeholder="Confirmar contraseña" required="required">
 			</div>
 			
-			
-				<div class="col-5 ce">
+				<div class="ce text-center mt-5">
 					<button type="submit" class="btn btn-primary">Actualizar</button>
 				</div>
 			</div>

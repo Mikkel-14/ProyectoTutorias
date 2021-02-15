@@ -84,8 +84,7 @@
 	  	
 	}
 
-		
-
+	
 </style>
 </head>
 <body>
@@ -119,7 +118,7 @@
 				</ul>
 			</div>
 			<div class="col-12 col-md-9 col-lg-10">
-				<div class = "col-12 enunAciones"> <h5>Acciones rápidas</h5></div>
+				<div class = "col-12 enunAciones fs-3">Acciones rápidas</div>
 				<div class = "row" >
 					<div class = "nav flex-column col-6 accesos ">
 						<a class = "nav-link active acceso card text-center align-middle d-table-cell" href = "#">Añadir Profesor</a>
