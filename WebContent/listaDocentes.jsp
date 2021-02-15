@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Estudiantes: Lista</title>
+	<title>Docentes: Lista</title>
 	<link
 		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
 		rel="stylesheet"
@@ -109,8 +109,8 @@
 			<!-- una fila con dos columnas: la primera es la navegacion izq
 	        y la segunda el espacio en blanco-->
 			<div class="col-3 purpura2 d-flex flex-column justify-content-start">
-				<a class="btn py-3 my-4 text-center aOn" href="listaEstudiantes.jsp">Estudiante</a>
-				<a class="btn py-3 my-4 text-center" href="listaDocentes.jsp">Docente</a>
+				<a class="btn py-3 my-4 text-center" href="listaEstudiantes.jsp">Estudiante</a>
+				<a class="btn py-3 my-4 text-center aOn" href="listaDocentes.jsp">Docente</a>
 				<a class="btn py-3 my-4 text-center" href="listaDepartamentos.jsp">Departamento</a>
 			</div>
 			<div class="col-9">
@@ -125,6 +125,10 @@
 							</div>
 							<div class="col-1 px-0 mx-0">
 								<button type="button" class="btn btn-primary">Buscar</button>
+							</div>
+							<div class="col-2 px-0 mx-0"></div>
+							<div class="col-1 ">
+								<button type="button" class="btn btn-success">Nuevo</button>
 							</div>
 						</form>
 						<div class="row my-4">
@@ -142,48 +146,42 @@
 										<td>Celda 1</td>
 										<td>Celda 2</td>
 										<td>Celda 3</td>
-										<td><a href="#" class="btn edicion"> <i
-												class="far fa-edit"></i></a><a href="#" class="btn edicion"><i
+										<td><a href="#" class="btn edicion"><i
 												class="far fa-trash-alt"></i></a></td>
 									</tr>
 									<tr>
 										<td>Celda 1</td>
 										<td>Celda 2</td>
 										<td>Celda 3</td>
-										<td><a href="#" class="btn edicion"> <i
-												class="far fa-edit"></i></a><a href="#" class="btn edicion"><i
+										<td><a href="#" class="btn edicion"><i
 												class="far fa-trash-alt"></i></a></td>
 									</tr>
 									<tr>
 										<td>Celda 1</td>
 										<td>Celda 2</td>
 										<td>Celda 3</td>
-										<td><a href="#" class="btn edicion"> <i
-												class="far fa-edit"></i></a><a href="#" class="btn edicion"><i
+										<td><a href="#" class="btn edicion"><i
 												class="far fa-trash-alt"></i></a></td>
 									</tr>
 									<tr>
 										<td>Celda 1</td>
 										<td>Celda 2</td>
 										<td>Celda 3</td>
-										<td><a href="#" class="btn edicion"> <i
-												class="far fa-edit"></i></a><a href="#" class="btn edicion"><i
+										<td><a href="#" class="btn edicion"><i
 												class="far fa-trash-alt"></i></a></td>
 									</tr>
 									<tr>
 										<td>Celda 1</td>
 										<td>Celda 2</td>
 										<td>Celda 3</td>
-										<td><a href="#" class="btn edicion"> <i
-												class="far fa-edit"></i></a><a href="#" class="btn edicion"><i
+										<td><a href="#" class="btn edicion"><i
 												class="far fa-trash-alt"></i></a></td>
 									</tr>
 									<tr>
 										<td>Celda 1</td>
 										<td>Celda 2</td>
 										<td>Celda 3</td>
-										<td><a href="#" class="btn edicion"> <i
-												class="far fa-edit"></i></a><a href="#" class="btn edicion"><i
+										<td><a href="#" class="btn edicion"><i
 												class="far fa-trash-alt"></i></a></td>
 									</tr>
 								</tbody>

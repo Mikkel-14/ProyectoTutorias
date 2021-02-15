@@ -85,6 +85,11 @@
 			color: white !important;
 			font-weight: 800 !important;
 		}
+		
+		.col-9 div a:hover {
+			color: white !important;
+			font-weight: 800 !important;
+		}
 		#acciones {
 			width: 35%
 		}
@@ -119,15 +124,15 @@
 					class="container-fluid d-flex flex-column justify-content-start"
 					style="height: 100%;">
 					<div
-						class="container bg-white rounded-3 my-4 mx-1 px-2 py-1 d-flex flex-column justify-content-start">
+						class="container bg-white rounded-3 my-4 mx-1 px-2 py-3 pb-4 d-flex flex-column justify-content-start">
 						<div class="row mb-2 mx-2">
-							<div class="col-12 my-3 px-1">Acciones Rápidas</div>
+							<div class="col ms-4 my-2 px-1"> <h4>Acciones Rápidas</h4></div>
 						</div>
-						<div class="row  my-3">
-							<div class="col-12 my-5 text-center" style="height: 70px;">
+						<div class="row py-4">
+							<div class="col-12 mb-4 text-center" style="height: 50%;">
 								<a class="btn py-5 w-25 text-center text-white bg-primary bg-gradient" id="acciones" href="añadirDocente.jsp">Añadir Docente</a>
 							</div>
-							<div class="col-12 my-5 text-center" style="height: 70px;">
+							<div class="col-12 mb-4 text-center" style="height: 50%;">
 								<a class="btn py-5 w-25 text-center text-white bg-primary bg-gradient" id="acciones" href="añadirDepartamento.jsp">Añadir Departamento</a>
 							</div>
 						</div>
