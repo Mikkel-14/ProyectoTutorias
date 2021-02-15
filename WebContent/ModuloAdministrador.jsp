@@ -20,7 +20,7 @@
 	        height: 100%;
 	      }
 	      body {
-	  			background-color: rgb(251, 249, 246);
+	  			background-color: #fbf9f6;
 	  			font-family: 'Poppins';
 	  			color: #2f3640;
 	  		}
@@ -122,12 +122,15 @@
 		          <a class="btn py-3 my-4 text-center" href="listaDocentes.jsp">Docente</a>
 		          <a class="btn py-3 my-4 text-center" href="listaDepartamentos.jsp">Departamento</a>
 		        </div>
-		        <div class ="col-9" id="altura">
-					<div class="container bg-white rounded-3 my-4 mx-1 px-2 py-1">
+		        <div class ="col-9">
+		        	<div
+					class="container-fluid d-flex flex-column justify-content-start"
+					style="height: 100%;">
+					<div class="container bg-white rounded-3 my-4 mx-1 px-2 py-1 d-flex flex-column justify-content-start">
 						<div class="row mb-2 mx-2">
 							<div class = "col-12 my-3 px-1">Acciones Rápidas</div>
 						</div>
-						<div class = "row p-5">
+						<div class = "row">
 							<div class = "col-12 text-center" style = "height: 70px;"  >
 								<a class="btn py-4 my-5 text-center text-white bg-primary bg-gradient" id="acciones" href="añadirDocente.jsp" name="añadirDocente">Añadir Docente</a>
 							</div>
@@ -136,7 +139,8 @@
 							</div>
 						</div>	
 					</div>	        		
-		        </div>		        			        	
+		        </div>	
+		        </div>	        			        	
 		</div>		        
 	  </div>
 
