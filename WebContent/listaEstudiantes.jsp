@@ -93,7 +93,6 @@
 </head>
 
 <body>
-
 	<div class="container-fluid" id="altura">
 		<nav class="row purpura" style="height: 6%">
 			<div
@@ -101,8 +100,8 @@
 				Tutorias</div>
 			<div
 				class="col-3 d-flex flex-row justify-content-end align-items-center">
-				<a href="ModuloAdministrador.jsp" class="btn">Administrador</a> <a
-					href="#" class="btn"><i class="fas fa-sign-out-alt is"></i></a>
+				<a href="ModuloAdministrador.jsp" class="btn">Administrador</a>
+				<a href="index.jsp" class="btn"><i class="fas fa-sign-out-alt is"></i></a>
 			</div>
 		</nav>
 
@@ -110,9 +109,9 @@
 			<!-- una fila con dos columnas: la primera es la navegacion izq
 	        y la segunda el espacio en blanco-->
 			<div class="col-3 purpura2 d-flex flex-column justify-content-start">
-				<a class="btn py-3 my-4 text-center aOn" href="#">Estudiante</a> <a
-					class="btn py-3 my-4 text-center" href="#">Profesor</a> <a
-					class="btn py-3 my-4 text-center" href="#">Departamento</a>
+				<a class="btn py-3 my-4 text-center aOn" href="listaEstudiantes.jsp">Estudiante</a>
+				<a class="btn py-3 my-4 text-center" href="listaDocentes.jsp">Docente</a>
+				<a class="btn py-3 my-4 text-center" href="listaDepartamentos.jsp">Departamento</a>
 			</div>
 			<div class="col-9">
 				<div
@@ -190,20 +189,11 @@
 								</tbody>
 							</table>
 						</div>
-
 					</div>
-
-
-
 				</div>
 			</div>
 		</div>
 	</div>
-	<!--
-
-	  -->
-
-
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
