@@ -127,12 +127,12 @@
 						<div class="row mb-2 mx-2">
 							<div class = "col-12 my-3 px-1">Acciones Rápidas</div>
 						</div>
-						<div class = "row p-5">
-							<div class = "col-12 text-center" style = "height: 70px;"  >
-								<a class="btn py-4 my-5 text-center text-white bg-primary bg-gradient" id="acciones" href="añadirDocente.jsp" name="añadirDocente">Añadir Docente</a>
+						<div class = "row  my-3">
+							<div class = "col-12 my-5 text-center" style = "height: 70px;">
+								<a class="btn py-5 w-25 text-center text-white bg-primary bg-gradient" id="acciones" href="añadirDocente.jsp">Añadir Docente</a>
 							</div>
-							<div class = "col-12 text-center " >
-								<a class="btn py-4 my-5 text-center text-white bg-primary bg-gradient" id="acciones" href="#" name="añadirDepartamento">Añadir Departamento</a>
+							<div class = "col-12 my-5 text-center" style = "height: 70px;">
+								<a class="btn py-5 w-25 text-center text-white bg-primary bg-gradient" id="acciones" href="añadirDepartamento.jsp">Añadir Departamento</a>
 							</div>
 						</div>	
 					</div>	        		
