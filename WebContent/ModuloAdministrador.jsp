@@ -132,10 +132,10 @@
 						</div>
 						<div class = "row  my-3">
 							<div class = "col-12 my-5 text-center" style = "height: 70px;">
-								<a class="btn py-5 w-25 text-center text-white bg-primary bg-gradient" id="acciones" href="aï¿½adirDocente.jsp">Añadir Docente</a>
+								<a class="btn py-5 w-25 text-center text-white bg-primary bg-gradient" id="acciones" href="añadirDocente.jsp">Añadir Docente</a>
 							</div>
 							<div class = "col-12 my-5 text-center" style = "height: 70px;">
-								<a class="btn py-5 w-25 text-center text-white bg-primary bg-gradient" id="acciones" href="aï¿½adirDepartamento.jsp">Añadir Departamento</a>
+								<a class="btn py-5 w-25 text-center text-white bg-primary bg-gradient" id="acciones" href="añadirDepartamento.jsp">Añadir Departamento</a>
 							</div>
 						</div>
 					</div>
