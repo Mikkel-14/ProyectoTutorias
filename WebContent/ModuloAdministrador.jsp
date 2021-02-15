@@ -84,8 +84,18 @@
 	          color:black !important;
 	      }
 	      
+	    nav div a {
+			background-color:inherit !important;
+			color: white !important;
+			font-weight: 600 !important;
+		}
+		nav div a:hover {
+			color: white !important;
+			font-weight: 800 !important;
+		}
 	    #acciones{
-		width: 60%
+			width: 35%
+		}
 	  </style>
 	</head>
 
@@ -99,7 +109,7 @@
 	            Tutorías
 	        </div>
 	        <div class="col-3 d-flex flex-row justify-content-end align-items-center">
-	            <div>Administrador</div>
+	              <a href="ModuloAdministrador.jsp" class="btn">Administrador</a>			
 	            <a href="#" class="btn"><i class="fas fa-sign-out-alt is"></i></a>
 	        </div>
 	      </nav>
@@ -108,23 +118,24 @@
 	         <!-- una fila con dos columnas: la primera es la navegacion izq
 	        y la segunda el espacio en blanco-->
 		        <div class="col-3 purpura2 d-flex flex-column justify-content-start">
-		          <a class="btn py-3 my-4 text-center" href="#">Estudiante</a>
-		          <a class="btn py-3 my-4 text-center" href="#">Profesor</a>
-		          <a class="btn py-3 my-4 text-center" href="#">Departamento</a>
+		          <a class="btn py-3 my-4 text-center" href="listaEstudiantes.jsp">Estudiante</a>
+		          <a class="btn py-3 my-4 text-center" href="listaDocentes.jsp">Docente</a>
+		          <a class="btn py-3 my-4 text-center" href="listaDepartamentos.jsp">Departamento</a>
 		        </div>
 		        <div class ="col-9" id="altura">
-		        	<div class = "col-12 my-3 p-0"  >Acciones Rápidas</div>
-		        	<div class = "row p-5" style = "margin-top: 10%">
-		        		<div class = "col-6 text-center" style = "height: 70px;"  >
-		        			<a class="btn py-4 my-4 text-center text-white bg-primary bg-gradient" id="acciones" href="#">Añadir Docente</a>
-		        		</div>
-		        		<div class = "col-6 text-center " >
-		        			<a class="btn py-4 my-4 text-center text-white bg-primary bg-gradient" id="acciones"  href="#">Añadir Departamento</a>
-		        		</div>
-		        		<div class = "col-12 text-center m5-1">
-		        			<a class="btn py-4 my-4 text-center text-white bg-primary bg-gradient "  style="width: 30%;" href="#">????</a>
-		        		</div>
-		        	</div>		        		
+					<div class="container bg-white rounded-3 my-4 mx-1 px-2 py-1">
+						<div class="row mb-2 mx-2">
+							<div class = "col-12 my-3 px-1">Acciones Rápidas</div>
+						</div>
+						<div class = "row p-5">
+							<div class = "col-12 text-center" style = "height: 70px;"  >
+								<a class="btn py-4 my-5 text-center text-white bg-primary bg-gradient" id="acciones" href="" name="añadirDocente">Añadir Docente</a>
+							</div>
+							<div class = "col-12 text-center " >
+								<a class="btn py-4 my-5 text-center text-white bg-primary bg-gradient" id="acciones" href="#" name="añadirDepartamento">Añadir Departamento</a>
+							</div>
+						</div>	
+					</div>	        		
 		        </div>		        			        	
 		</div>		        
 	  </div>
