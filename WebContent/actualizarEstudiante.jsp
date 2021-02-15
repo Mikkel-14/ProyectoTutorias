@@ -34,9 +34,9 @@
 	    	background-color: white;
 			color:black !important;
 		}
-		a:nth-child(1) {
+		.aOn {
 			background-color: white;
-			color:black !important;
+			color: black !important;
 		}
 	    nav{ text-align: end; }
 		#altura { height: 100%; }
@@ -44,6 +44,15 @@
 		a {
 			text-decoration: none;
 			color: #2f3640;
+		}
+		nav div a {
+			background-color: inherit !important;
+			color: white !important;
+			font-weight: 600 !important;
+		}		
+		nav div a:hover {
+			color: white !important;
+			font-weight: 800 !important;
 		}
 	</style>
 	
@@ -57,7 +66,7 @@
             	Tutorias
             </div>
 			<div class="col-3 d-flex flex-row justify-content-end align-items-center">
-            	<div>Administrador</div>
+            	<a href="ModuloAdministrador.jsp" class="btn">Administrador</a>
             	<a href="#" class="btn"><i class="fas fa-sign-out-alt"></i></a>
         	</div>
       	</nav>
@@ -65,7 +74,7 @@
          	<!-- una fila con dos columnas: la primera es la navegacion izq
         	y la segunda el espacio en blanco-->
         	<div class="col-3 purpura2 d-flex flex-column justify-content-start">
-          		<a class="btn py-3 my-4 text-center" href="#">Estudiante</a>
+          		<a class="btn py-3 my-4 text-center aOn" href="#">Estudiante</a>
           		<a class="btn py-3 my-4 text-center" href="#">Docente</a>
           		<a class="btn py-3 my-4 text-center" href="#">Departamento</a>
         	</div>
