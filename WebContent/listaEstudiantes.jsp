@@ -16,6 +16,12 @@
 		rel="stylesheet">
 	<script src="https://kit.fontawesome.com/7e57fa7d19.js"></script>
 	<link rel="stylesheet" href="css/layout.css">
+	<style>
+	.col-9 div a:hover {
+			color: white !important;
+			font-weight: 800 !important;
+		}
+	</style>
 </head>
 
 <body>
