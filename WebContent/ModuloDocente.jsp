@@ -84,11 +84,13 @@
 		
 		.fondo{
 			height: 100% ;
-			background-image: url('./img/u.png'); 
+			background-image: url('./img/2.png'); 
 			background-repeat: no-repeat; 
-			background-size: 100% 100%;
-			opacity: .7;
-			filter: drop-shadow(0 0 200px blue)
+			background-size: 50% 55%;
+			position:relative;
+			left:20%;
+			top:20%;
+			opacity:0.6;
 		}
 			
 	  </style>
