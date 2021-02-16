@@ -22,69 +22,7 @@
 	href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
 	rel="stylesheet">
 
-<style>
-html, body {
-	height: 100%;
-}
-
-body {
-	background-color: rgb(251, 249, 246);
-	font-family: 'Poppins';
-	color: #2f3640;
-}
-
-.purpura {
-	background-color: rgb(87, 16, 178);
-	color: white;
-	font-weight: 600;
-}
-
-.purpura2 {
-	background-color: rgba(79, 12, 164, 1);
-}
-
-a {
-	color: white !important;
-}
-
-a:hover {
-	background-color: white;
-	color: black !important;
-}
-
-.aOn {
-	background-color: white;
-	color: black !important;
-}
-
-nav {
-	text-align: end;
-}
-
-#altura {
-	height: 100%;
-}
-
-.gray {
-	background-color: #C4C4C4;
-}
-
-a {
-	text-decoration: none;
-	color: #2f3640;
-}
-
-nav div a {
-	background-color: inherit !important;
-	color: white !important;
-	font-weight: 600 !important;
-}
-
-nav div a:hover {
-	color: white !important;
-	font-weight: 800 !important;
-}
-</style>
+<link rel="stylesheet" href="css/layout.css">
 
 <script src="https://kit.fontawesome.com/7e57fa7d19.js"></script>
 </head>
