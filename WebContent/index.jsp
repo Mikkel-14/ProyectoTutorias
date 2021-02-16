@@ -71,7 +71,7 @@
 					placeholder="Contraseña" name="password" required>
 			</div>
 			<div class="row px-4 mb-4">
-				<a href="#">¿No tienes cuenta? Regístrate</a>
+				<a href="registrarEstudiante.jsp">¿No tienes cuenta? Regístrate</a>
 			</div>
 			<div class="row mx-auto">
 				<div class="col-5">

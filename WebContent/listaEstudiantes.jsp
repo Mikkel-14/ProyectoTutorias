@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="nomina" scope="request" value="${nomina}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,7 +43,7 @@
 			<!-- una fila con dos columnas: la primera es la navegacion izq
 	        y la segunda el espacio en blanco-->
 			<div class="col-3 purpura2 d-flex flex-column justify-content-start">
-				<a class="btn py-3 my-4 text-center aOn" href="listaEstudiantes.jsp">Estudiante</a>
+				<a class="btn py-3 my-4 text-center aOn" href="listarEstudianteController">Estudiante</a>
 				<a class="btn py-3 my-4 text-center" href="listarDocenteController">Docente</a>
 				<a class="btn py-3 my-4 text-center" href="listarDepartamentoController">Departamento</a>
 			</div>
@@ -53,10 +55,10 @@
 						class="container d-flex flex-column justify-content-start bg-white my-4 rounded-3 ">
 						<form class="row my-4">
 							<div class="col-8 px-0">
-								<input type="text" class="form-control" placeholder="Search..">
+								<input type="text" class="form-control" placeholder="Buscar por CI" name="search">
 							</div>
 							<div class="col-1 px-0 mx-0">
-								<button type="button" class="btn btn-primary">Buscar</button>
+								<button type="submit" class="btn btn-primary">Buscar</button>
 							</div>
 						</form>
 						<div class="row my-4">
@@ -69,58 +71,29 @@
 										<th>Opciones</th>
 									</tr>
 								</thead>
-								<tbody>
-									<tr>
-										<td>Celda 1</td>
-										<td>Celda 2</td>
-										<td>Celda 3</td>
-										<td><a href="#" class="btn edicion"> <i
-												class="far fa-edit"></i></a><a href="#" class="btn edicion"><i
-												class="far fa-trash-alt"></i></a></td>
-									</tr>
-									<tr>
-										<td>Celda 1</td>
-										<td>Celda 2</td>
-										<td>Celda 3</td>
-										<td><a href="#" class="btn edicion"> <i
-												class="far fa-edit"></i></a><a href="#" class="btn edicion"><i
-												class="far fa-trash-alt"></i></a></td>
-									</tr>
-									<tr>
-										<td>Celda 1</td>
-										<td>Celda 2</td>
-										<td>Celda 3</td>
-										<td><a href="#" class="btn edicion"> <i
-												class="far fa-edit"></i></a><a href="#" class="btn edicion"><i
-												class="far fa-trash-alt"></i></a></td>
-									</tr>
-									<tr>
-										<td>Celda 1</td>
-										<td>Celda 2</td>
-										<td>Celda 3</td>
-										<td><a href="#" class="btn edicion"> <i
-												class="far fa-edit"></i></a><a href="#" class="btn edicion"><i
-												class="far fa-trash-alt"></i></a></td>
-									</tr>
-									<tr>
-										<td>Celda 1</td>
-										<td>Celda 2</td>
-										<td>Celda 3</td>
-										<td><a href="#" class="btn edicion"> <i
-												class="far fa-edit"></i></a><a href="#" class="btn edicion"><i
-												class="far fa-trash-alt"></i></a></td>
-									</tr>
-									<tr>
-										<td>Celda 1</td>
-										<td>Celda 2</td>
-										<td>Celda 3</td>
-										<td><a href="#" class="btn edicion"> <i
-												class="far fa-edit"></i></a><a href="#" class="btn edicion"><i
-												class="far fa-trash-alt"></i></a></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
+								<c:choose>
+									<c:when test="${nomina == null}">
+										</table>
+										</div>
+										<div class="row mx-auto mb-4">No hay elementos para mostrar.</div>
+									</c:when>
+									<c:otherwise>
+										<tbody>
+										<c:forEach var="estudiante" items="${nomina}">
+											<tr>
+												<td>${estudiante.cedula}</td>
+												<td>${estudiante.nombre}</td>
+												<td>${estudiante.apellido}</td>
+												<td><a href="#" class="btn edicion"> <i
+														class="far fa-edit"></i></a><a href="#" class="btn edicion"><i
+														class="far fa-trash-alt"></i></a></td>
+											</tr>
+										</c:forEach>
+										</tbody>
+										</table>
+										</div>
+									</c:otherwise>
+								</c:choose>
 					</div>
 				</div>
 			</div>
