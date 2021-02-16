@@ -78,7 +78,7 @@
 				<a class="btn py-3 my-4 text-center aOn" href="listaDocentes.jsp">Docente</a>
 				<a class="btn py-3 my-4 text-center" href="listaDepartamentos.jsp">Departamento</a>
         	</div>
-       		<form class="col-9 d-flex flex-column justify-content-center">
+       		<form class="col-9 d-flex flex-column justify-content-center" method="POST" action="añadirDocenteController">
 				<div class="mt-auto mx-5">
 					<h4>Datos del Docente</h4>
 				</div>
@@ -87,7 +87,7 @@
 					<label for="cedula" class="form-label">Cédula</label>
 				</div>
 				<div class="w-50 mx-auto">
-					<input type="text" class="form-control" id="cedula" placeholder="Número de cédula">
+					<input type="text" class="form-control" id="cedula" placeholder="Número de cédula" name="numCedula">
 				</div>
 				
 				<!-- Nombre -->
@@ -95,7 +95,7 @@
 					<label for="nombre" class="form-label">Nombre</label>
 				</div>
 				<div class="w-50 mx-auto">
-					<input type="text" class="form-control" id="nombre" placeholder="Nombre del docente">
+					<input type="text" class="form-control" id="nombre" placeholder="Nombre del docente" name="nombreDocente">
 				</div>
 				
 				<!-- Apellido -->
@@ -103,7 +103,7 @@
 					<label for="apellido" class="form-label">Apellido</label>
 				</div>
 				<div class="w-50 mx-auto">
-					<input type="text" class="form-control" id="apellido" placeholder="Apellido del docente">
+					<input type="text" class="form-control" id="apellido" placeholder="Apellido del docente" name="apellidoDocente">
 				</div>
 				
 				<!-- Botón Actualizar -->

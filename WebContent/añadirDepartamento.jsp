@@ -78,7 +78,7 @@
 				<a class="btn py-3 my-4 text-center" href="listaDocentes.jsp">Docente</a>
 				<a class="btn py-3 my-4 text-center aOn" href="listaDepartamentos.jsp">Departamento</a>
         	</div>
-       		<form class="col-9 d-flex flex-column justify-content-center">
+       		<form class="col-9 d-flex flex-column justify-content-center" method="POST" action="anadirDepartamentoController">
 				<div class="mt-auto mx-5">
 					<h4>Datos del Departamento</h4>
 				</div>
@@ -95,7 +95,7 @@
 					<label for="nombre" class="form-label">Nombre</label>
 				</div>
 				<div class="w-50 mx-auto">
-					<input type="text" class="form-control" id="nombre" placeholder="Nombre del departamento">
+					<input type="text" class="form-control" id="nombre" placeholder="Nombre del departamento" name="nombreDepartamento">
 				</div>
 				
 				<!-- Botón Actualizar -->

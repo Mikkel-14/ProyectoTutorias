@@ -89,6 +89,10 @@
 			color: white !important;
 			font-weight: 800 !important;
 		}
+		.col-9 div a:hover {
+			color: white !important;
+			font-weight: 800 !important;
+		}
 	</style>
 </head>
 
@@ -128,7 +132,7 @@
 							</div>
 							<div class="col-2 px-0 mx-0"></div>
 							<div class="col-1 ">
-								<button type="button" class="btn btn-success">Nuevo</button>
+								<a href="añadirDepartamento.jsp" class="btn btn-success">Nuevo</a>
 							</div>
 						</form>
 						<div class="row my-4">

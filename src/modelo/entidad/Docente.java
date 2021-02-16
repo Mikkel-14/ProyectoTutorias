@@ -25,6 +25,13 @@ public class Docente implements Serializable {
 	
 	public Docente() {}
 
+	public Docente(String cedula, String nombre, String apellido) {
+		this.cedula = cedula;
+		this.contraseña = "docente123";
+		this.nombre = nombre;
+		this.apellido = apellido;
+	}
+
 	public Docente(String cedula, String contraseña, String nombre, String apellido) {
 		this.cedula = cedula;
 		this.contraseña = contraseña;
