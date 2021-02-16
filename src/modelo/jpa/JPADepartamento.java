@@ -22,7 +22,22 @@ public class JPADepartamento extends JPAGenericDAO<Departamento, Integer> implem
 		}
 		return null;
 	}
-	
-	
+
+	@Override
+	public Departamento leerByNombre(String name) {
+		Query query = em.createNamedQuery("buscarDpto",Departamento.class);
+		query.setParameter("name", name);
+		Departamento buscado;
+		try {
+			buscado= (Departamento) query.getSingleResult();
+		}
+		catch (Exception e) {
+			buscado = null;
+		}
+		if (buscado != null) {
+			return buscado;
+		}
+		return null;
+	}
 	
 }

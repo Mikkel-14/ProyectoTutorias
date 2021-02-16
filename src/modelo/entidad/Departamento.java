@@ -5,7 +5,10 @@ import javax.persistence.*;
 
 
 @Entity
-@NamedQuery(name = "listarDepartamentos",query = "SELECT d FROM Departamento d")
+@NamedQueries({
+@NamedQuery(name = "listarDepartamentos",query = "SELECT d FROM Departamento d") , 
+@NamedQuery(name = "buscarDpto", query = "SELECT d FROM Departamento d WHERE d.nombre LIKE :name")})
+
 public class Departamento implements Serializable {
 
 	private static final long serialVersionUID = 1L;

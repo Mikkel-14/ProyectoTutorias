@@ -1,6 +1,7 @@
 package controlador;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -24,7 +25,13 @@ public class listarDepartamentoController extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Departamento> dptos = this.listar();
+		String aBuscar =request.getParameter("search");
+		List<Departamento> dptos;
+		if(aBuscar == null) {
+			dptos = this.listar();
+		} else {
+			dptos = buscar(aBuscar);
+		}
 		request.setAttribute("dptos", dptos);
 		getServletContext().getRequestDispatcher("/listaDepartamentos.jsp").forward(request, response);
 	}
@@ -36,5 +43,15 @@ public class listarDepartamentoController extends HttpServlet {
 	private List<Departamento> listar(){
 		DAOFactory fabrica = new JPAFactory();
 		return fabrica.crearDepartamentoDAO().listar();
+	}
+	private List<Departamento> buscar(String nombre){
+		DAOFactory fabrica = new JPAFactory();
+		List<Departamento> deptos = new ArrayList<Departamento>();
+		Departamento encontrado = fabrica.crearDepartamentoDAO().leerByNombre(nombre);
+		if(encontrado != null) {
+			deptos.add(encontrado);
+			return deptos;
+		}
+		return null;
 	}
 }

@@ -125,12 +125,12 @@
 					style="height: 100%;">
 					<div
 						class="container d-flex flex-column justify-content-start bg-white my-4 rounded-3 ">
-						<form class="row my-4">
+						<form class="row my-4" method="GET" action="listarDepartamentoController">
 							<div class="col-8 px-0">
-								<input type="text" class="form-control" placeholder="Search..">
+								<input type="text" class="form-control" placeholder="Buscar por nombre" name="search">
 							</div>
 							<div class="col-1 px-0 mx-0">
-								<button type="button" class="btn btn-primary">Buscar</button>
+								<button type="submit" class="btn btn-primary">Buscar</button>
 							</div>
 							<div class="col-2 px-0 mx-0"></div>
 							<div class="col-1 ">
