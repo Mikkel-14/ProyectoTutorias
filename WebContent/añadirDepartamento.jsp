@@ -11,7 +11,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Añadir Departamento</title>
+<title>Aï¿½adir Departamento</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -28,9 +28,28 @@
 </head>
 
 <body>
-	<c:if test="${(not empty sessionScope.usuario) && (sessionScope.tipo == 'admin')}">
-		<div class="container-fluid" id="altura">
-			<nav class="row purpura" style="height: 6%">
+	<div class="container-fluid" id="altura">
+		<nav class="row purpura" style="height: 6%">
+			<div
+				class="col-9 d-flex flex-column justify-content-center align-items-start">
+				Tutorias</div>
+			<div
+				class="col-3 d-flex flex-row justify-content-end align-items-center">
+				<a href="ModuloAdministrador.jsp" class="btn">Administrador</a> <a
+					href="index.jsp" class="btn"><i class="fas fa-sign-out-alt is"></i></a>
+			</div>
+		</nav>
+		<div class="row" style="height: 94%;">
+			<!-- una fila con dos columnas: la primera es la navegacion izq
+        	y la segunda el espacio en blanco-->
+			<div class="col-3 purpura2 d-flex flex-column justify-content-start">
+				<a class="btn py-3 my-4 text-center" href="listarEstudianteController">Estudiante</a>
+				<a class="btn py-3 my-4 text-center" href="listarDocenteController">Docente</a>
+				<a class="btn py-3 my-4 text-center aOn"
+					href="listarDepartamentoController">Departamento</a>
+			</div>
+			<form class="col-9 d-flex flex-column justify-content-center"
+				method="POST" action="anadirDepartamentoController">
 				<div
 					class="col-9 d-flex flex-column justify-content-center align-items-start">
 					Tutorias</div>
@@ -59,14 +78,14 @@
 							<div class=" row my-3 mx-5">
 								<h4>Datos del Departamento</h4>
 							</div>
-							<!-- Id 
+							<!-- Id
 					<div class="w-50 mt-auto mx-auto">
 						<label for="ID" class="form-label">ID</label>
 					</div>
 					<div class="w-50 mx-auto">
 						<input type="text" class="form-control" id="ID" placeholder="ID del departamento" readonly>
 					</div>-->
-	
+
 							<!-- Nombre -->
 							<div class="row w-50 mt-auto mx-auto">
 								<label for="nombre" class="form-label">Nombre</label>
@@ -86,10 +105,10 @@
 								<c:otherwise>
 								</c:otherwise>
 							</c:choose>
-	
-							<!-- Botón Actualizar -->
+
+							<!-- Botï¿½n Actualizar -->
 							<div class="row my-3 m-auto">
-								<button type="submit" class="btn btn-primary">Añadir</button>
+								<button type="submit" class="btn btn-primary">Aï¿½adir</button>
 							</div>
 						</div>
 					</div>

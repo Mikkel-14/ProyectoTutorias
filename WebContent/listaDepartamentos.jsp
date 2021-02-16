@@ -99,9 +99,27 @@
 </head>
 
 <body>
-	<c:if test="${(not empty sessionScope.usuario) && (sessionScope.tipo == 'admin')}">
-		<div class="container-fluid" id="altura">
-			<nav class="row purpura" style="height: 6%">
+	<div class="container-fluid" id="altura">
+		<nav class="row purpura" style="height: 6%">
+			<div
+				class="col-9 d-flex flex-column justify-content-center align-items-start">
+				Tutorias</div>
+			<div
+				class="col-3 d-flex flex-row justify-content-end align-items-center">
+				<a href="ModuloAdministrador.jsp" class="btn">Administrador</a>
+				<a href="index.jsp" class="btn"><i class="fas fa-sign-out-alt is"></i></a>
+			</div>
+		</nav>
+
+		<div class="row" style="height: 94%;">
+			<!-- una fila con dos columnas: la primera es la navegacion izq
+	        y la segunda el espacio en blanco-->
+			<div class="col-3 purpura2 d-flex flex-column justify-content-start">
+				<a class="btn py-3 my-4 text-center" href="listarEstudianteController">Estudiante</a>
+				<a class="btn py-3 my-4 text-center" href="listarDocenteController">Docente</a>
+				<a class="btn py-3 my-4 text-center aOn" href="listarDepartamentoController">Departamento</a>
+			</div>
+			<div class="col-9">
 				<div
 					class="col-9 d-flex flex-column justify-content-center align-items-start">
 					Tutorias</div>
@@ -111,7 +129,7 @@
 					<a href="index.jsp" class="btn"><i class="fas fa-sign-out-alt is"></i></a>
 				</div>
 			</nav>
-	
+
 			<div class="row" style="height: 94%;">
 				<!-- una fila con dos columnas: la primera es la navegacion izq
 		        y la segunda el espacio en blanco-->
@@ -135,7 +153,7 @@
 								</div>
 								<div class="col-2 px-0 mx-0"></div>
 								<div class="col-1 ">
-									<a href="añadirDepartamento.jsp" class="btn btn-success">Nuevo</a>
+									<a href="aï¿½adirDepartamento.jsp" class="btn btn-success">Nuevo</a>
 								</div>
 							</form>
 							<div class="row my-4">
