@@ -27,6 +27,7 @@
 </head>
 
 <body>
+<c:if test="${(not empty sessionScope.usuario) && (sessionScope.tipo == 'admin')}">
 	<div class="container-fluid" id="altura">
 		<nav class="row purpura" style="height: 6%">
 			<div
