@@ -26,7 +26,7 @@ public class anadirDepartamentoController extends HttpServlet {
 		procesarSolicitud(request, response);
 	}
 
-	private void procesarSolicitud(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+	private void procesarSolicitud(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		String nombre = req.getParameter("nombreDepartamento");
 		
         Departamento departamento = new Departamento(nombre);
@@ -46,9 +46,14 @@ public class anadirDepartamentoController extends HttpServlet {
         
         if (bandera) {
         	fabrica.crearDepartamentoDAO().crear(departamento);	
-            resp.sendRedirect("listaDepartamentos.jsp");
+            //resp.sendRedirect("listaDepartamentos.jsp");
+        	req.setAttribute("mensajeExito", "Se ha registrado el departamento");//mensaje
+			getServletContext().getRequestDispatcher("/añadirDepartamento.jsp").forward(req, resp);
         } else {
-        	resp.sendRedirect("añadirDepartamento.jsp");
+        	req.setAttribute("departamento", dptos);//Docente
+			req.setAttribute("mensajeError", "No se ha podido registrar el departamento");//mensaje
+			//Navego hacia el JSP
+			getServletContext().getRequestDispatcher("/añadirDocente.jsp").forward(req, resp);
         }
         
 	}
