@@ -37,8 +37,9 @@ public class listarDepartamentoController extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		Integer aBorrar = Integer.parseInt(request.getParameter("del"));
+		eliminar(aBorrar);
+		response.sendRedirect("listarDepartamentoController");
 	}
 	private List<Departamento> listar(){
 		DAOFactory fabrica = new JPAFactory();
@@ -53,5 +54,9 @@ public class listarDepartamentoController extends HttpServlet {
 			return deptos;
 		}
 		return null;
+	}
+	private void eliminar(Integer id) {
+		DAOFactory fabrica = new JPAFactory();
+		fabrica.crearDepartamentoDAO().eliminarPorId(id);
 	}
 }

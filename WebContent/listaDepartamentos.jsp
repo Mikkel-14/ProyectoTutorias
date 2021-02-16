@@ -95,6 +95,10 @@
 			color: white !important;
 			font-weight: 800 !important;
 		}
+		.col-9 div button:hover {
+			color: white !important;
+			font-weight: 800 !important;
+		}
 	</style>
 </head>
 
@@ -158,9 +162,12 @@
 												<tr>
 													<td>${depa.id}</td>
 													<td>${depa.nombre}</td>
-													<td><a href="#" class="btn edicion"> <i
-															class="far fa-edit"></i></a><a href="#" class="btn edicion"><i
-															class="far fa-trash-alt"></i></a></td>
+													<td><a href="actualizarDepartamento.jsp" class="btn edicion"> <i
+															class="far fa-edit"></i></a>
+														<form style="display: inline-block;" method="post" action="listarDepartamentoController">
+														<button type="submit" class="btn edicion" value="${depa.id}" name="del"><i
+															class="far fa-trash-alt"></i></button></td>
+														</form>
 												</tr>
 											</c:forEach>
 										</tbody>
