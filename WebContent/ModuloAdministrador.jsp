@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
+    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -99,51 +102,55 @@
 
 <body>
 
-	<div class="container-fluid" id="altura">
-		<nav class="row purpura" style="height: 6%">
-			<div
-				class="col-9 d-flex flex-column justify-content-center align-items-start">
-				Tutorías</div>
-			<div
-				class="col-3 d-flex flex-row justify-content-end align-items-center">
-				<a href="ModuloAdministrador.jsp" class="btn">Administrador</a>
-				<a href="index.jsp" class="btn"><i class="fas fa-sign-out-alt is"></i></a>
-			</div>
-		</nav>
+	<c:if test="${(not empty sessionScope.usuario) && (sessionScope.tipo == 'admin')}">
+    
 
-		<div class="row" style="height: 94%;">
-			<!-- una fila con dos columnas: la primera es la navegacion izq
-	        y la segunda el espacio en blanco-->
-			<div class="col-3 purpura2 d-flex flex-column justify-content-start">
-				<a class="btn py-3 my-4 text-center" href="listaEstudiantes.jsp">Estudiante</a>
-				<a class="btn py-3 my-4 text-center" href="listarDocenteController">Docente</a>
-				<a class="btn py-3 my-4 text-center" href="listarDepartamentoController">Departamento</a>
-			</div>
-			<div class="col-9">
+		<div class="container-fluid" id="altura">
+			<nav class="row purpura" style="height: 6%">
 				<div
-					class="container-fluid d-flex flex-column justify-content-start"
-					style="height: 100%;">
+					class="col-9 d-flex flex-column justify-content-center align-items-start">
+					Tutorías</div>
+				<div
+					class="col-3 d-flex flex-row justify-content-end align-items-center">
+					<a href="ModuloAdministrador.jsp" class="btn">Administrador</a>
+					<a href="index.jsp" class="btn"><i class="fas fa-sign-out-alt is"></i></a>
+				</div>
+			</nav>
+	
+			<div class="row" style="height: 94%;">
+				<!-- una fila con dos columnas: la primera es la navegacion izq
+		        y la segunda el espacio en blanco-->
+				<div class="col-3 purpura2 d-flex flex-column justify-content-start">
+					<a class="btn py-3 my-4 text-center" href="listaEstudiantes.jsp">Estudiante</a>
+					<a class="btn py-3 my-4 text-center" href="listarDocenteController">Docente</a>
+					<a class="btn py-3 my-4 text-center" href="listarDepartamentoController">Departamento</a>
+				</div>
+				<div class="col-9">
 					<div
-						class="container bg-white rounded-3 my-4 mx-1 px-2 py-3 pb-4 d-flex flex-column justify-content-start">
-						<div class="row mb-2 mx-2">
-							<div class="col ms-4 my-2 px-1"> <h4>Acciones Rápidas</h4></div>
-						</div>
-						<div class="row py-4">
-							<div class="col-12 mb-4 text-center" style="height: 50%;">
-								<a class="btn py-5 w-25 text-center text-white bg-primary bg-gradient" id="acciones" href="añadirDocente.jsp">Añadir Docente</a>
+						class="container-fluid d-flex flex-column justify-content-start"
+						style="height: 100%;">
+						<div
+							class="container bg-white rounded-3 my-4 mx-1 px-2 py-3 pb-4 d-flex flex-column justify-content-start">
+							<div class="row mb-2 mx-2">
+								<div class="col ms-4 my-2 px-1"> <h4>Acciones Rápidas</h4></div>
 							</div>
-							<div class="col-12 mb-4 text-center" style="height: 50%;">
-								<a class="btn py-5 w-25 text-center text-white bg-primary bg-gradient" id="acciones" href="añadirDepartamento.jsp">Añadir Departamento</a>
+							<div class="row py-4">
+								<div class="col-12 mb-4 text-center" style="height: 50%;">
+									<a class="btn py-5 w-25 text-center text-white bg-primary bg-gradient" id="acciones" href="añadirDocente.jsp">Añadir Docente</a>
+								</div>
+								<div class="col-12 mb-4 text-center" style="height: 50%;">
+									<a class="btn py-5 w-25 text-center text-white bg-primary bg-gradient" id="acciones" href="añadirDepartamento.jsp">Añadir Departamento</a>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-		crossorigin="anonymous"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+			crossorigin="anonymous"></script>
+	</c:if>
 </body>
 </html>
