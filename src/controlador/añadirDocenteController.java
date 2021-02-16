@@ -38,11 +38,11 @@ public class añadirDocenteController extends HttpServlet {
         if (d == null) {
         	fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).crear(docente);		
             //resp.sendRedirect("listaDocentes.jsp");
-			req.setAttribute("mensajeExito", "Se ha registrado el docente");//mensaje
+			req.setAttribute("estadoSolicitud", true);//mensaje
 			getServletContext().getRequestDispatcher("/añadirDocente.jsp").forward(req, resp);
         } else {
 			req.setAttribute("docente", docente);//Docente
-			req.setAttribute("mensajeError", "No se ha podido registrar al docente");//mensaje
+			req.setAttribute("estadoSolicitud", false);//mensaje
 			//Navego hacia el JSP
 			getServletContext().getRequestDispatcher("/añadirDocente.jsp").forward(req, resp);
         }

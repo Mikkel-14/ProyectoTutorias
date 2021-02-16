@@ -49,11 +49,11 @@ public class anadirDepartamentoController extends HttpServlet {
         if (bandera) {
         	fabrica.crearDepartamentoDAO().crear(departamento);	
             //resp.sendRedirect("listaDepartamentos.jsp");
-        	req.setAttribute("mensajeExito", "Se ha registrado el departamento");//mensaje
+        	req.setAttribute("estadoSolicitud", true);//mensaje
 			getServletContext().getRequestDispatcher("/añadirDepartamento.jsp").forward(req, resp);
         } else {
         	req.setAttribute("depNombre", nombre);//Docente
-			req.setAttribute("mensajeError", "No se ha podido registrar el departamento");//mensaje
+			req.setAttribute("estadoSolicitud", false);//mensaje
 			//Navego hacia el JSP
 			getServletContext().getRequestDispatcher("/añadirDepartamento.jsp").forward(req, resp);
         }
