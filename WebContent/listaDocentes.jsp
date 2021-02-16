@@ -1,27 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="nomina" scope="request" value="${nomina}" />
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="ISO-8859-1">
-	<title>Docentes: Lista</title>
-	<link
-		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-		rel="stylesheet"
-		integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-		crossorigin="anonymous">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link
-		href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
-		rel="stylesheet">
-	<script src="https://kit.fontawesome.com/7e57fa7d19.js"></script>
-	<link rel="stylesheet" href="css/layout.css">
-	<style>
-	.col-9 div a:hover {
-			color: white !important;
-			font-weight: 800 !important;
-		}
-	</style>
+<meta charset="ISO-8859-1">
+<title>Docentes: Lista</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+	crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+	rel="stylesheet">
+<script src="https://kit.fontawesome.com/7e57fa7d19.js"></script>
+<link rel="stylesheet" href="css/layout.css">
+<style>
+.col-9 div a:hover {
+	color: white !important;
+	font-weight: 800 !important;
+}
+</style>
 </head>
 
 <body>
@@ -32,8 +34,8 @@
 				Tutorias</div>
 			<div
 				class="col-3 d-flex flex-row justify-content-end align-items-center">
-				<a href="ModuloAdministrador.jsp" class="btn">Administrador</a>
-				<a href="index.jsp" class="btn"><i class="fas fa-sign-out-alt is"></i></a>
+				<a href="ModuloAdministrador.jsp" class="btn">Administrador</a> <a
+					href="index.jsp" class="btn"><i class="fas fa-sign-out-alt is"></i></a>
 			</div>
 		</nav>
 
@@ -42,8 +44,9 @@
 	        y la segunda el espacio en blanco-->
 			<div class="col-3 purpura2 d-flex flex-column justify-content-start">
 				<a class="btn py-3 my-4 text-center" href="listaEstudiantes.jsp">Estudiante</a>
-				<a class="btn py-3 my-4 text-center aOn" href="listaDocentes.jsp">Docente</a>
-				<a class="btn py-3 my-4 text-center" href="listaDepartamentos.jsp">Departamento</a>
+				<a class="btn py-3 my-4 text-center aOn"
+					href="listarDocenteController">Docente</a> <a
+					class="btn py-3 my-4 text-center" href="listaDepartamentos.jsp">Departamento</a>
 			</div>
 			<div class="col-9">
 				<div
@@ -75,55 +78,33 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>Celda 1</td>
-										<td>Celda 2</td>
-										<td>Celda 3</td>
-										<td><a href="#" class="btn edicion"><i
-												class="far fa-trash-alt"></i></a></td>
-									</tr>
-									<tr>
-										<td>Celda 1</td>
-										<td>Celda 2</td>
-										<td>Celda 3</td>
-										<td><a href="#" class="btn edicion"><i
-												class="far fa-trash-alt"></i></a></td>
-									</tr>
-									<tr>
-										<td>Celda 1</td>
-										<td>Celda 2</td>
-										<td>Celda 3</td>
-										<td><a href="#" class="btn edicion"><i
-												class="far fa-trash-alt"></i></a></td>
-									</tr>
-									<tr>
-										<td>Celda 1</td>
-										<td>Celda 2</td>
-										<td>Celda 3</td>
-										<td><a href="#" class="btn edicion"><i
-												class="far fa-trash-alt"></i></a></td>
-									</tr>
-									<tr>
-										<td>Celda 1</td>
-										<td>Celda 2</td>
-										<td>Celda 3</td>
-										<td><a href="#" class="btn edicion"><i
-												class="far fa-trash-alt"></i></a></td>
-									</tr>
-									<tr>
-										<td>Celda 1</td>
-										<td>Celda 2</td>
-										<td>Celda 3</td>
-										<td><a href="#" class="btn edicion"><i
-												class="far fa-trash-alt"></i></a></td>
-									</tr>
+							<c:choose>
+								<c:when test="${nomina==null}">
 								</tbody>
 							</table>
 						</div>
-					</div>
+						<div class="row mx-auto mb-4">No hay elementos para mostrar.</div>
+								</c:when>
+								<c:when test="${nomina!=null}">
+									<c:forEach var="d" items="${nomina}">
+									<tr>
+										<td>${d.cedula}</td>
+										<td>${d.nombre}</td>
+										<td>${d.apellido}</td>
+										<td><a href="#" class="btn edicion"><i
+												class="far fa-trash-alt"></i></a></td>
+									</tr>
+									</c:forEach>
+								</tbody>
+							</table>
+						</div>
+								</c:when>
+							</c:choose>
+
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
