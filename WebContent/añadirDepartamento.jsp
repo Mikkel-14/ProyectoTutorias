@@ -3,7 +3,7 @@
     
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<c:set var="departamento" scope="request" value="${departamento}"/>
+<c:set var="depNombre" scope="request" value="${depNombre}"/>
 <c:set var="mensajeError" scope="request" value="${mensajeError}"/>
 <c:set var="mensajeExito" scope="request" value="${mensajeExito}"/>    
     
@@ -102,16 +102,16 @@
 					<label for="nombre" class="form-label">Nombre</label>
 				</div>
 				<div class="w-50 mx-auto">
-					<input type="text" class="form-control" id="nombre" placeholder="Nombre del departamento" n value="<c:out value="${departamento.nombre}"/>" name="nombreDepartamento">
+					<input type="text" class="form-control" id="nombre" placeholder="Nombre del departamento" value="<c:out value="${depNombre}"/>" name="nombreDepartamento">
 				</div>
+				<div class="text-danger">${mensajeError}</div>
+				<div class="text-success">${mensajeExito}</div>
 				
 				<!-- Botón Actualizar -->
 				<div class="m-auto">
 					<button type="submit" class="btn btn-primary">Añadir</button>
 				</div>				
-				<div class="text-danger">${mensajeError}</div>
-				<div class="text-success">${mensajeExito}</div>
-				
+
 			</form>
         </div>
 	</div>

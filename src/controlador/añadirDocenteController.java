@@ -34,7 +34,7 @@ public class añadirDocenteController extends HttpServlet {
         
         DAOFactory fabrica = new JPAFactory();
         Docente d = (Docente)fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).leer(cedula);
-    
+        System.out.println(d);
         if (d == null) {
         	fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).crear(docente);		
             //resp.sendRedirect("listaDocentes.jsp");

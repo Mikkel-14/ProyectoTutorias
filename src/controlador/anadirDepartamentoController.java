@@ -34,13 +34,15 @@ public class anadirDepartamentoController extends HttpServlet {
         DAOFactory fabrica = new JPAFactory();
         List<Departamento> dptos = fabrica.crearDepartamentoDAO().listar();
         
-        boolean bandera = true;
+        boolean bandera = false;
         if (dptos == null) {
-            bandera = false;
+            bandera = true;
         } else {
             for (Departamento d: dptos) {
                 bandera = !d.getNombre().equals(nombre);
-                if (!bandera) {break;}
+                if (!bandera) {
+                	break;
+                }
             }
         }
         
@@ -50,10 +52,10 @@ public class anadirDepartamentoController extends HttpServlet {
         	req.setAttribute("mensajeExito", "Se ha registrado el departamento");//mensaje
 			getServletContext().getRequestDispatcher("/añadirDepartamento.jsp").forward(req, resp);
         } else {
-        	req.setAttribute("departamento", dptos);//Docente
+        	req.setAttribute("depNombre", nombre);//Docente
 			req.setAttribute("mensajeError", "No se ha podido registrar el departamento");//mensaje
 			//Navego hacia el JSP
-			getServletContext().getRequestDispatcher("/añadirDocente.jsp").forward(req, resp);
+			getServletContext().getRequestDispatcher("/añadirDepartamento.jsp").forward(req, resp);
         }
         
 	}
