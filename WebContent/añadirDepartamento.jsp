@@ -46,7 +46,7 @@
 				<a class="btn py-3 my-4 text-center" href="listaEstudiantes.jsp">Estudiante</a>
 				<a class="btn py-3 my-4 text-center" href="listarDocenteController">Docente</a>
 				<a class="btn py-3 my-4 text-center aOn"
-					href="listaDepartamentos.jsp">Departamento</a>
+					href="listarDepartamentoController">Departamento</a>
 			</div>
 			<form class="col-9 d-flex flex-column justify-content-center"
 				method="POST" action="anadirDepartamentoController">

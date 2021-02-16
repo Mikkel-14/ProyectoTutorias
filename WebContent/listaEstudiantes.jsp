@@ -43,7 +43,7 @@
 			<div class="col-3 purpura2 d-flex flex-column justify-content-start">
 				<a class="btn py-3 my-4 text-center aOn" href="listaEstudiantes.jsp">Estudiante</a>
 				<a class="btn py-3 my-4 text-center" href="listarDocenteController">Docente</a>
-				<a class="btn py-3 my-4 text-center" href="listaDepartamentos.jsp">Departamento</a>
+				<a class="btn py-3 my-4 text-center" href="listarDepartamentoController">Departamento</a>
 			</div>
 			<div class="col-9">
 				<div

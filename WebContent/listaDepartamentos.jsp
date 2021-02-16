@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="dptos" scope="request" value="${dptos}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -115,7 +117,7 @@
 			<div class="col-3 purpura2 d-flex flex-column justify-content-start">
 				<a class="btn py-3 my-4 text-center" href="listaEstudiantes.jsp">Estudiante</a>
 				<a class="btn py-3 my-4 text-center" href="listarDocenteController">Docente</a>
-				<a class="btn py-3 my-4 text-center aOn" href="listaDepartamentos.jsp">Departamento</a>
+				<a class="btn py-3 my-4 text-center aOn" href="listarDepartamentoController">Departamento</a>
 			</div>
 			<div class="col-9">
 				<div
@@ -144,53 +146,28 @@
 										<th>Opciones</th>
 									</tr>
 								</thead>
-								<tbody>
-									<tr>
-										<td>Celda 1</td>
-										<td>Celda 2</td>
-										<td><a href="#" class="btn edicion"> <i
-												class="far fa-edit"></i></a><a href="#" class="btn edicion"><i
-												class="far fa-trash-alt"></i></a></td>
-									</tr>
-									<tr>
-										<td>Celda 1</td>
-										<td>Celda 2</td>
-										<td><a href="#" class="btn edicion"> <i
-												class="far fa-edit"></i></a><a href="#" class="btn edicion"><i
-												class="far fa-trash-alt"></i></a></td>
-									</tr>
-									<tr>
-										<td>Celda 1</td>
-										<td>Celda 2</td>
-										<td><a href="#" class="btn edicion"> <i
-												class="far fa-edit"></i></a><a href="#" class="btn edicion"><i
-												class="far fa-trash-alt"></i></a></td>
-									</tr>
-									<tr>
-										<td>Celda 1</td>
-										<td>Celda 2 </td>
-										<td><a href="#" class="btn edicion"> <i
-												class="far fa-edit"></i></a><a href="#" class="btn edicion"><i
-												class="far fa-trash-alt"></i></a></td>
-									</tr>
-									<tr>
-										<td>Celda 1</td>
-										<td>Celda 2</td>
-										<td><a href="#" class="btn edicion"> <i
-												class="far fa-edit"></i></a><a href="#" class="btn edicion"><i
-												class="far fa-trash-alt"></i></a></td>
-									</tr>
-									<tr>
-										<td>Celda 1</td>
-										<td>Celda 2</td>
-
-										<td><a href="#" class="btn edicion"> <i
-												class="far fa-edit"></i></a><a href="#" class="btn edicion"><i
-												class="far fa-trash-alt"></i></a></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
+								<c:choose>
+									<c:when test="${dptos==null}">
+										</table>
+										</div>
+										<div class="row mx-auto mb-4">No hay elementos para mostrar.</div>
+									</c:when>
+									<c:otherwise>
+										<tbody>
+											<c:forEach var="depa" items="${dptos}">
+												<tr>
+													<td>${depa.id}</td>
+													<td>${depa.nombre}</td>
+													<td><a href="#" class="btn edicion"> <i
+															class="far fa-edit"></i></a><a href="#" class="btn edicion"><i
+															class="far fa-trash-alt"></i></a></td>
+												</tr>
+											</c:forEach>
+										</tbody>
+										</table>
+										</div>
+									</c:otherwise>
+								</c:choose>
 					</div>
 				</div>
 			</div>
