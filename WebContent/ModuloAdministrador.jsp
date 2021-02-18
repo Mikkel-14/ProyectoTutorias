@@ -5,106 +5,107 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Administrador: Módulo</title>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-	crossorigin="anonymous">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link
-	href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
-	rel="stylesheet">
-<script src="https://kit.fontawesome.com/7e57fa7d19.js"></script>
-	<style>
-		html, body {
-			height: 100%;
-		}
-		body {
-			background-color: #fbf9f6;
-			font-family: 'Poppins';
-			color: #2f3640;
-		}
-		.purpura {
-			background-color: rgb(87, 16, 178);
-			color: white;
-			font-weight: 600;
-		}
-		.purpura2 {
-			background-color: rgba(79, 12, 164, 1);
-		}
-		nav {
-			text-align: end;
-		}
-		a {
-			color: white !important;
-		}
-		a:hover {
-			background-color: white;
-			color: black !important;
-		}
-		table {
-			border-collapse: collapse;
-			overflow: hidden;
-			/*box-shadow: 0 0 20px rgba(0,0,0,0.1);*/
-			text-align: center;
-			background-color: white;
-		}
-		table tr:hover {
-			background-color: #a5c9fe;
-			/*cursor: pointer;*/
-		}
-		table th {
-			color: white;
-		}
-		table thead tr:hover {
-			background-color: #0d6efd;
-			cursor: inherit;
-		}
-		.btn-primary {
-			width: 100%;
-			background-color: rgb(87, 16, 178);
-			border-color: rgb(87, 16, 178);
-		}
-		.btn-primary:hover {
-			background-color: rgba(79, 12, 164, 1);
-			border-color: rgba(79, 12, 164, 1);
-		}
-		#altura {
-			height: 100%;
-		}
-		.edicion {
-			background-color: inherit !important;
-			color: black !important;
-		}
-		nav div a {
-			background-color: inherit !important;
-			color: white !important;
-			font-weight: 600 !important;
-		}
-		nav div a:hover {
-			color: white !important;
-			font-weight: 800 !important;
-		}
+<c:if test="${(not empty sessionScope.usuario) && (sessionScope.tipo == 'admin')}">
+	<head>
+	<meta charset="ISO-8859-1">
+	<title>Administrador: Módulo</title>
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+		crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+		rel="stylesheet">
+	<script src="https://kit.fontawesome.com/7e57fa7d19.js"></script>
+		<style>
+			html, body {
+				height: 100%;
+			}
+			body {
+				background-color: #fbf9f6;
+				font-family: 'Poppins';
+				color: #2f3640;
+			}
+			.purpura {
+				background-color: rgb(87, 16, 178);
+				color: white;
+				font-weight: 600;
+			}
+			.purpura2 {
+				background-color: rgba(79, 12, 164, 1);
+			}
+			nav {
+				text-align: end;
+			}
+			a {
+				color: white !important;
+			}
+			a:hover {
+				background-color: white;
+				color: black !important;
+			}
+			table {
+				border-collapse: collapse;
+				overflow: hidden;
+				/*box-shadow: 0 0 20px rgba(0,0,0,0.1);*/
+				text-align: center;
+				background-color: white;
+			}
+			table tr:hover {
+				background-color: #a5c9fe;
+				/*cursor: pointer;*/
+			}
+			table th {
+				color: white;
+			}
+			table thead tr:hover {
+				background-color: #0d6efd;
+				cursor: inherit;
+			}
+			.btn-primary {
+				width: 100%;
+				background-color: rgb(87, 16, 178);
+				border-color: rgb(87, 16, 178);
+			}
+			.btn-primary:hover {
+				background-color: rgba(79, 12, 164, 1);
+				border-color: rgba(79, 12, 164, 1);
+			}
+			#altura {
+				height: 100%;
+			}
+			.edicion {
+				background-color: inherit !important;
+				color: black !important;
+			}
+			nav div a {
+				background-color: inherit !important;
+				color: white !important;
+				font-weight: 600 !important;
+			}
+			nav div a:hover {
+				color: white !important;
+				font-weight: 800 !important;
+			}
+			
+			.col-9 div a:hover {
+				color: white !important;
+				font-weight: 800 !important;
+			}
+			#acciones {
+				width: 35%
+			}
+		</style>
+	</head>
+	
+	
+	<body>
+	
 		
-		.col-9 div a:hover {
-			color: white !important;
-			font-weight: 800 !important;
-		}
-		#acciones {
-			width: 35%
-		}
-	</style>
-</head>
-
-
-<body>
-
-	<c:if test="${(not empty sessionScope.usuario) && (sessionScope.tipo == 'admin')}">
-    
-
+	    
+	
 		<div class="container-fluid" id="altura">
 			<nav class="row purpura" style="height: 6%">
 				<div
@@ -151,6 +152,14 @@
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
 			crossorigin="anonymous"></script>
-	</c:if>
-</body>
+		
+	</body>
+</c:if>
+<c:if test="${(empty sessionScope.usuario) || (sessionScope.tipo != 'admin')}">
+
+	<head>
+		<meta http-equiv="refresh" content="2; url=index.jsp"/>
+	</head>
+</c:if>
+	
 </html>

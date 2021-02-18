@@ -26,11 +26,11 @@ public class listarDocenteController extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String aBuscar =request.getParameter("search");
+		String aBuscar = request.getParameter("search");
 		List<Docente> nomina;
-		if(aBuscar==null) {
-		 nomina= this.listar();
-		}else {
+		if (aBuscar == null) {
+			nomina = this.listar();
+		} else {
 			nomina = buscar(aBuscar);
 		}
 		request.setAttribute("nomina", nomina);
@@ -47,11 +47,12 @@ public class listarDocenteController extends HttpServlet {
 		DAOFactory fabrica = new JPAFactory();
 		return (List<Docente>)fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).listar();
 	}
-	private List<Docente> buscar(String cedula){
+
+	private List<Docente> buscar(String cedula) {
 		DAOFactory fabrica = new JPAFactory();
 		List<Docente> lista = new ArrayList<Docente>();
 		Docente encontrado = (Docente) fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).leer(cedula);
-		if(encontrado!=null) {
+		if(encontrado != null) {
 			lista.add(encontrado);
 			return lista;
 		}
