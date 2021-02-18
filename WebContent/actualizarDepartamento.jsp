@@ -79,7 +79,7 @@
 					<a class="btn py-3 my-4 text-center" href="listarDocenteController">Docente</a>
 					<a class="btn py-3 my-4 text-center aOn" href="listarDepartamentoController">Departamento</a>
 	        	</div>
-	       		<form class="col-9 d-flex flex-column justify-content-center">
+	       		<form class="col-9 d-flex flex-column justify-content-center" method="POST" action="actualizarDepartamentoController">
 					<div class="mt-auto mx-5">
 						<h4>Edición de los Datos del Departamento</h4>
 					</div>
@@ -88,7 +88,7 @@
 						<label for="ID" class="form-label">ID</label>
 					</div>
 					<div class="w-50 mx-auto">
-						<input type="text" class="form-control" id="ID" placeholder="ID del departamento" readonly>
+						<input type="text" class="form-control" id="ID" placeholder="${idEditar}" readonly name="id" value="${idEditar}">
 					</div>
 		
 					<!-- Nombre -->
@@ -96,12 +96,12 @@
 						<label for="nombre" class="form-label">Nombre</label>
 					</div>
 					<div class="w-50 mx-auto">
-						<input type="text" class="form-control" id="nombre" placeholder="Nombre del departamento">
+						<input type="text" class="form-control" id="nombre" placeholder="Nombre del departamento" name="nombre" required>
 					</div>
 		
 					<!-- Botón Actualizar -->
 					<div class="m-auto">
-						<button type="submit" class="btn btn-primary">Actualizar</button>
+						<button type="submit" class="btn btn-primary" name="actualizar">Actualizar</button>
 					</div>
 				</form>
 	        </div>
