@@ -25,7 +25,7 @@ public class listarDepartamentoController extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String aBuscar =request.getParameter("search");
+		String aBuscar = request.getParameter("search");
 		List<Departamento> dptos;
 		if(aBuscar == null) {
 			dptos = this.listar();
