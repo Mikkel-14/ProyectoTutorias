@@ -64,9 +64,9 @@ public class registrarEstudianteController extends HttpServlet {
         	req.setAttribute("Nombre", nombre);
         	req.setAttribute("Cedula", cedula);
         	req.setAttribute("Apellido", apellido);
-			
 			getServletContext().getRequestDispatcher("/registrarEstudiante.jsp").forward(req, resp);
         }
+
         
 	}
 	

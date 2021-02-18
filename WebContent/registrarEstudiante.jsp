@@ -2,9 +2,9 @@
     pageEncoding="ISO-8859-1"%>
     
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="depNombre" scope="request" value="${Cedula}"/>
-<c:set var="depNombre" scope="request" value="${Nombre}"/>
-<c:set var="depNombre" scope="request" value="${Apellido}"/>
+<c:set var="Cedula" scope="request" value="${Cedula}"/>
+<c:set var="Nombre" scope="request" value="${Nombre}"/>
+<c:set var="Apellido" scope="request" value="${Apellido}"/>
 <c:set var="mensajeError" scope="request" value="${mensajeError}"/>
 <c:set var="mensajeExito" scope="request" value="${mensajeExito}"/>    
 <!DOCTYPE html>

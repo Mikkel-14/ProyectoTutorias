@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<c:set var="cedula" scope="request" value="${Cedula}"/>
+<c:set var="nombre" scope="request" value="${Nombre}"/>
+<c:set var="apellido" scope="request" value="${Apellido}"/>
+<c:set var="mensajeError" scope="request" value="${mensajeError}"/>
+<c:set var="mensajeExito" scope="request" value="${mensajeExito}"/>
 <!DOCTYPE html>
 <html>
 <c:if test="${(not empty sessionScope.usuario) && (sessionScope.tipo == 'admin')}">
@@ -79,7 +86,7 @@
 					<a class="btn py-3 my-4 text-center" href="listarDocenteController">Docente</a>
 					<a class="btn py-3 my-4 text-center" href="listarDepartamentoController">Departamento</a>
 	        	</div>
-	       		<form class="col-9 d-flex flex-column justify-content-center">
+	       		<form class="col-9 d-flex flex-column justify-content-center"  action="actualizarEstudianteController" method="POST">
 					<div class="mt-auto mx-5">
 						<h4>Edición de los Datos del Estudiante</h4>
 					</div>
@@ -88,7 +95,7 @@
 						<label for="cedula" class="form-label">Cédula</label>
 					</div>
 					<div class="w-50 mx-auto">
-						<input type="text" class="form-control" id="cedula" placeholder="Número de cédula">
+						<input type="text" class="form-control" id="cedula" name ="cedula" placeholder="Número de cédula" value="<c:out value="${Cedula}"/>" readonly>
 					</div>
 					
 					<!-- Nombre -->
@@ -96,7 +103,7 @@
 						<label for="nombre" class="form-label">Nombre</label>
 					</div>
 					<div class="w-50 mx-auto">
-						<input type="text" class="form-control" id="nombre" placeholder="Nombre del estudiante">
+						<input type="text" class="form-control" id="nombre" name ="nombre" placeholder="Nombre del estudiante" value="<c:out value="${Nombre}"/>" required>
 					</div>
 					
 					<!-- Apellido -->
@@ -104,13 +111,15 @@
 						<label for="apellido" class="form-label">Apellido</label>
 					</div>
 					<div class="w-50 mx-auto">
-						<input type="text" class="form-control" id="apellido" placeholder="Apellido del estudiante">
+						<input type="text" class="form-control" id="apellido" name ="apellido" placeholder="Apellido del estudiante" value="<c:out value="${Apellido}"/>" required >
 					</div>
-					
+					<div class="text-danger text-center">${mensajeError}</div>
+					<div class="text-success text-center">${mensajeExito}</div>
 					<!-- Botón Actualizar -->
 					<div class="m-auto">
 						<button type="submit" class="btn btn-primary">Actualizar</button>
 					</div>
+
 				</form>
 	        </div>
 		</div>

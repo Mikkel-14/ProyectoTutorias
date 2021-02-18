@@ -85,12 +85,16 @@
 													<td>${estudiante.cedula}</td>
 													<td>${estudiante.nombre}</td>
 													<td>${estudiante.apellido}</td>
-													<td><a href="actualizarEstudiante.jsp" class="btn edicion"> <i
-															class="far fa-edit"></i></a>
-															<form style="display: inline-block;" method="post" action="listarEstudianteController">
-															<button type="submit" class="btn edicion" value="${estudiante.cedula}" name="del"><i
-																class="far fa-trash-alt"></i></button></td>
-															</form>
+													<td>
+														<form style="display: inline-block;" method="GET" action="actualizarEstudianteController">
+														<button type="submit" class="btn edicion" value="${estudiante.cedula}" name="act"><i
+															class="far fa-edit"></i></button>
+														</form>
+														<form style="display: inline-block;" method="post" action="listarEstudianteController">
+														<button type="submit" class="btn edicion" value="${estudiante.cedula}" name="del"><i
+															class="far fa-trash-alt"></i></button>
+														</form>
+													</td>
 												</tr>
 											</c:forEach>
 											</tbody>
