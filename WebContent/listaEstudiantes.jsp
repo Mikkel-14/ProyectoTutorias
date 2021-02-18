@@ -24,6 +24,10 @@
 				color: white !important;
 				font-weight: 800 !important;
 			}
+		.col-9 div button:hover {
+				color: white !important;
+				font-weight: 800 !important;
+			}
 		</style>
 	</head>
 	
