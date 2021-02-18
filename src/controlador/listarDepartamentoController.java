@@ -37,9 +37,16 @@ public class listarDepartamentoController extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Integer aBorrar = Integer.parseInt(request.getParameter("del"));
-		eliminar(aBorrar);
-		response.sendRedirect("listarDepartamentoController");
+		if (request.getParameter("del") != null) {
+			Integer aBorrar = Integer.parseInt(request.getParameter("del"));
+			eliminar(aBorrar);
+			response.sendRedirect("listarDepartamentoController");
+		}
+		if (request.getParameter("edit") != null) {
+			Integer aEditar = Integer.parseInt(request.getParameter("edit"));
+			request.setAttribute("idEditar", aEditar);
+			getServletContext().getRequestDispatcher("/actualizarDepartamento.jsp").forward(request, response);
+		}
 	}
 	private List<Departamento> listar(){
 		DAOFactory fabrica = new JPAFactory();

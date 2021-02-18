@@ -164,8 +164,8 @@
 														<td>${depa.id}</td>
 														<td>${depa.nombre}</td>
 														<td>
-															<a href="actualizarDepartamento.jsp" class="btn edicion"> <i class="far fa-edit"></i></a>
 															<form style="display: inline-block;" method="post" action="listarDepartamentoController">
+															<button type="submit" class="btn edicion" value="${depa.id}" name="edit"><i class="far fa-edit"></i></button>
 															<button type="submit" class="btn edicion" value="${depa.id}" name="del"><i class="far fa-trash-alt"></i></button>
 														</td>
 															</form>
