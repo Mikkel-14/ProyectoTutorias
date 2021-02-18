@@ -95,8 +95,9 @@
 											<td>${d.nombre}</td>
 											<td>${d.apellido}</td>
 											<td>
-												<form style="display: inline-block;" method="post" action="listarDocenteController">
-												<button type="submit" class="btn edicion" value="${d.cedula}" name="del"><i class="far fa-trash-alt"></i></button>
+												<form style="display: inline-block;" method="POST" action="listarDocenteController">
+													<button type="submit" class="btn edicion" value="${d.cedula}" name="del"><i class="far fa-trash-alt"></i></button>
+												</form>
 											</td>
 										</tr>
 										</c:forEach>

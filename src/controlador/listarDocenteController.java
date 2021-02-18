@@ -39,8 +39,9 @@ public class listarDocenteController extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String aBorrar = request.getParameter("del");
+		eliminar(aBorrar);
+		response.sendRedirect("listarDocenteController");
 	}
 	
 	private List<Docente> listar(){
@@ -59,4 +60,8 @@ public class listarDocenteController extends HttpServlet {
 		return null;
 	}
 
+	private void eliminar(String cedula) {
+		DAOFactory fabrica = new JPAFactory();
+		fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).eliminarPorId(cedula);
+	}
 }
