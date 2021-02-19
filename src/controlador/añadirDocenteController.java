@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import modelo.dao.DAOFactory;
+import modelo.entidad.Departamento;
 import modelo.entidad.Docente;
 import modelo.jpa.JPAFactory;
 
@@ -29,8 +30,9 @@ public class añadirDocenteController extends HttpServlet {
 		String cedula = req.getParameter("numCedula");
 		String nombre = req.getParameter("nombreDocente");
         String apellido = req.getParameter("apellidoDocente");
-		//TODO validar la cedula (?
-        Docente docente = new Docente(cedula, nombre, apellido);
+        Integer idDpto = Integer.parseInt(req.getParameter("departamento"));
+        
+        Docente docente = null;
         
         boolean bandera= validación.validadorDeCedula(cedula);
         
@@ -38,8 +40,12 @@ public class añadirDocenteController extends HttpServlet {
 	        DAOFactory fabrica = new JPAFactory();
 	        Docente d = (Docente)fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).leer(cedula);
 	        if (d == null) {
-	        	fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).crear(docente);		
-	            //resp.sendRedirect("listaDocentes.jsp");
+				// Departamento
+				Departamento dpto = fabrica.crearDepartamentoDAO().leer(idDpto);
+				System.out.println("Entrando: " + dpto);
+				docente = new Docente(cedula, nombre, apellido, dpto);
+				System.out.println("Saliendo >:v: " + docente.getDepartamento());
+	        	fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).crear(docente);
 				req.setAttribute("estadoSolicitud", true);//mensaje
 				getServletContext().getRequestDispatcher("/añadirDocente.jsp").forward(req, resp);
 	        } else {
