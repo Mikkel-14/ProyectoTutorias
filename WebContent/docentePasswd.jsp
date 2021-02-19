@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +17,13 @@
 	<link
 		href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
 		rel="stylesheet">
+	<c:choose>
+			<c:when test="${(empty sessionScope.usuario) && (sessionScope.tipo != 'docente')}">
+				<meta http-equiv="refresh" content="0; url=index.jsp"/> 
+				</head>
+			</c:when>
+	<c:otherwise>
+	
 	<style>
 		html, body {
 			height: 100%;
@@ -89,62 +98,14 @@
 <div class="container-fluid d-flex flex-column justify-content-center" id="altura">
 
 	<div class="row my-3 mx-4" >
-		<h7 class >Inicio > información del docente</h7>
+		<h7 class >Inicio > Cambiar contraseña</h7>
 	</div>
-	 <div class="row my-3 mx-4" >
-		<h1> Información  del docente</h1>
-	</div>
-	<div class="row my-3">
 	
-		<div class="bordes bg-white rounded-3 container shadow-sm  col-lg-4 col-md-4 col-sm-8 col-xs-8 " >
-		
-			<img src="img/user.jpg" class="img-fluid rounded mx-auto d-block" alt="Responsive image">
-		
-		
-			<div class="row px-4">
-				<label for="cedula" class="form-label">Cédula</label>
-			</div>
-			
-			<div class=" row  px-3   rounded-3 fondo ">
-				ggfgfjfdj
-			</div>
-			
-			<div class="row px-4">
-				<label for="nombre" class="form-label">Nombre</label>
-			</div>
-			
-			<div class=" row  px-3   rounded-3 fondo ">
-				ggfgfjfdj
-			</div>
-			
-			<div class="row px-4">
-			<label for="apellido" class="form-label">Apellido</label>
-			</div>
-			
-			<div class=" row  px-3   rounded-3 fondo ">
-				ggfgfjfdj
-			</div>
-			
-			<div class="row px-4">
-				<label for="departamento" class="form-label">Departamento</label>
-			</div>
-			
-			<div class=" row  px-3   rounded-3 fondo">
-				ggfgfjfdjfggggggggggggggggggg
-			</div>
-		
-		</div>
-		
-	
-	<div class="bordes bg-white rounded-3 container-fluid shadow-sm my-3  col-lg-7 col-md-7 col-sm-10 col-xs-10">
-		
-		<form >
+		<form class="bordes bg-white rounded-3 container-fluid shadow-sm my-3 col-lg-7 col-md-7 col-sm-10 col-xs-10"  action="loginController" method="POST">
 			
 			<div class="row ">
 				<h3>Cambio de contraseña</h3>
-			
 			</div>
-			
 		
 			<div class="row px-4">
 				<label for="passwdActual" class="form-label">Contraseña actual</label>
@@ -161,27 +122,25 @@
 				<input type="password" class="form-control" id="passwd1"
 					placeholder="Nueva Contraseña" required="required">
 			</div>
-					<div class="row px-4">
+			<div class="row px-4">
 				<label for="passwdRepetida" class="form-label">Confirmar Contraseña</label>
 			</div>
 			<div class="row px-4 mb-2">
 				<input type="password" class="form-control" id="passwd2"
 					placeholder="Confirmar contraseña" required="required">
 			</div>
-			
-				<div class="ce text-center mt-5">
-					<button type="submit" class="btn btn-primary">Actualizar</button>
-				</div>
+			<div class = "text-danger"></div>
+			<div class="ce text-center mt-5">
+				<button type="submit" class="btn btn-primary" value="${usuario} name = "cedula" >Actualizar</button>
 			</div>
 		</form>
-	</div>
-</div>
-
-
 	
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
 		crossorigin="anonymous"></script>
 </body>
+</c:otherwise>
+</c:choose>
+
 </html>

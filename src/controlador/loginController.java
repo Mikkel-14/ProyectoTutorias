@@ -26,26 +26,40 @@ public class loginController extends HttpServlet {
 		
 		String usuario = req.getParameter("usuario");
 		String password = req.getParameter("password");
+		System.out.println(usuario);
+		System.out.println(password);
 		
 		//admin //admin2021
-		try {
-			if(usuario.equals("admin") && password.equals("admin2021")){
-				//getServletContext().getRequestDispatcher("/ModuloAdministrador.jsp").forward(req, resp);
+		
+		if(usuario.equals("admin") && password.equals("admin2021")){
+			//getServletContext().getRequestDispatcher("/ModuloAdministrador.jsp").forward(req, resp);
+			HttpSession sesion = req.getSession();
+			sesion.setAttribute("usuario", usuario);
+			String tipo = "admin";
+			sesion.setAttribute("tipo", tipo);
+			//Navego hacia el JSP
+			getServletContext().getRequestDispatcher("/ModuloAdministrador.jsp").forward(req, resp);
+			
+			
+		} 
+			if (usuario.equals("1") && password.equals("1")){
 				HttpSession sesion = req.getSession();
 				sesion.setAttribute("usuario", usuario);
-				String tipo = "admin";
+				String tipo = "docente";
 				sesion.setAttribute("tipo", tipo);
 				//Navego hacia el JSP
-				getServletContext().getRequestDispatcher("/ModuloAdministrador.jsp").forward(req, resp);
+				System.out.println("Redireccionando xd");
+				getServletContext().getRequestDispatcher("/docentePasswd.jsp").forward(req, resp);
 				
-				
-			} else {
+			}else{
+				System.out.println("Redireccionando");
 				resp.sendRedirect("index.jsp");
+				
 			}
-		}catch (Exception e) {
-			resp.sendRedirect("index.jsp");
+
 		}
+
 		
 	}
 
-}
+
