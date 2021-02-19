@@ -30,9 +30,6 @@ public class loginController extends HttpServlet {
 		
 		String usuario = req.getParameter("usuario");
 		String password = req.getParameter("password");
-		System.out.println(usuario);
-		System.out.println(password);
-		
 		//admin //admin2021
 		
 		if(usuario.equals("admin") && password.equals("admin2021")){
