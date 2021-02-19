@@ -28,19 +28,24 @@ public class loginController extends HttpServlet {
 		String password = req.getParameter("password");
 		
 		//admin //admin2021
-		if(usuario.equals("admin") && password.equals("admin2021")){
-			//getServletContext().getRequestDispatcher("/ModuloAdministrador.jsp").forward(req, resp);
-			HttpSession sesion = req.getSession();
-			sesion.setAttribute("usuario", usuario);
-			String tipo = "admin";
-			sesion.setAttribute("tipo", tipo);
-			//Navego hacia el JSP
-			getServletContext().getRequestDispatcher("/ModuloAdministrador.jsp").forward(req, resp);
-			
-			
-		} else {
+		try {
+			if(usuario.equals("admin") && password.equals("admin2021")){
+				//getServletContext().getRequestDispatcher("/ModuloAdministrador.jsp").forward(req, resp);
+				HttpSession sesion = req.getSession();
+				sesion.setAttribute("usuario", usuario);
+				String tipo = "admin";
+				sesion.setAttribute("tipo", tipo);
+				//Navego hacia el JSP
+				getServletContext().getRequestDispatcher("/ModuloAdministrador.jsp").forward(req, resp);
+				
+				
+			} else {
+				resp.sendRedirect("index.jsp");
+			}
+		}catch (Exception e) {
 			resp.sendRedirect("index.jsp");
 		}
+		
 	}
 
 }
