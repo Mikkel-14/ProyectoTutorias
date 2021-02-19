@@ -23,8 +23,8 @@ public class Docente implements Serializable {
 	@Column(name = "apellido")
 	private String apellido;
 	
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "id")
+	@ManyToOne
+	@JoinColumn(name = "depto_id")
 	private Departamento departamento;
 	
 	public Docente() {}

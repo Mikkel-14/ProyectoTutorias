@@ -34,6 +34,9 @@ public class añadirDocenteController extends HttpServlet {
         
         Docente docente = null;
         
+        DAOFactory fabricaA = new JPAFactory();
+		List<Departamento> listaDptos = fabricaA.crearDepartamentoDAO().listar();
+        
         boolean bandera= validación.validadorDeCedula(cedula);
         
         if(bandera==true) {
@@ -42,21 +45,22 @@ public class añadirDocenteController extends HttpServlet {
 	        if (d == null) {
 				// Departamento
 				Departamento dpto = fabrica.crearDepartamentoDAO().leer(idDpto);
-				System.out.println("Entrando: " + dpto);
 				docente = new Docente(cedula, nombre, apellido, dpto);
-				System.out.println("Saliendo >:v: " + docente.getDepartamento());
 	        	fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).crear(docente);
 				req.setAttribute("estadoSolicitud", true);//mensaje
+				req.setAttribute("listaDptos", listaDptos);
 				getServletContext().getRequestDispatcher("/añadirDocente.jsp").forward(req, resp);
 	        } else {
 				req.setAttribute("docente", docente);//Docente
 				req.setAttribute("estadoSolicitud", false);//mensaje
+				req.setAttribute("listaDptos", listaDptos);
 				//Navego hacia el JSP
 				getServletContext().getRequestDispatcher("/añadirDocente.jsp").forward(req, resp);
 	        }
         } else {
         	req.setAttribute("docente", docente);//Docente
 			req.setAttribute("estadoSolicitud", false);//mensaje
+			req.setAttribute("listaDptos", listaDptos);
 			//Navego hacia el JSP
 			getServletContext().getRequestDispatcher("/añadirDocente.jsp").forward(req, resp);	
         }
