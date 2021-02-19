@@ -101,7 +101,7 @@
 		<h7 class >Inicio > Cambiar contraseña</h7>
 	</div>
 	
-		<form class="bordes bg-white rounded-3 container-fluid shadow-sm my-3 col-lg-7 col-md-7 col-sm-10 col-xs-10"  action="loginController" method="POST">
+		<form class="bordes bg-white rounded-3 container-fluid shadow-sm my-3 col-lg-7 col-md-7 col-sm-10 col-xs-10"  action="actualizarContrasenaDocenteController" method="POST">
 			
 			<div class="row ">
 				<h3>Cambio de contraseña</h3>
@@ -111,7 +111,7 @@
 				<label for="passwdActual" class="form-label">Contraseña actual</label>
 			</div>
 			<div class="row px-4 mb-2">
-				<input type="password" class="form-control" id="passwd"
+				<input type="password" class="form-control" name="passwd"
 					placeholder="Contraseña Actual" required="required">
 			</div>
 			
@@ -119,19 +119,19 @@
 				<label for="passwdNueva" class="form-label">Nueva Contraseña</label>
 			</div>
 			<div class="row px-4 mb-2">
-				<input type="password" class="form-control" id="passwd1"
+				<input type="password" class="form-control" name="passwd1"
 					placeholder="Nueva Contraseña" required="required">
 			</div>
 			<div class="row px-4">
 				<label for="passwdRepetida" class="form-label">Confirmar Contraseña</label>
 			</div>
 			<div class="row px-4 mb-2">
-				<input type="password" class="form-control" id="passwd2"
+				<input type="password" class="form-control" name="passwd2"
 					placeholder="Confirmar contraseña" required="required">
 			</div>
-			<div class = "text-danger"></div>
+			<div class="text-danger">${mensajeError}</div>
 			<div class="ce text-center mt-5">
-				<button type="submit" class="btn btn-primary" value="${usuario} name = "cedula" >Actualizar</button>
+				<button type="submit" class="btn btn-primary">Actualizar</button>
 			</div>
 		</form>
 	

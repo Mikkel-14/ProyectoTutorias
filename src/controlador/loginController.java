@@ -8,6 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import modelo.dao.DAOFactory;
+import modelo.entidad.Docente;
+import modelo.jpa.JPAFactory;
+
 @WebServlet("/loginController")
 public class loginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -41,21 +45,24 @@ public class loginController extends HttpServlet {
 			getServletContext().getRequestDispatcher("/ModuloAdministrador.jsp").forward(req, resp);
 			
 			
-		} 
-			if (usuario.equals("1") && password.equals("1")){
+		} else {
+				DAOFactory fabrica = new JPAFactory();
+				Docente docente = (Docente)fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).leer(usuario);
+			
+			if (docente != null && docente.getContraseña().equals(password)){
 				HttpSession sesion = req.getSession();
 				sesion.setAttribute("usuario", usuario);
 				String tipo = "docente";
 				sesion.setAttribute("tipo", tipo);
 				//Navego hacia el JSP
-				System.out.println("Redireccionando xd");
 				getServletContext().getRequestDispatcher("/docentePasswd.jsp").forward(req, resp);
 				
 			}else{
-				System.out.println("Redireccionando");
 				resp.sendRedirect("index.jsp");
 				
 			}
+		}
+			
 
 		}
 
