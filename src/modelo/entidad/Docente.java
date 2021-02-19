@@ -23,6 +23,10 @@ public class Docente implements Serializable {
 	@Column(name = "apellido")
 	private String apellido;
 	
+	@JoinColumn(name = "id")
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private Departamento departamento;
+	
 	public Docente() {}
 
 	public Docente(String cedula, String nombre, String apellido) {
@@ -69,6 +73,14 @@ public class Docente implements Serializable {
 
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
+	}
+
+	public Departamento getDepartamento() {
+		return departamento;
+	}
+
+	public void setDepartamento(Departamento departamento) {
+		this.departamento = departamento;
 	}
 
 	@Override

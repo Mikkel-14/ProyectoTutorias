@@ -1,6 +1,8 @@
 package modelo.entidad;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.*;
 
 
@@ -21,11 +23,22 @@ public class Departamento implements Serializable {
 	@Column(name = "nombre")
 	private String nombre;
 	
+	@OneToMany(mappedBy = "departamento", cascade = CascadeType.ALL)
+	private List<Docente> docentes;
+	
 	public Departamento() {
 	}
 
 	public Departamento(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public List<Docente> getDocentes() {
+		return docentes;
+	}
+
+	public void setDocentes(List<Docente> docentes) {
+		this.docentes = docentes;
 	}
 
 	public Integer getId() {
