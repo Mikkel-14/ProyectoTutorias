@@ -23,7 +23,7 @@ public class Departamento implements Serializable {
 	@Column(name = "nombre")
 	private String nombre;
 	
-	@OneToMany(mappedBy = "departamento")
+	@OneToMany(mappedBy = "departamento", cascade = CascadeType.ALL)
 	private List<Docente> docentes;
 	
 	public Departamento() {
