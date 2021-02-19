@@ -44,9 +44,9 @@ public class loginController extends HttpServlet {
 			
 		} else {
 				DAOFactory fabrica = new JPAFactory();
-				Docente docente = (Docente)fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).leer(usuario);
+				Docente docente = (Docente)fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).autorizar(usuario, password);
 			
-			if (docente != null && docente.getContraseña().equals(password)){
+			if (docente != null){
 				HttpSession sesion = req.getSession();
 				sesion.setAttribute("usuario", usuario);
 				String tipo = "docente";
