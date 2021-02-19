@@ -82,17 +82,14 @@
 			color: black !important;
 		}
 		
-		.fondo{
-			height: 100% ;
-			background-image: url('./img/2.png'); 
-			background-repeat: no-repeat; 
-			background-size: 50% 55%;
-			position:relative;
-			left:20%;
-			top:20%;
-			opacity:0.6;
-		}
-			
+        .col-4 {
+            text-align: center;
+            position:absolute;
+            bottom:55px !important;
+            right:25% !important;
+            opacity:0.6;
+        }
+
 	  </style>
 	</head>
 
@@ -125,7 +122,9 @@
 		          <a class="btn py-3 my-4 text-center" href="#">Gestionar Horarios</a>
 		          <a class="btn py-3 my-4 text-center" href="#">Gestionar tutorías</a>
 		        </div>
-		        <div class ="col-9 fondo fs-5"></div>	        			        	
+		        <div class="col-4 ">
+                    <img src="./img/2.png">
+                </div>       			        	
 		</div>		        
 	  </div>
 
