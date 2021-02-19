@@ -23,8 +23,8 @@ public class Docente implements Serializable {
 	@Column(name = "apellido")
 	private String apellido;
 	
-	@JoinColumn(name = "id")
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "id")
 	private Departamento departamento;
 	
 	public Docente() {}
@@ -41,6 +41,14 @@ public class Docente implements Serializable {
 		this.contraseña = contraseña;
 		this.nombre = nombre;
 		this.apellido = apellido;
+	}
+
+	public Docente(String cedula, String nombre, String apellido, Departamento dpto){
+		this.cedula = cedula;
+		this.contraseña = "docente123";
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.departamento = dpto;
 	}
 
 	public String getCedula() {

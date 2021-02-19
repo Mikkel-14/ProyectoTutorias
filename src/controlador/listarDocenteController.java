@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import modelo.dao.DAOFactory;
+import modelo.entidad.Departamento;
 import modelo.entidad.Docente;
 import modelo.jpa.JPAFactory;
 
@@ -39,9 +40,17 @@ public class listarDocenteController extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String aBorrar = request.getParameter("del");
-		eliminar(aBorrar);
-		response.sendRedirect("listarDocenteController");
+		if (request.getParameter("del") != null) {
+			String aBorrar = request.getParameter("del");
+			eliminar(aBorrar);
+			response.sendRedirect("listarDocenteController");
+		}
+		if (request.getParameter("nuevo") != null) {
+			DAOFactory fabrica = new JPAFactory();
+			List<Departamento> listaDptos = fabrica.crearDepartamentoDAO().listar();
+			request.setAttribute("listaDptos", listaDptos);
+			getServletContext().getRequestDispatcher("/añadirDocente.jsp").forward(request, response);;
+		}
 	}
 	
 	private List<Docente> listar(){

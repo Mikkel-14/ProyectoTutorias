@@ -4,7 +4,7 @@
 
 <c:set var="docente" scope="request" value="${docente}" />
 <c:set var="estadoSolicitud" scope="request" value="${estadoSolicitud}" />
-
+<c:set var="listaDptos" scope="request" value="${listaDptos}"/>
 <!DOCTYPE html>
 <html>
 <c:if test="${(not empty sessionScope.usuario) && (sessionScope.tipo == 'admin')}">
@@ -81,12 +81,27 @@
 							<div class="row w-50 mt-auto mx-auto">
 								<label for="apellido" class="form-label">Apellido</label>
 							</div>
-							<div class="row w-50 mx-auto mb-2">
+							<div class="row w-50 mx-auto mb-4">
 								<input type="text" class="form-control" id="apellido"
 									placeholder="Apellido del docente"
 									value="<c:out value="${docente.apellido}"/>"
 									name="apellidoDocente">
 							</div>
+							
+							<!-- Lista de Deparamentos -->
+							
+							<div class="row w-50 mt-auto mx-auto">
+								<label for="departamento" class="form-label">Departamento</label>
+							</div>
+							<div class="row w-50 mx-auto mb-2">
+								<select class="form-select" name="departamento" id="departamento" required>
+									<option default>Elija un depatamento</option>
+									<c:forEach var="dpto" items="${listaDptos}">
+										<option value="${dpto.id}">${dpto.nombre}</option>
+									</c:forEach>
+								</select>
+							</div>
+							
 							<c:choose>
 								<c:when test="${estadoSolicitud}">
 									<div class="row w-50 mx-auto text-success">Se ha registrado al docente exitosamente</div>
