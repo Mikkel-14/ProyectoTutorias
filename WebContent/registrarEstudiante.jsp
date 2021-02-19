@@ -99,6 +99,9 @@
 				<input type="password" class="form-control" id="rpasswd"
 					placeholder="Confirmar Contraseña" name="rpassword" required>
 			</div>
+			<div class="row px-4 mb-4">
+				<a href="index.jsp">Regresar al inicio de sesión</a>
+			</div>
 			
 			<div class="row mx-auto">
 				<div class="col-5">

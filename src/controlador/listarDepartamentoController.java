@@ -43,8 +43,12 @@ public class listarDepartamentoController extends HttpServlet {
 			response.sendRedirect("listarDepartamentoController");
 		}
 		if (request.getParameter("edit") != null) {
-			Integer aEditar = Integer.parseInt(request.getParameter("edit"));
-			request.setAttribute("idEditar", aEditar);
+			Integer idEditar = Integer.parseInt(request.getParameter("edit"));
+			request.setAttribute("idEditar", idEditar);
+			DAOFactory fabrica = new JPAFactory();
+			Departamento dpto = fabrica.crearDepartamentoDAO().leer(idEditar);
+			String nombreEditar = dpto.getNombre(); 
+			request.setAttribute("nombreEditar", nombreEditar);
 			getServletContext().getRequestDispatcher("/actualizarDepartamento.jsp").forward(request, response);
 		}
 	}

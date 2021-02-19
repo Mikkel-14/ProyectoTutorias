@@ -112,7 +112,7 @@
 				<div
 					class="col-3 d-flex flex-row justify-content-end align-items-center">
 					<a href="ModuloAdministrador.jsp" class="btn">Administrador</a>
-					<a href="index.jsp" class="btn"><i class="fas fa-sign-out-alt is"></i></a>
+					<a href="cerrarSesionController" class="btn"><i class="fas fa-sign-out-alt is"></i></a>
 				</div>
 			</nav>
 	
@@ -165,10 +165,10 @@
 														<td>${depa.nombre}</td>
 														<td>
 															<form style="display: inline-block;" method="post" action="listarDepartamentoController">
-															<button type="submit" class="btn edicion" value="${depa.id}" name="edit"><i class="far fa-edit"></i></button>
-															<button type="submit" class="btn edicion" value="${depa.id}" name="del"><i class="far fa-trash-alt"></i></button>
-														</td>
+																<button type="submit" class="btn edicion" value="${depa.id}" name="edit"><i class="far fa-edit"></i></button>
+																<button type="submit" class="btn edicion" value="${depa.id}" name="del"><i class="far fa-trash-alt"></i></button>
 															</form>
+														</td>
 													</tr>
 												</c:forEach>
 											</tbody>

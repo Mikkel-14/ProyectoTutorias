@@ -74,7 +74,7 @@
 				<div
 					class="col-3 d-flex flex-row justify-content-end align-items-center">
 					<a href="ModuloAdministrador.jsp" class="btn">Administrador</a> <a
-						href="index.jsp" class="btn"><i class="fas fa-sign-out-alt is"></i></a>
+						href="cerrarSesionController" class="btn"><i class="fas fa-sign-out-alt is"></i></a>
 				</div>
 			</nav>
 			<div class="row" style="height: 94%;">
@@ -109,11 +109,11 @@
 
 							<!-- Nombre -->
 							<div class="row w-50 mt-1 mx-auto">
-								<label for="nombre" class="form-label">Nombre</label>
+								<label for="nombre" class="form-label ">Nombre</label>
 							</div>
 							<div class="row w-50 mb-2 mx-auto">
 								<input type="text" class="form-control" id="nombre"
-									placeholder="Nombre del departamento" name="nombre" required>
+									placeholder="Nombre del departamento" name="nombre" value="${nombreEditar}" required>
 							</div>
 
 							<!-- Botón Actualizar -->

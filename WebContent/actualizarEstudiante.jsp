@@ -5,8 +5,6 @@
 <c:set var="cedula" scope="request" value="${Cedula}"/>
 <c:set var="nombre" scope="request" value="${Nombre}"/>
 <c:set var="apellido" scope="request" value="${Apellido}"/>
-<c:set var="mensajeError" scope="request" value="${mensajeError}"/>
-<c:set var="mensajeExito" scope="request" value="${mensajeExito}"/>
 <!DOCTYPE html>
 <html>
 <c:if
@@ -101,7 +99,7 @@ nav div a:hover {
 				<div
 					class="col-3 d-flex flex-row justify-content-end align-items-center">
 					<a href="ModuloAdministrador.jsp" class="btn">Administrador</a> <a
-						href="index.jsp" class="btn"><i class="fas fa-sign-out-alt is"></i></a>
+						href="cerrarSesionController" class="btn"><i class="fas fa-sign-out-alt is"></i></a>
 				</div>
 			</nav>
 			<div class="row" style="height: 94%;">
@@ -153,8 +151,6 @@ nav div a:hover {
 									name="apellido" placeholder="Apellido del estudiante"
 									value="<c:out value="${Apellido}"/>" required>
 							</div>
-							<div class="row w-50 mx-auto mt-1 text-danger">${mensajeError}</div>
-							<div class="row w-50 mx-auto mt-1 text-success">${mensajeExito}</div>
 							<!-- Botón Actualizar -->
 							<div class="row my-3 m-auto">
 								<button type="submit" class="btn btn-primary">Actualizar</button>

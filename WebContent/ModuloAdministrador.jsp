@@ -114,7 +114,7 @@
 				<div
 					class="col-3 d-flex flex-row justify-content-end align-items-center">
 					<a href="ModuloAdministrador.jsp" class="btn">Administrador</a>
-					<a href="index.jsp" class="btn"><i class="fas fa-sign-out-alt is"></i></a>
+					<a href="cerrarSesionController" class="btn"><i class="fas fa-sign-out-alt is"></i></a>
 				</div>
 			</nav>
 	

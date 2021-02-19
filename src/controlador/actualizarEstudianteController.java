@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import modelo.dao.DAOFactory;
 import modelo.entidad.Estudiante;
+import modelo.jpa.JPAEstudiante;
 import modelo.jpa.JPAFactory;
 
 /**
@@ -50,31 +51,15 @@ public class actualizarEstudianteController extends HttpServlet {
 		String cedula = req.getParameter("cedula");
 		String nombre = req.getParameter("nombre");
 		String apellido = req.getParameter("apellido");
-		boolean cedulaValida = validación.validadorDeCedula(cedula);
-		System.out.println("VALOR CEDULA"+ cedula);
 		DAOFactory fabrica = new JPAFactory();
-		
-		Estudiante e = (Estudiante)fabrica.crearUsuarioDAO(JPAFactory.ESTUDIANTE).leer(cedula);
-
-		if(cedulaValida && e != null) {
-			String password = e.getContraseña();
-			Estudiante estudiante = new Estudiante(cedula, password, nombre, apellido);
-			fabrica.crearUsuarioDAO(JPAFactory.ESTUDIANTE).actualizar(estudiante);
-        	req.setAttribute("mensajeExito", "Se actualizó el estudiante");//mensaje
-			getServletContext().getRequestDispatcher("/actualizarEstudiante.jsp").forward(req, resp);
-		}else {
-			req.setAttribute("Nombre", nombre);
-        	req.setAttribute("Cedula", cedula);
-        	req.setAttribute("Apellido", apellido);
-        	if(!cedulaValida)
-        		req.setAttribute("mensajeError", "Cédula incorrecta");
-        	else
-        		req.setAttribute("mensajeError", "Estudiante no registrado");
-			getServletContext().getRequestDispatcher("/actualizarEstudiante.jsp").forward(req, resp);
-		    
-		}
-		
-        
+		Estudiante e = (Estudiante) fabrica.crearUsuarioDAO(JPAFactory.ESTUDIANTE).leer(cedula);
+		String password = e.getContraseña();
+		Estudiante estudiante = new Estudiante(cedula, password, nombre, apellido);
+		fabrica.crearUsuarioDAO(JPAFactory.ESTUDIANTE).actualizar(estudiante);
+    	
+		//req.setAttribute("mensajeExito", "Se actualizó el estudiante");//mensaje
+		//getServletContext().getRequestDispatcher("listarEstudianteController.jsp").forward(req, resp);
+		resp.sendRedirect("listarEstudianteController");
 	}
 
 }
