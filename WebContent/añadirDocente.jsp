@@ -94,8 +94,8 @@
 								<label for="departamento" class="form-label">Departamento</label>
 							</div>
 							<div class="row w-50 mx-auto mb-2">
-								<select class="form-select" name="departamento" id="departamento" required>
-									<option default>Elija un depatamento</option>
+								<select class="form-select" name="departamento" id="departamento" required >
+									
 									<c:forEach var="dpto" items="${listaDptos}">
 										<option value="${dpto.id}">${dpto.nombre}</option>
 									</c:forEach>
