@@ -23,7 +23,6 @@
 				</head>
 			</c:when>
 	<c:otherwise>
-	
 	<style>
 		html, body {
 			height: 100%;
@@ -73,22 +72,27 @@
         padding: 5px 0px 5px 5px;
     	}
     	
+    	.purpura {
+			background-color: rgb(87, 16, 178);
+			color: white;
+			font-weight: 600;
+		}
 
 		
 	
 	</style>
 </head>
 <body>
-<div class = "container-fluid barraTitulo fs-3 row position-fixed" >
+<div class = "container-fluid barraTitulo row position-fixed  purpura" >
         
-	<div class = "col-6 col-md-1 titulo">Tutorias</div>
-	<div class="dropdown col-6 col-md-11 text-end titulo ">Docente
+	<div class = "col-6 col-md-1 titulo m-auto">Tutorias</div>
+	<div class="dropdown col-6 col-md-11 text-end titulo m-auto">Docente
 	  <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
 	  </a>
 	
 	  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-	    <li><a class="dropdown-item" href="#">Administrar Cuenta</a></li>
-	    <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+	    <li><a class="dropdown-item" href="#">Cambiar Contraseña</a></li>
+	    <li><a class="dropdown-item" href="index.jsp">Cerrar Sesión</a></li>
 	  </ul>
 	</div>
    
@@ -98,7 +102,10 @@
 <div class="container-fluid d-flex flex-column justify-content-center" id="altura">
 
 	<div class="row my-3 mx-4" >
-		<h7 class >Inicio > Cambiar contraseña</h7>
+		<div class ="inline" > 
+			<a class="py-1 my-1ext-center text-dark" href="moduloDocente.jsp">Inicio</a>
+			<a>> Cambiar Contraseña</a>
+		 </div>
 	</div>
 	
 		<form class="bordes bg-white rounded-3 container-fluid shadow-sm my-3 col-lg-7 col-md-7 col-sm-10 col-xs-10"  action="actualizarContrasenaDocenteController" method="POST">
