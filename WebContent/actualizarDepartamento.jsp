@@ -15,7 +15,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
 				rel="stylesheet">
 		<c:choose>
-			<c:when test="${(empty sessionScope.usuario) && (sessionScope.tipo != 'admin')}">
+			<c:when test="${(empty sessionScope.usuario) || (sessionScope.tipo != 'admin')}">
 				<meta http-equiv="refresh" content="0; url=index.jsp"/> 
 				</head>
 			</c:when>

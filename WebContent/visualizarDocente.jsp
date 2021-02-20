@@ -135,9 +135,9 @@
         </div>
 
         <div class="bordes bg-white rounded-3 container-fluid shadow-sm my-3 col-lg-7 col-md-7 col-sm-10 col-xs-10" >
-            <form>
+            <form action="actualizarDoncenteController" method="GET">
               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-              <button type="button" class="btn btn-success text-end ">Editar</button></div>
+              <button type="submit" class="btn btn-success text-end ">Editar</button></div>
               <div class="form-group">
                 <label for="nombre">Nombre</label>
                 <input type="text" class="form-control" id="nombre" readonly>

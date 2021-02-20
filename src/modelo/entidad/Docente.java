@@ -50,6 +50,16 @@ public class Docente implements Serializable {
 		this.apellido = apellido;
 		this.departamento = dpto;
 	}
+	
+
+	public Docente(String cedula, String contraseña, String nombre, String apellido, Departamento departamento) {
+		
+		this.cedula = cedula;
+		this.contraseña = contraseña;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.departamento = departamento;
+	}
 
 	public String getCedula() {
 		return cedula;
