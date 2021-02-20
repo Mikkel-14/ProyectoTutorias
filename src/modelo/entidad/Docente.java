@@ -1,7 +1,11 @@
 package modelo.entidad;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.*;
+
+
 
 @Entity
 @NamedQuery(name = "listarDocentes",query = "SELECT dc FROM Docente dc")
@@ -27,6 +31,12 @@ public class Docente implements Serializable {
 	@JoinColumn(name = "depto_id")
 	private Departamento departamento;
 	
+	@OneToMany(mappedBy = "docente", cascade = CascadeType.ALL)
+	private List<Turno> turnos;
+	
+	@OneToMany(mappedBy = "docente", cascade = CascadeType.ALL)
+	private List<Tutoria> tutorias;
+	
 	public Docente() {}
 
 	public Docente(String cedula, String nombre, String apellido) {
@@ -49,6 +59,19 @@ public class Docente implements Serializable {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.departamento = dpto;
+	}
+	
+
+	public Docente(String cedula, String contraseña, String nombre, String apellido, Departamento departamento,
+			List<Turno> turnos, List<Tutoria> tutoria) {
+		super();
+		this.cedula = cedula;
+		this.contraseña = contraseña;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.departamento = departamento;
+		this.turnos = turnos;
+		this.tutorias = tutoria;
 	}
 
 	public String getCedula() {
@@ -89,6 +112,23 @@ public class Docente implements Serializable {
 
 	public void setDepartamento(Departamento departamento) {
 		this.departamento = departamento;
+	}
+	
+
+	public List<Turno> getTurnos() {
+		return turnos;
+	}
+
+	public void setTurnos(List<Turno> turnos) {
+		this.turnos = turnos;
+	}
+
+	public List<Tutoria> getTutorias() {
+		return tutorias;
+	}
+
+	public void setTutorias(List<Tutoria> tutorias) {
+		this.tutorias = tutorias;
 	}
 
 	@Override

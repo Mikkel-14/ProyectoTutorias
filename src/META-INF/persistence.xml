@@ -4,6 +4,8 @@
 		<class>modelo.entidad.Departamento</class>
 		<class>modelo.entidad.Docente</class>
 		<class>modelo.entidad.Estudiante</class>
+		<class>modelo.entidad.Tutoria</class>
+		<class>modelo.entidad.Turno</class>
 			<properties>
 				<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/tutorias"/>
 				<property name="javax.persistence.jdbc.user" value="root"/>
