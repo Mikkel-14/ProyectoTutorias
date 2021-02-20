@@ -56,6 +56,14 @@
 			a:hover {
 				background-color: white;
 				color: black !important;
+			}
+			.img{
+	            text-align: center;
+	            bottom:55px !important;
+	            right:25% !important;
+	            opacity:0.6;
+        	}	
+			
 			
 		</style>
 	</head>	
@@ -85,8 +93,8 @@
 					<a class="btn py-3 my-4 text-center" href="#">Visualizar Tutorías</a>
 					<a class="btn py-3 my-4 text-center" href="#">Visualizar Información</a>
 				</div>
-				<div class="col-9">
-					
+				<div class="col-9 img m-auto">
+                    	<img src="./img/2.png">    
 				</div>
 			</div>
 		</div>
