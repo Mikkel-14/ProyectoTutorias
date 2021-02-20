@@ -53,7 +53,7 @@ public class loginController extends HttpServlet {
 			String tipo = "docente";
 			sesion.setAttribute("tipo", tipo);
 			// Navego hacia el JSP
-			getServletContext().getRequestDispatcher("/docentePasswd.jsp").forward(req, resp);
+			getServletContext().getRequestDispatcher("/ModuloDocente.jsp").forward(req, resp);
 
 		} else if (estudiante != null) {
 			HttpSession sesion = req.getSession();

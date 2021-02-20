@@ -39,7 +39,7 @@
 	              <div class="btn-group">
 					  <button type="button" class="btn text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></button>
 					  <ul class="dropdown-menu  purpura2">
-					    <li><a class="dropdown-item " href="#">Cambiar Contraseña</a></li>
+					    <li><a class="dropdown-item " href="docentePasswd.jsp">Cambiar Contraseña</a></li>
 					    <li><a class="dropdown-item " href="index.jsp">Salir</a></li>
 					  </ul>
 					</div>

@@ -103,7 +103,7 @@
 
 	<div class="row my-3 mx-4" >
 		<div class ="inline" > 
-			<a class="py-1 my-1ext-center text-dark" href="moduloDocente.jsp">Inicio</a>
+			<a class="py-1 my-1ext-center text-dark" href="ModuloDocente.jsp">Inicio</a>
 			<a>> Cambiar Contraseña</a>
 		 </div>
 	</div>
