@@ -62,7 +62,7 @@
             bottom:55px !important;
             right:25% !important;
             opacity:0.6;
-        }
+        	}
 			
 		</style>
 	</head>	
@@ -89,7 +89,6 @@
 		        y la segunda el espacio en blanco-->
 				<div class="col-3 purpura2 d-flex flex-column justify-content-start">
 					<a class="btn py-3 my-4 text-center" href="#">Solicitar Tutorías</a>
-					<a class="btn py-3 my-4 text-center" href="#">Listar Tutorías</a>
 					<a class="btn py-3 my-4 text-center" href="#">Visualizar Información</a>
 				</div>
 				<div class="col-9 img m-auto">

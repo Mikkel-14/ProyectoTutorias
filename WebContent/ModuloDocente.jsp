@@ -86,9 +86,8 @@
 			color: black !important;
 		}
 		
-        .col-4 {
+        .img {
             text-align: center;
-            position:absolute;
             bottom:55px !important;
             right:25% !important;
             opacity:0.6;
@@ -126,9 +125,9 @@
 		          <a class="btn py-3 my-4 text-center" href="listarHorarioTutorias.jsp">Horarios Tutorias</a>
 		          <a class="btn py-3 my-4 text-center" href="#">Informacion Docente</a>
 		        </div>
-		        <div class="col-4 ">
-                    <img src="./img/2.png">
-                </div>       			        	
+		        <div class="col-9 img m-auto">
+                    	<img src="./img/2.png">    
+				</div>       			        	
 		</div>		        
 	  </div>
 
