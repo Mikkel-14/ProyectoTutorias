@@ -20,7 +20,7 @@ public class Tutoria implements Serializable {
 	@Id
 	@Column(name="id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idTutoria;
+	private Integer idTutoria;
 	@Column(name = "horaInicio")
 	private String horaInicio;
 	
@@ -47,7 +47,7 @@ public class Tutoria implements Serializable {
 		this.estudiante = estudiante;
 	}
 
-	public int getIdTutoria() {
+	public Integer getIdTutoria() {
 		return idTutoria;
 	}
 

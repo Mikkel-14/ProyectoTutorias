@@ -16,7 +16,7 @@ public class Turno implements Serializable {
 	@Id
 	@Column(name="id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idTurno;
+	private Integer idTurno;
 	@Column(name = "dia")
 	private String dia;
 	@Column(name = "horaInicio")
@@ -37,7 +37,7 @@ public class Turno implements Serializable {
 		this.docente = docente;
 	}
 
-	public int getIdTurno() {
+	public Integer getIdTurno() {
 		return idTurno;
 	}
 
