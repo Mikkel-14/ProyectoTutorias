@@ -5,7 +5,7 @@
 
 <!DOCTYPE html>
 <html>
-
+<c:if test="${(not empty sessionScope.usuario) && (sessionScope.tipo == 'estudiante')}">
 	<head>
 	<meta charset="ISO-8859-1">
 	<title>Estudiante: Módulo</title>
@@ -57,18 +57,17 @@
 				background-color: white;
 				color: black !important;
 			}
-			.img{
-	            text-align: center;
-	            bottom:55px !important;
-	            right:25% !important;
-	            opacity:0.6;
-        	}	
-			
+			.img {
+            text-align: center;
+            bottom:55px !important;
+            right:25% !important;
+            opacity:0.6;
+        }
 			
 		</style>
 	</head>	
 	<body>
-<div class="container-fluid" id="altura">
+		<div class="container-fluid" id="altura">
 			<nav class="row purpura" style="height: 6%">
 				<div
 					class="col-9 d-flex flex-column justify-content-center align-items-start">
@@ -79,7 +78,7 @@
 					<a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
 	  				</a>
 					<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-					    <li><a class="dropdown-item text-dark" href="#">Cambiar Contraseña</a></li>
+					    <li><a class="dropdown-item text-dark" href="estudiantePasswd.jsp">Cambiar Contraseña</a></li>
 					    <li><a class="dropdown-item text-dark" href="index.jsp">Cerrar Sesión</a></li>
 					  </ul>
 				</div>
@@ -97,18 +96,20 @@
                     	<img src="./img/2.png">    
 				</div>
 			</div>
-		</div>
-		
-		
-		
-		
-
-	</div>	
+		</div>	
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
 			crossorigin="anonymous"></script>
 		
 	</body>
+
+</c:if>
+<c:if test="${(empty sessionScope.usuario) || (sessionScope.tipo != 'estudiante')}">
+
+	<head>
+		<meta http-equiv="refresh" content="2; url=index.jsp"/>
+	</head>
+</c:if>
 	
 </html>

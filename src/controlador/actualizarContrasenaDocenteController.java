@@ -8,9 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import modelo.dao.DAOFactory;
-import modelo.entidad.Departamento;
 import modelo.entidad.Docente;
-import modelo.entidad.Estudiante;
 import modelo.jpa.JPAFactory;
 
 @WebServlet("/actualizarContrasenaDocenteController")
