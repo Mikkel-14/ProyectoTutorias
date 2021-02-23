@@ -23,8 +23,8 @@ public class Departamento implements Serializable {
 	@Column(name = "nombre")
 	private String nombre;
 	
-	@OneToMany(mappedBy = "departamento", cascade = CascadeType.ALL)
-	private List<Docente> docentes;
+	//@OneToMany(mappedBy = "departamento", cascade = CascadeType.ALL)
+	//private List<Docente> docentes;
 	
 	public Departamento() {
 	}
@@ -33,13 +33,13 @@ public class Departamento implements Serializable {
 		this.nombre = nombre;
 	}
 
-	public List<Docente> getDocentes() {
+	/*public List<Docente> getDocentes() {
 		return docentes;
 	}
 
 	public void setDocentes(List<Docente> docentes) {
 		this.docentes = docentes;
-	}
+	}*/
 
 	public Integer getId() {
 		return id;
