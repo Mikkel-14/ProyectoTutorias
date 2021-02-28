@@ -40,7 +40,7 @@ public class actualizarDoncenteController extends HttpServlet {
 		DAOFactory fabrica = new JPAFactory();
 		Docente docente = (Docente) fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).leer(cedula);
 		request.setAttribute("docente", docente);
-		Departamento departamento=docente.getDepartamento();
+		Departamento departamento = docente.getDepartamento();
 
 		int idDpt= docente.getDepartamento().getId();
     	DAOFactory fabricaA = new JPAFactory();
@@ -74,7 +74,7 @@ public class actualizarDoncenteController extends HttpServlet {
 		docente.setDepartamento(dpto);
 		docente.setApellido(apellido);
 		fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).actualizar(docente);
-		response.sendRedirect("ModuloDocente.jsp");
+		response.sendRedirect("visualizarDocente.jsp");
 	}
 
 }

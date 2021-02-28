@@ -16,7 +16,7 @@ import modelo.entidad.Docente;
 import modelo.entidad.Estudiante;
 import modelo.jpa.JPAFactory;
 
-@WebServlet("/actualizarContrasenaDocenteController")
+@WebServlet("/visualizarDatosDocenteController")
 public class visualizarDatosDocente extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	
@@ -27,18 +27,17 @@ public class visualizarDatosDocente extends HttpServlet{
 	
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		getServletContext().getRequestDispatcher("/actualizarDocente.jsp").forward(request, response);
-	}
-	
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession sesion = request.getSession();
 		String cedula = (String) sesion.getAttribute("usuario");
 		DAOFactory fabricaC = new JPAFactory();
 		Docente docente = (Docente) fabricaC.crearUsuarioDAO(JPAFactory.DOCENTE).leer(cedula);
-		String nombre = request.getParameter("nombreDocente");
-		String apellido = request.getParameter("apellidoDocente");
-		String nombreDpto = request.getParameter("departamentoDocente");
+		request.setAttribute("docente", docente);
+		getServletContext().getRequestDispatcher("/visualizarDocente.jsp").forward(request, response);
+	}
+	
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 	}
 	
 	

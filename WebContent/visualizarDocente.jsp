@@ -2,7 +2,6 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="docente" scope="request" value="${docente}" />
-<c:set var="listaDptos" scope="request" value="${listaDptos}"/>
 
 <!DOCTYPE html>
 <html>
@@ -172,7 +171,7 @@
                 <label for="departamento">Departamento</label>
 					<input type="text" required class="form-control" id="departamento"
 					placeholder="Departamento del docente" readonly
-					value="<c:out value="${docente.nombreDpto}"/>"
+					value="<c:out value="${docente.departamento.nombre}"/>"
 					name="departamentoDocente">
 			  </div>
 			  
