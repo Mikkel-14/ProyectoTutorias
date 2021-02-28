@@ -27,7 +27,7 @@ public class visualizarDatosDocente extends HttpServlet{
 	
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		getServletContext().getRequestDispatcher("/actualizarDocente.jsp").forward(request, response);
+		
 	}
 	
 	
@@ -39,7 +39,6 @@ public class visualizarDatosDocente extends HttpServlet{
 		String nombre = request.getParameter("nombreDocente");
 		String apellido = request.getParameter("apellidoDocente");
 		String nombreDpto = request.getParameter("departamentoDocente");
-		
 	}
 	
 	
