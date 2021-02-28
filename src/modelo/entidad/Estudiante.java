@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import org.eclipse.persistence.annotations.CascadeOnDelete;
+
 @Entity
 @NamedQuery(name = "listarEstudiantes",query = "SELECT e FROM Estudiante e")public class Estudiante implements Serializable {
 
@@ -24,8 +26,9 @@ import javax.persistence.*;
 	@Column(name = "apellido")
 	private String apellido;
 	
-	/*@OneToMany(mappedBy = "estudiante", cascade = CascadeType.ALL)
-	private List<Tutoria> tutorias;*/
+	@OneToMany(mappedBy = "estudiante", cascade = CascadeType.ALL)
+	@CascadeOnDelete
+	private List<Tutoria> tutorias;
 	
 	public Estudiante() {
 	}
@@ -38,7 +41,7 @@ import javax.persistence.*;
 		this.contraseña = contraseña;
 		this.nombre = nombre;
 		this.apellido = apellido;
-		//this.tutorias = tutorias;
+		this.tutorias = tutorias;
 	}
 
 
@@ -85,7 +88,7 @@ import javax.persistence.*;
 	}
 
 	
-	/*public List<Tutoria> getTutorias() {
+	public List<Tutoria> getTutorias() {
 		return tutorias;
 	}
 
@@ -93,7 +96,7 @@ import javax.persistence.*;
 
 	public void setTutorias(List<Tutoria> tutorias) {
 		this.tutorias = tutorias;
-	}*/
+	}
 
 
 
