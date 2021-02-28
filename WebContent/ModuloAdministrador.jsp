@@ -137,7 +137,7 @@
 							</div>
 							<div class="row py-4">
 								<div class="col-12 mb-4 text-center" style="height: 50%;">
-									<a class="btn py-5 w-25 text-center text-white bg-primary bg-gradient" id="acciones" href="añadirDocente.jsp">Añadir Docente</a>
+									<a class="btn py-5 w-25 text-center text-white bg-primary bg-gradient" id="acciones" href="moduloAdministradorController">Añadir Docente</a>
 								</div>
 								<div class="col-12 mb-4 text-center" style="height: 50%;">
 									<a class="btn py-5 w-25 text-center text-white bg-primary bg-gradient" id="acciones" href="añadirDepartamento.jsp">Añadir Departamento</a>
