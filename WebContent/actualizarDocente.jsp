@@ -56,8 +56,8 @@
 	        y la segunda el espacio en blanco-->
 		        <div class="col-3 purpura2 d-flex flex-column justify-content-start">
 		          <a class="btn py-3 my-4 text-center" href="#">Tutorías</a>
-		          <a class="btn py-3 my-4 text-center aOn" href="#">Horarios de tutorías</a>
-		          <a class="btn py-3 my-4 text-center" href="#">Información Docente</a>
+		          <a class="btn py-3 my-4 text-center" href="listarHorarioTutorias.jsp">Horarios de tutorías</a>
+		          <a class="btn py-3 my-4 text-center aOn" href="visualizarDatosDocenteController">Información Docente</a>
 		        </div>
 		        <form class="col-9 d-flex flex-column justify-content-center"
 					method="POST" action="actualizarDoncenteController">

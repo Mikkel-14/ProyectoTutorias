@@ -49,7 +49,7 @@ public class listarDocenteController extends HttpServlet {
 			DAOFactory fabrica = new JPAFactory();
 			List<Departamento> listaDptos = fabrica.crearDepartamentoDAO().listar();
 			request.setAttribute("listaDptos", listaDptos);
-			getServletContext().getRequestDispatcher("/añadirDocente.jsp").forward(request, response);;
+			getServletContext().getRequestDispatcher("/añadirDocente.jsp").forward(request, response);
 		}
 	}
 	
