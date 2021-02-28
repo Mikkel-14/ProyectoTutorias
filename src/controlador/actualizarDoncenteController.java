@@ -74,7 +74,7 @@ public class actualizarDoncenteController extends HttpServlet {
 		docente.setDepartamento(dpto);
 		docente.setApellido(apellido);
 		fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).actualizar(docente);
-		response.sendRedirect("visualizarDocente.jsp");
+		response.sendRedirect("visualizarDatosDocenteController");
 	}
 
 }
