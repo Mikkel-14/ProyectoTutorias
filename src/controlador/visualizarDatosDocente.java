@@ -27,7 +27,7 @@ public class visualizarDatosDocente extends HttpServlet{
 	
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		getServletContext().getRequestDispatcher("/actualizarDocente.jsp").forward(request, response);
 	}
 	
 	
