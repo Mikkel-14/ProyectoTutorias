@@ -49,7 +49,7 @@
 	        y la segunda el espacio en blanco-->
 			<div class="col-3 purpura2 d-flex flex-column justify-content-start">
 			    <a class="btn py-3 my-4 text-center" href="#">Tutorías</a>
-	            <a class="btn py-3 my-4 text-center aOn" href="listarHorarioTutorias.jsp">Horarios de tutorías</a>
+	            <a class="btn py-3 my-4 text-center aOn" href="listarHorarioTutoriasController">Horarios de tutorías</a>
 	            <a class="btn py-3 my-4 text-center" href="visualizarDatosDocenteController">Información Docente</a>
 			</div>
 			<div class="col-9">

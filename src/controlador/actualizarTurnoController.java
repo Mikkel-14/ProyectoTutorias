@@ -80,7 +80,7 @@ public class actualizarTurnoController extends HttpServlet {
 		} else {
 			// Mensaje de "Seleccione algo si quiera xd"
 		}
-		getServletContext().getRequestDispatcher("/listarHorarioTutorias.jsp").forward(request, response);
+		getServletContext().getRequestDispatcher("/listarHorarioTutoriasController").forward(request, response);
 	}
 
 }

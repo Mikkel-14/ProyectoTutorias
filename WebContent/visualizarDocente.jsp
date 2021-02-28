@@ -131,7 +131,7 @@
 
             <div class="col-3 purpura2 d-flex flex-column justify-content-start">
               <a class="btn py-3 my-4 text-center" href="#">Tutorias</a>
-              <a class="btn py-3 my-4 text-center" href="listarHorarioTutorias.jsp">Horarios Tutorias</a>
+              <a class="btn py-3 my-4 text-center" href="listarHorarioTutoriasController">Horarios Tutorias</a>
               <a class="btn py-3 my-4 text-center aOn" href="#">Informacion Docente</a>
             </div>
         </div>

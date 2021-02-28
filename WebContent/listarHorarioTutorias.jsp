@@ -56,17 +56,15 @@
 		        <div class="col-3 purpura2 d-flex flex-column justify-content-start">
 		          <a class="btn py-3 my-4 text-center" href="#">Tutorías</a>
 		          <a class="btn py-3 my-4 text-center aOn" href="listarHorarioTutoriasController">Horarios de tutorías</a>
-		          <a class="btn py-3 my-4 text-center" href="#">Información Docente</a>
+		          <a class="btn py-3 my-4 text-center" href="visualizarDatosDocenteController">Información Docente</a>
 		        </div>
 		        <div class ="col-9">
 		        	<div class="container-fluid d-flex flex-column justify-content-start" style="height: 100%;">
 						<div class="container d-flex flex-column justify-content-start bg-white my-4 rounded-3 ">
 							<div class="row mt-3 mb-0 mx-0">
-								<div class="col-1 mx-0 px-0 text-end">
-									<a class="btn btn-success mx-auto" href="actualizarTurnoController">Nuevo turno</a>
-								</div>
-								<div class="col-1  mx-1 px-0">
-									<a class="btn btn-danger text-center">Eliminar turno</a>
+								<div class="col-10"></div>
+								<div class="col-2 mx-0 px-0 text-end">
+									<a class="btn btn-success mx-auto" href="actualizarTurnoController">Actualizar Turnos</a>
 								</div>
 							</div>
 							<div class="row my-4">
