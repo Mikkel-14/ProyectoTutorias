@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import org.eclipse.persistence.annotations.CascadeOnDelete;
+
 
 @Entity
 @NamedQueries({
@@ -24,6 +26,7 @@ public class Departamento implements Serializable {
 	private String nombre;
 	
 	@OneToMany(mappedBy = "departamento", cascade = CascadeType.ALL)
+	@CascadeOnDelete
 	private List<Docente> docentes;
 	
 	public Departamento() {
