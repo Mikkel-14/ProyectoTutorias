@@ -66,24 +66,14 @@ public class Docente implements Serializable {
 	}
 	
 
-<<<<<<< HEAD
+
 	public Docente(String cedula, String contraseña, String nombre, String apellido, Departamento departamento) {
 		
-=======
-	public Docente(String cedula, String contraseña, String nombre, String apellido, Departamento departamento,
-			List<Turno> turnos, List<Tutoria> tutoria) {
-		super();
->>>>>>> XPprueba
 		this.cedula = cedula;
 		this.contraseña = contraseña;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.departamento = departamento;
-<<<<<<< HEAD
-=======
-		//this.turnos = turnos;
-		//this.tutorias = tutoria;
->>>>>>> XPprueba
 	}
 
 	public String getCedula() {
