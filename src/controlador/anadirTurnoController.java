@@ -59,13 +59,14 @@ public class anadirTurnoController extends HttpServlet {
 		String cedula = (String) req.getSession().getAttribute("usuario");
 		Docente profe = (Docente)fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).leer(cedula);
 		List<Turno> listaTurnos = fabrica.crearTurnoDAO().listarAsociados(profe);
-		System.out.println(listaTurnos);
 		Turno turn = new Turno(dia,horaInicio,profe);
 		boolean flag = false;
-		for(Turno t:listaTurnos) {
-			if ((t.getDia().equals(turn.getDia())) && (t.getHoraInicio().equals(turn.getHoraInicio())) ) {
-				flag = true;
-				break;
+		if(listaTurnos != null) {
+			for(Turno t:listaTurnos) {
+				if ((t.getDia().equals(turn.getDia())) && (t.getHoraInicio().equals(turn.getHoraInicio())) ) {
+					flag = true;
+					break;
+				}
 			}
 		}
 		req.setAttribute("result", !flag);
