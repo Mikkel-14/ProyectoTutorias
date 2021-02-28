@@ -66,21 +66,21 @@
 			<div class="row px-4">
 				<label for="cedula" class="form-label">Cédula</label>
 			</div>
-			<div class="row px-4 mb-4">
+			<div class="row px-4 mb-3">
 				<input type="text" class="form-control" id="cedula"
 					placeholder="Número de cédula" name="cedula" required value="<c:out value="${Cedula}"/>">
 			</div>
 			<div class="row px-4">
 				<label for="nombre" class="form-label">Nombre</label>
 			</div>
-			<div class="row px-4 mb-4">
+			<div class="row px-4 mb-3">
 				<input type="text" class="form-control" id="nombre"
 					placeholder="Nombre" name="nombre" required value="<c:out value="${Nombre}"/>">
 			</div>
 			<div class="row px-4">
 				<label for="apellido" class="form-label">Apellido</label>
 			</div>
-			<div class="row px-4 mb-4">
+			<div class="row px-4 mb-3">
 				<input type="text" class="form-control" id="apellido"
 					placeholder="Apellido" name="apellido" required value="<c:out value="${Apellido}"/>">
 			</div>
@@ -95,22 +95,24 @@
 			<div class="row px-4">
 				<label for="rpasswd" class="form-label">Confirmar Contraseña</label>
 			</div>
-			<div class="row px-4 mb-4">
+			<div class="row px-4 mb-3">
 				<input type="password" class="form-control" id="rpasswd"
 					placeholder="Confirmar Contraseña" name="rpassword" required>
 			</div>
-			<div class="row px-4 mb-4">
+			<div class="row px-4 mb-3">
 				<a href="index.jsp">Regresar al inicio de sesión</a>
 			</div>
-			
 			<div class="row mx-auto">
-				<div class="col-5">
+				<div class="col-5 pe-0">
 					<button type="submit" class="btn btn-primary">
 						Registrarse</button>
 				</div>
+				<div class="col-7 px-0 my-auto mx-0">
+					<div class="text-danger">${mensajeError}</div>
+					<div class="text-success">${mensajeExito}</div>
+				</div>
 			</div>
-			<div class="text-danger">${mensajeError}</div>
-			<div class="text-success">${mensajeExito}</div>
+			
 		</form>
 	</div>
 	<script
