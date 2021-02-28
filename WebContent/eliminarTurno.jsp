@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,7 +57,6 @@
 									placeholder="Seleccione un día"
 									 name="diaTurno">
 									 <option value="l">Lunes</option>
-									 <option value="m">Martes</option>
 									 <!-- Esto hay que llenar desde la base -->
 								</select>
 							</div>
@@ -66,10 +66,9 @@
 							<div class="row w-50 mx-auto mb-4">
 								<div class="col-6">
 									<select type="select" required class="form-select" id="diaTurno" name="hTurno">
-									 <option value="7">7</option>
-									 <option value="8">8</option>
-									 <!-- Esto hay que llenar desde la base -->
-									 <option value="18">18</option>
+									 	<c:forEach items="${listaHoras}" var="hora">
+									 		<option>${hora}</option>
+									 	</c:forEach>
 									</select>
 								</div>
 								<div class="col-6">
