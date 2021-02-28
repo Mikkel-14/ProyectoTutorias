@@ -26,11 +26,13 @@ public class actualizarDepartamentoController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Integer id = Integer.parseInt(request.getParameter("id"));
-		String nuevoNombre = request.getParameter("nombre");
 		DAOFactory fabrica = new JPAFactory();
-		Departamento dpto = new Departamento(nuevoNombre);
-		dpto.setId(id);
-		fabrica.crearDepartamentoDAO().actualizar(dpto);
+		Departamento dpto= fabrica.crearDepartamentoDAO().leer(id);
+		
+		String nuevoNombre = request.getParameter("nombre");
+		dpto.setNombre(nuevoNombre);
+		DAOFactory fabrica2 = new JPAFactory();
+		fabrica2.crearDepartamentoDAO().actualizar(dpto);
 		response.sendRedirect("listarDepartamentoController");
 	}
 
