@@ -123,7 +123,7 @@
 		        <div class="col-3 purpura2 d-flex flex-column justify-content-start">
 		          <a class="btn py-3 my-4 text-center" href="#">Tutorias</a>
 		          <a class="btn py-3 my-4 text-center" href="listarHorarioTutorias.jsp">Horarios Tutorias</a>
-		          <a class="btn py-3 my-4 text-center" href="#">Informacion Docente</a>
+		          <a class="btn py-3 my-4 text-center" href="visualizarDatosDocenteController">Informacion Docente</a>
 		        </div>
 		        <div class="col-9 img m-auto">
                     	<img src="./img/2.png">    

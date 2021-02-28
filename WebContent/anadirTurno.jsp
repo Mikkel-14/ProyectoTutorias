@@ -49,7 +49,7 @@
 		          <a class="btn py-3 my-4 text-center aOn" href="#">Horarios de tutorías</a>
 		          <a class="btn py-3 my-4 text-center" href="#">Información Docente</a>
 		        </div>
-		        <form class ="col-9">
+		        <form class ="col-9" method="POST" action="anadirTurnoController">
 		        	<div class="container-fluid d-flex flex-column justify-content-start" style="height: 100%;">
 						<div class="container d-flex flex-column justify-content-start bg-white my-4 rounded-3 ">
 							<div class=" row my-3 mx-5">
@@ -98,6 +98,16 @@
 									</select>
 								</div>
 							</div>
+							
+								<c:choose>
+									<c:when test="${result==true}">
+										<div class="row w-50 mx-auto text-success mb-4">Se ha añadido el nuevo turno</div>
+									</c:when>
+									<c:when test="${result==false}">
+										<div class="row w-50 mx-auto text-danger mb-4">El turno ya existe</div>
+									</c:when>
+								</c:choose>
+							
 							<div class="row mx-auto mb-4">
 								<button type="submit" class="btn btn-primary">Añadir turno</button>
 							</div>

@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="docente" scope="request" value="${docente}" />
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -138,22 +140,41 @@
             <form action="actualizarDoncenteController" method="GET">
               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
               <button type="submit" class="btn btn-success text-end ">Editar</button></div>
+              
+              
               <div class="form-group">
                 <label for="nombre">Nombre</label>
-                <input type="text" class="form-control" id="nombre" readonly>
-              </div>
+				<input type="text" required class="form-control" id="nombre"
+				placeholder="Nombre del docente" readonly
+				value="<c:out value="${docente.nombre}"/>" 
+				name="nombreDocente">
+				</div>
+
+       
               <div class="form-group">
                 <label for="apellido">Apellido</label>
-                <input type="text" class="form-control" id="apellido" readonly>
-              </div>
+					<input type="text" required class="form-control" id="apellido"
+					placeholder="Apellido del docente" readonly
+					value="<c:out value="${docente.apellido}"/>"
+					name="apellidoDocente">
+			</div>
+              
               <div class="form-group">
                 <label for="cedula">Cédula</label>
-                <input type="text" class="form-control" id="cedula" readonly>
-              </div>
+					<input type="text" required class="form-control" id="usuario"
+					placeholder="Cédula del docente" readonly
+					value="<c:out value="${docente.cedula}"/>">
+				</div>
+				
+				
               <div class="form-group">
                 <label for="departamento">Departamento</label>
-                <input type="text" class="form-control" id="departamento" readonly >
-              </div>
+					<input type="text" required class="form-control" id="departamento"
+					placeholder="Departamento del docente" readonly
+					value="<c:out value="${docente.departamento.nombre}"/>"
+					name="departamentoDocente">
+			  </div>
+			  
             </form>
         </div>
     </div>

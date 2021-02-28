@@ -47,8 +47,8 @@ public class actualizarContrasenaEstudianteController extends HttpServlet {
 		Estudiante estudiante = (Estudiante) fabrica.crearUsuarioDAO(JPAFactory.ESTUDIANTE).leer(cedula);
 		if ( nuevaContraseña.equals(nuevaContraseñaVerificar) && cedula.equals(estudiante.getCedula()) 
 				&& contraseñaActual.equals(estudiante.getContraseña())){
-			Estudiante estudianteNuevo = new Estudiante(cedula, nuevaContraseña, estudiante.getNombre(), estudiante.getApellido());
-			fabrica.crearUsuarioDAO(JPAFactory.ESTUDIANTE).actualizar(estudianteNuevo);
+			estudiante.setContraseña(nuevaContraseña);
+			fabrica.crearUsuarioDAO(JPAFactory.ESTUDIANTE).actualizar(estudiante);
 			response.sendRedirect("estudiantePasswd.jsp");
 		}else{
 			request.setAttribute("mensajeError", "Las contraseñas no coinciden");

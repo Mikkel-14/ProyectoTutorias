@@ -53,9 +53,10 @@ public class actualizarEstudianteController extends HttpServlet {
 		String apellido = req.getParameter("apellido");
 		DAOFactory fabrica = new JPAFactory();
 		Estudiante e = (Estudiante) fabrica.crearUsuarioDAO(JPAFactory.ESTUDIANTE).leer(cedula);
-		String password = e.getContraseña();
-		Estudiante estudiante = new Estudiante(cedula, password, nombre, apellido);
-		fabrica.crearUsuarioDAO(JPAFactory.ESTUDIANTE).actualizar(estudiante);
+		
+		e.setApellido(apellido);
+		e.setNombre(nombre);
+		fabrica.crearUsuarioDAO(JPAFactory.ESTUDIANTE).actualizar(e);
     	
 		//req.setAttribute("mensajeExito", "Se actualizó el estudiante");//mensaje
 		//getServletContext().getRequestDispatcher("listarEstudianteController.jsp").forward(req, resp);
