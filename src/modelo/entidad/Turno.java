@@ -9,7 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 @Entity
+@NamedQuery(name = "listarTurnos", query = "SELECT t FROM Turno t WHERE t.docente = :docente")
 public class Turno implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
