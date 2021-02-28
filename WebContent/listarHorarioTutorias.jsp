@@ -59,7 +59,7 @@
 						<div class="container d-flex flex-column justify-content-start bg-white my-4 rounded-3 ">
 							<div class="row mt-3 mb-0 mx-0">
 								<div class="col-1 mx-0 px-0 text-end">
-									<a class="btn btn-success mx-auto">Nuevo turno</a>
+									<a class="btn btn-success mx-auto" href="actualizarTurnoController">Nuevo turno</a>
 								</div>
 								<div class="col-1  mx-1 px-0">
 									<a class="btn btn-danger text-center">Eliminar turno</a>
