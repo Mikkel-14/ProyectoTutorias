@@ -55,7 +55,7 @@
 	        y la segunda el espacio en blanco-->
 		        <div class="col-3 purpura2 d-flex flex-column justify-content-start">
 		          <a class="btn py-3 my-4 text-center" href="#">Tutorías</a>
-		          <a class="btn py-3 my-4 text-center aOn" href="#">Horarios de tutorías</a>
+		          <a class="btn py-3 my-4 text-center aOn" href="listarHorarioTutoriasController">Horarios de tutorías</a>
 		          <a class="btn py-3 my-4 text-center" href="#">Información Docente</a>
 		        </div>
 		        <div class ="col-9">
@@ -82,102 +82,45 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td>7:00</td>
-											<td class="disponible">7:15, 7:30</td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										<tr>
-										<tr>
-											<td>8:00</td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										<tr>
-										<tr>
-											<td>9:00</td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										<tr>
-										<tr>
-											<td>10:00</td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										<tr>
-										<tr>
-											<td>11:00</td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										<tr>
-										<tr>
-											<td>12:00</td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										<tr>
-										<tr>
-											<td>13:00</td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										<tr>
-										<tr>
-											<td>14:00</td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										<tr>
-										<tr>
-											<td>15:00</td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										<tr>
-										<tr>
-											<td>16:00</td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										<tr>
-										<tr>
-											<td>17:00</td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										<tr>
-										<tr>
-											<td>18:00</td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										<tr>
+										<c:forEach begin="7" end="18" varStatus="hora">
+											<tr>
+												<td>${hora.index}:00</td>
+												<c:forEach begin="1" end="5" varStatus="dia">
+													<c:set var="encontrado">${false}</c:set>
+													<c:set var="cadenaTurnos">${''}</c:set>
+													<c:choose>
+														<c:when test="${dia.index==1}">
+															<c:set var="day">l</c:set>
+														</c:when>
+														<c:when test="${dia.index==2}">
+															<c:set var="day">m</c:set>
+														</c:when>
+														<c:when test="${dia.index==3}">
+															<c:set var="day">x</c:set>
+														</c:when>
+														<c:when test="${dia.index==4}">
+															<c:set var="day">j</c:set>
+														</c:when>
+														<c:when test="${dia.index==5}">
+															<c:set var="day">v</c:set>
+														</c:when>
+													</c:choose>
+													<c:forEach items="${listaTurnos}" var="turnos">
+															<c:set var="horaTurno">${turnos.horaInicio.split(':')[0]}</c:set>
+															<c:if test="${(turnos.dia ==day) &&(horaTurno == hora.index)}">
+																<c:set var="encontrado">${true}</c:set>
+																<c:set var="cadenaTurnos">${cadenaTurnos.concat(turnos.horaInicio).concat('<br>')}</c:set>
+															</c:if>
+													</c:forEach>
+													<c:if test="${encontrado==true}">
+														<td class="disponible">${cadenaTurnos}</td>
+													</c:if>
+													<c:if test="${encontrado==false}">
+														<td></td>
+													</c:if>
+												</c:forEach>
+											</tr>
+										</c:forEach>
 									</tbody>
 								</table>
 							</div>
