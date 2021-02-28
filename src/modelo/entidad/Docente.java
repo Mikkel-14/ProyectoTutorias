@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import org.eclipse.persistence.annotations.CascadeOnDelete;
+
 
 
 @Entity
@@ -31,11 +33,13 @@ public class Docente implements Serializable {
 	@JoinColumn(name = "id")
 	private Departamento departamento;
 	
-	/*@OneToMany(mappedBy = "docente", cascade = CascadeType.REMOVE)
-	private List<Turno> turnos;*/
+	@OneToMany(mappedBy = "docente", cascade = CascadeType.ALL)
+	@CascadeOnDelete
+	private List<Turno> turnos;
 	
-	/*@OneToMany(mappedBy = "docente", cascade = CascadeType.ALL)
-	private List<Tutoria> tutorias;*/
+	@OneToMany(mappedBy = "docente", cascade = CascadeType.ALL)
+	@CascadeOnDelete
+	private List<Tutoria> tutorias;
 	
 	public Docente() {}
 
@@ -115,7 +119,7 @@ public class Docente implements Serializable {
 	}
 	
 
-	/*public List<Turno> getTurnos() {
+	public List<Turno> getTurnos() {
 		return turnos;
 	}
 
@@ -129,7 +133,7 @@ public class Docente implements Serializable {
 
 	public void setTutorias(List<Tutoria> tutorias) {
 		this.tutorias = tutorias;
-	}*/
+	}
 
 	@Override
 	public int hashCode() {
