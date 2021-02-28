@@ -1,6 +1,7 @@
 package controlador;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -26,27 +27,60 @@ public class actualizarTurnoController extends HttpServlet {
 		String cedulaDocente = (String) request.getSession().getAttribute("usuario");
 		DAOFactory fabrica = new JPAFactory();
 		Docente docente = (Docente) fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).leer(cedulaDocente);
-		List<Turno> turnos = docente.getTurnos();
 		
+		System.out.println(docente);
+		
+		// Prueba //////////////////
+		/*Turno t1 = new Turno("l", "17:45", docente);
+		Turno t2 = new Turno("x", "9:30", docente);
+		Turno t3 = new Turno("v", "18:00", docente);
+		fabrica.crearTurnoDAO().crear(t1);
+		fabrica.crearTurnoDAO().crear(t2);
+		fabrica.crearTurnoDAO().crear(t3);*/
+		//////////////////////
+		
+		List<Turno> turnosDocente = fabrica.crearTurnoDAO().listarAsociados(docente);
+		List<String> turnos = new ArrayList<String>();
+		if (turnosDocente != null) {
+			for (Turno t: turnosDocente) {
+				String[] datos = t.getHoraInicio().split(":");
+				turnos.add(t.getDia() + "-" + datos[0] + "-" + datos[1]);
+			}
+		} else {
+			//////////////////////////
+			//System.out.println("ESTA VACIO");
+		}
+		request.setAttribute("turnos", turnos);
 		getServletContext().getRequestDispatcher("/actualizarTurno.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Falta que lea los que ya existen xdd
+		String cedulaDocente = (String) request.getSession().getAttribute("usuario");
+		DAOFactory fabrica = new JPAFactory();
+		Docente docente = (Docente) fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).leer(cedulaDocente);
+		
+		List<Turno> turnosDocente = fabrica.crearTurnoDAO().listarAsociados(docente);
+		if (turnosDocente != null) {
+			for (Turno t: turnosDocente) {
+				fabrica.crearTurnoDAO().eliminar(t);
+			}
+		}
+		
+		// Esto sera de hacer xd???
+		//docente.setTurnos(new ArrayList<Turno>()); // Vaciar la lista del docente
+		
 		String[] turnos = request.getParameterValues("turno");
 		if (turnos != null) {
-			System.out.println("------------------------------"); ////////////////////////////
 			for (String turno: turnos) {
-				System.out.println(turno); ///////////////////////////
 				String[] datos = turno.split("-");
-				DAOFactory fabrica = new JPAFactory();
-				
-				//Turno nuevoTurno
-				//fabrica.crearTurnoDAO().crear(nuevoTurno);
+				String horaInicio = datos[1] + ":" + datos[2];
+				Turno t = new Turno(datos[0], horaInicio, docente);
+				fabrica.crearTurnoDAO().crear(t);
 			}
 		} else {
 			// Mensaje de "Seleccione algo si quiera xd"
 		}
+		getServletContext().getRequestDispatcher("/listarHorarioTutorias.jsp").forward(request, response);
 	}
 
 }
