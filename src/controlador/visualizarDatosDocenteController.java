@@ -17,10 +17,10 @@ import modelo.entidad.Estudiante;
 import modelo.jpa.JPAFactory;
 
 @WebServlet("/visualizarDatosDocenteController")
-public class visualizarDatosDocente extends HttpServlet{
+public class visualizarDatosDocenteController extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	
-	public visualizarDatosDocente() {
+	public visualizarDatosDocenteController() {
         super();
         // TODO Auto-generated constructor stub
     }
