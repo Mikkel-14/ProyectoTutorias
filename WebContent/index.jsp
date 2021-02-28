@@ -78,19 +78,19 @@
 				<input type="password" class="form-control" id="passwd"
 					placeholder="Contraseña" name="password" value="<c:out value="${cookie['password'].getValue()}"/>" required>
 			</div>
-			<div class="row px-1 mb-1">
-				<a href="registrarEstudiante.jsp">¿No tienes cuenta? Regístrate</a>
-			</div>
-			<div class="row px-1 mb-1 ml-20">
-				<div class="col-10">
-					<input type="checkbox" name="recordarme" <c:if test="${cookie['recordar'].getValue() == 'on'}">checked="checked"</c:if>/>Recordarme<br>
-					
+			<div class="row px-4 mb-2 ml-20">
+				<div class="col-10 form-switch">
+					<input type="checkbox" id="flexSwitchCheckDefault" class="form-check-input" name="recordarme" <c:if test="${cookie['recordar'].getValue() == 'on'}">checked="checked"</c:if>/>
+					<label class="form-check-label" for="flexSwitchCheckDefault">Recordarme</label>
 				</div>
 			</div>
 			<div class="row mx-auto">
-				<div class="col-5">
+				<div class="col-5 pe-0">
 					<button type="submit" class="btn btn-primary">Iniciar
 						Sesión</button>
+				</div>
+				<div class="col-7 px-0 my-auto mx-0">
+					<a href="registrarEstudiante.jsp">¿No tienes cuenta? Regístrate</a>
 				</div>
 			</div>
 		</form>
