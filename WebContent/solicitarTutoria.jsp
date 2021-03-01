@@ -8,7 +8,7 @@
 <c:if test="${(not empty sessionScope.usuario) && (sessionScope.tipo == 'estudiante')}">
 	<head>
 	<meta charset="ISO-8859-1">
-	<title>Estudiante: Módulo</title>
+	<title>Estudiante: Solicitar Tutoria</title>
 	<link
 		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
 		rel="stylesheet"
@@ -19,6 +19,7 @@
 		href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
 		rel="stylesheet">
 	<script src="https://kit.fontawesome.com/7e57fa7d19.js"></script>
+	<link rel="stylesheet" href="css/layout.css">
 		<style>
 			html, body {
 				height: 100%;
@@ -88,19 +89,63 @@
 				<!-- una fila con dos columnas: la primera es la navegacion izq
 		        y la segunda el espacio en blanco-->
 				<div class="col-3 purpura2 d-flex flex-column justify-content-start">
-					<a class="btn py-3 my-4 text-center" href="solicitarTutoriaController">Solicitar Tutorías</a>
+					<a class="btn py-3 my-4 text-center aOn" href="solicitarTutoriaController">Solicitar Tutorías</a>
 					<a class="btn py-3 my-4 text-center" href="#">Visualizar Información</a>
 				</div>
-				<div class="col-9 img m-auto">
-                    	<img src="./img/2.png">    
-				</div>
+				<form class="col-9">
+					<div
+						class="container-fluid d-flex flex-column justify-content-start"
+						style="height: 100%;">
+						<div
+							class="container d-flex flex-column justify-content-start bg-white my-4 rounded-3 ">
+							<div class="row my-3 mx-5">
+								<h4>Solicitar Tutoría</h4>
+							</div>
+							<div class="row w-50 mt-auto mx-auto">
+								<label for="dpto" class="form-label">Departamento</label>
+							</div>
+							<div class="row w-50 mx-auto mb-4">
+								<select class="form-select" name="departamento" id="dpto" required >
+									<c:forEach items="${listaDptos}" var="depa">
+										<option value="${depa.id}">${depa.nombre}</option>
+									</c:forEach>
+								</select>
+							</div>
+							<div class="row w-50 mt-auto mx-auto">
+								<label for="docente" class="form-label">Docente</label>
+							</div>
+							<div class="row w-50 mx-auto mb-4">
+								<select class="form-select" name="docente" id="docente" required >
+									
+								</select>
+							</div>
+							<div class="row w-50 mt-auto mx-auto">
+								<label for="fecha" class="form-label">Fecha de Tutoría</label>
+							</div>
+							<div class="row w-50 mx-auto mb-4">
+								<input type="date" class="form-control" name="fechaTuto" id="fecha"/>
+							</div>
+							<div class="row w-50 mt-auto mx-auto">
+								<label for="turnos" class="form-label">Turno de tutoría</label>
+							</div>
+							<div class="row w-50 mx-auto mb-4">
+								<select class="form-select" name="turno" id="turnos" required >
+									
+								</select>
+							</div>
+							<div class="row my-2 m-auto mb-2 pb-4">
+								<button type="submit" class="btn btn-primary">Solicitar Tutoría</button>
+							</div>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>	
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
 			crossorigin="anonymous"></script>
-		
+		<script src="js/cargarDatosSolicitudTutoria.js"></script>
 	</body>
 
 </c:if>
