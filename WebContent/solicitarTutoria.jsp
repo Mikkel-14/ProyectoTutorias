@@ -92,7 +92,7 @@
 					<a class="btn py-3 my-4 text-center aOn" href="solicitarTutoriaController">Solicitar Tutorías</a>
 					<a class="btn py-3 my-4 text-center" href="#">Visualizar Información</a>
 				</div>
-				<form class="col-9">
+				<form class="col-9" method="POST" action="solicitarTutoriaController">
 					<div
 						class="container-fluid d-flex flex-column justify-content-start"
 						style="height: 100%;">
@@ -129,7 +129,7 @@
 								<label for="turnos" class="form-label">Turno de tutoría</label>
 							</div>
 							<div class="row w-50 mx-auto mb-4">
-								<select class="form-select" name="turno" id="turnos" required >
+								<select class="form-select" name="turno" id="turnos"  ><!-- required -->
 									
 								</select>
 							</div>

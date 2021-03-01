@@ -2,6 +2,7 @@ package controlador;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -16,6 +17,7 @@ import com.google.gson.GsonBuilder;
 import modelo.dao.DAOFactory;
 import modelo.entidad.Departamento;
 import modelo.entidad.Docente;
+import modelo.entidad.Turno;
 import modelo.jpa.JPAFactory;import modelo.jpa.JPAGenericDAO;
 
 
@@ -32,23 +34,46 @@ public class solicitarTutoriaController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		listarDepartamentos(request, response);
 		String busqueda = request.getParameter("id");
+		String buscarDocente = request.getParameter("cedula");
 		if(busqueda!=null) {
 			response.getWriter().print(listarDocentes(busqueda));
 			response.getWriter().close();
-		}else {
+		}else if(buscarDocente != null){
+			response.getWriter().print(listarTurnos(buscarDocente));
+			response.getWriter().close();
+		}
+		else {
 		getServletContext().getRequestDispatcher("/solicitarTutoria.jsp").forward(request, response);}
 	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	      System.out.println(request.getParameter("fechaTuto"));
 	}
 	
 	private void listarDepartamentos(HttpServletRequest req, HttpServletResponse resp){
 		DAOFactory fabrica = new JPAFactory();
 		List<Departamento> dptos = fabrica.crearDepartamentoDAO().listar();
 		req.setAttribute("listaDptos", dptos);
+	}
+
+	private String listarTurnos(String cedula){
+		DAOFactory fabrica = new JPAFactory();
+		Docente d = (Docente) fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).leer(cedula);
+		List<Turno> turnosCompletos = fabrica.crearTurnoDAO().listarAsociados(d);
+		List<Turno> turnosAParsear = new ArrayList<Turno>();
+		GsonBuilder parseador = new GsonBuilder();
+		Gson gson = parseador.create();
+		if(turnosCompletos ==null) {
+			return gson.toJson(turnosAParsear);
+		}
+		for(Turno t:turnosCompletos) {
+			t.setDocente(null);
+			turnosAParsear.add(t);
+		}
+		
+		String json = gson.toJson(turnosAParsear);
+		return json;
 	}
 	
 	private String listarDocentes(String id){
