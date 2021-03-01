@@ -9,6 +9,7 @@ menuDepa.addEventListener("change",traerDocentes);
 fechas.addEventListener("change",filtrarTurnos);
 function traerDocentes(){
 	menuDocentes.textContent = "";
+	menuTurnos.textContent="";
 	let valor = menuDepa.value;
 	let url = "http://localhost:8080/ProyectoTutorias/solicitarTutoriaController?id="+String(valor);
 	let method = "GET";
@@ -38,6 +39,7 @@ function traerDocentes(){
 
 function traerTutorias(){
 	let valor = menuDocentes.value;
+	menuTurnos.textContent="";
 	let url = "http://localhost:8080/ProyectoTutorias/solicitarTutoriaController?cedula="+String(valor);
 	let method = "GET";
 	//configurando AJAX
@@ -87,6 +89,8 @@ function filtrarTurnos(){
 				menuTurnos.appendChild(nuevaOpcion);
 			}
 		}
+	}else{
+	menuTurnos.textContent="";
 	}
 }
 document.onload = traerDocentes();
