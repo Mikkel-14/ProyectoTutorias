@@ -123,16 +123,26 @@
 								<label for="fecha" class="form-label">Fecha de Tutoría</label>
 							</div>
 							<div class="row w-50 mx-auto mb-4">
-								<input type="date" class="form-control" name="fechaTuto" id="fecha"/>
+								<input type="date" class="form-control" name="fechaTuto" id="fecha" min="${dateHoy}"required/> 
 							</div>
 							<div class="row w-50 mt-auto mx-auto">
 								<label for="turnos" class="form-label">Turno de tutoría</label>
 							</div>
 							<div class="row w-50 mx-auto mb-4">
-								<select class="form-select" name="turno" id="turnos"  ><!-- required -->
+								<select class="form-select" name="turno" id="turnos" required >
 									
 								</select>
 							</div>
+							<c:if test="${resultado==true }">
+								<div class="row w-50 mx-auto mb-4 text-danger">
+									Horario Ocupado
+								</div>
+							</c:if>
+							<c:if test="${resultado==false}">
+								<div class="row w-50 mx-auto mb-4 text-success">
+									Tutoria Registrada
+								</div>
+							</c:if>
 							<div class="row my-2 m-auto mb-2 pb-4">
 								<button type="submit" class="btn btn-primary">Solicitar Tutoría</button>
 							</div>

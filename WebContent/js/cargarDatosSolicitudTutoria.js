@@ -57,9 +57,9 @@ function filtrarTurnos(){
 	menuTurnos.textContent ="";
 	let valores = fechas.value;
 	let listaFecha = valores.split("-");
-	let date = new Date(parseInt(listaFecha[0]),parseInt(listaFecha[1]),parseInt(listaFecha[2]));
+	let date = new Date(parseInt(listaFecha[0]),parseInt(listaFecha[1])-1,parseInt(listaFecha[2]));
 	let dia;
-	console.log(date.getDay());
+	/*console.log(date.getDay());*/
 	switch (date.getDay()){
 		case 1:
 			dia = "l";

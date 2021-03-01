@@ -2,8 +2,10 @@ package modelo.jpa;
 
 import java.util.List;
 
-import modelo.dao.TutoriaDAO;
+import javax.persistence.Query;
 
+import modelo.dao.TutoriaDAO;
+import modelo.entidad.Docente;
 import modelo.entidad.Tutoria;
 
 public class JPATutoria extends JPAGenericDAO<Tutoria, Integer> implements TutoriaDAO {
@@ -15,6 +17,18 @@ public class JPATutoria extends JPAGenericDAO<Tutoria, Integer> implements Tutor
 	@Override
 	public List<Tutoria> listar() {
 		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Tutoria> listarPorDocente(Docente d) {
+		Query consulta = em.createNamedQuery("obtenerTutoriasDocente", Tutoria.class);
+		consulta.setParameter("docente", d);
+		List<Tutoria> tutorias = (List<Tutoria>) consulta.getResultList();
+		
+		if(tutorias.size() !=0) {
+			return tutorias;
+		}
 		return null;
 	}
 }

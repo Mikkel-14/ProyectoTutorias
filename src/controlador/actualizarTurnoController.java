@@ -28,17 +28,6 @@ public class actualizarTurnoController extends HttpServlet {
 		DAOFactory fabrica = new JPAFactory();
 		Docente docente = (Docente) fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).leer(cedulaDocente);
 		
-		System.out.println(docente);
-		
-		// Prueba //////////////////
-		/*Turno t1 = new Turno("l", "17:45", docente);
-		Turno t2 = new Turno("x", "9:30", docente);
-		Turno t3 = new Turno("v", "18:00", docente);
-		fabrica.crearTurnoDAO().crear(t1);
-		fabrica.crearTurnoDAO().crear(t2);
-		fabrica.crearTurnoDAO().crear(t3);*/
-		//////////////////////
-		
 		List<Turno> turnosDocente = fabrica.crearTurnoDAO().listarAsociados(docente);
 		List<String> turnos = new ArrayList<String>();
 		if (turnosDocente != null) {
@@ -48,7 +37,6 @@ public class actualizarTurnoController extends HttpServlet {
 			}
 		} else {
 			//////////////////////////
-			//System.out.println("ESTA VACIO");
 		}
 		request.setAttribute("turnos", turnos);
 		getServletContext().getRequestDispatcher("/actualizarTurno.jsp").forward(request, response);
