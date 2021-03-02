@@ -7,7 +7,7 @@
 <html>
 <head>
     <meta charset="ISO-8859-1">
-    <title>Docente: Módulo Visualizar Informacion</title>
+    <title>Docente: Mï¿½dulo Visualizar Informacion</title>
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
         rel="stylesheet"
@@ -70,7 +70,7 @@
           background-color: inherit !important;
           color:black !important;
     }
-      
+
     nav div a {
         background-color:inherit !important;
         color: white !important;
@@ -83,7 +83,7 @@
     #acciones{
         width: 35%
     }
-    
+
     li:hover {
         background-color: white;
     }
@@ -97,12 +97,8 @@
     }
 
     .bordes {
-        position: relative;
         width: 50%;
         padding: 20px;
-        float:right;
-        right:10%;
-        bottom:80%;
     }
   </style>
 </head>
@@ -113,14 +109,14 @@
     <div class="container-fluid" id="altura">
       <nav class="row purpura" style="height: 6%" >
         <div class="col-9 d-flex flex-column justify-content-center align-items-start">
-            Tutorías
+            Tutorï¿½as
         </div>
         <div class="col-3 d-flex flex-row justify-content-end align-items-center">
               <a href="ModuloDocente.jsp" class="btn">Docente</a>
               <div class="btn-group">
                   <button type="button" class="btn text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></button>
                   <ul class="dropdown-menu  purpura2">
-                    <li><a class="dropdown-item " href="docentePasswd.jsp">Cambiar Contraseña</a></li>
+                    <li><a class="dropdown-item " href="docentePasswd.jsp">Cambiar Contraseï¿½a</a></li>
                     <li><a class="dropdown-item " href="index.jsp">Salir</a></li>
                   </ul>
                 </div>
@@ -134,23 +130,24 @@
               <a class="btn py-3 my-4 text-center" href="listarHorarioTutoriasController">Horarios Tutorias</a>
               <a class="btn py-3 my-4 text-center aOn" href="#">Informacion Docente</a>
             </div>
-        </div>
 
-        <div class="bordes bg-white rounded-3 container-fluid shadow-sm my-3 col-lg-7 col-md-7 col-sm-10 col-xs-10" >
-            <form action="actualizarDoncenteController" method="GET">
+
+        <div class=" flex-column  my-3 col-9  position-relative" >
+            <form action="actualizarDoncenteController" method="GET" class="bordes bg-white rounded-3 shadow-sm
+            position-absolute top-50 start-50 translate-middle">
               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
               <button type="submit" class="btn btn-success text-end ">Editar</button></div>
-              
-              
-              <div class="form-group">
+
+
+              <div class="form-group ">
                 <label for="nombre">Nombre</label>
 				<input type="text" required class="form-control" id="nombre"
 				placeholder="Nombre del docente" readonly
-				value="<c:out value="${docente.nombre}"/>" 
+				value="<c:out value="${docente.nombre}"/>"
 				name="nombreDocente">
 				</div>
 
-       
+
               <div class="form-group">
                 <label for="apellido">Apellido</label>
 					<input type="text" required class="form-control" id="apellido"
@@ -158,15 +155,15 @@
 					value="<c:out value="${docente.apellido}"/>"
 					name="apellidoDocente">
 			</div>
-              
+
               <div class="form-group">
-                <label for="cedula">Cédula</label>
+                <label for="cedula">Cï¿½dula</label>
 					<input type="text" required class="form-control" id="usuario"
-					placeholder="Cédula del docente" readonly
+					placeholder="Cï¿½dula del docente" readonly
 					value="<c:out value="${docente.cedula}"/>">
 				</div>
-				
-				
+
+
               <div class="form-group">
                 <label for="departamento">Departamento</label>
 					<input type="text" required class="form-control" id="departamento"
@@ -174,8 +171,9 @@
 					value="<c:out value="${docente.departamento.nombre}"/>"
 					name="departamentoDocente">
 			  </div>
-			  
+
             </form>
+        </div>
         </div>
     </div>
 
