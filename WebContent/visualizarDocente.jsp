@@ -7,7 +7,7 @@
 <html>
 <head>
     <meta charset="ISO-8859-1">
-    <title>Docente: Mï¿½dulo Visualizar Informacion</title>
+    <title>Docente: Módulo Visualizar Informacion</title>
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
         rel="stylesheet"
@@ -109,14 +109,14 @@
     <div class="container-fluid" id="altura">
       <nav class="row purpura" style="height: 6%" >
         <div class="col-9 d-flex flex-column justify-content-center align-items-start">
-            Tutorï¿½as
+            Tutorías
         </div>
         <div class="col-3 d-flex flex-row justify-content-end align-items-center">
               <a href="ModuloDocente.jsp" class="btn">Docente</a>
               <div class="btn-group">
                   <button type="button" class="btn text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></button>
                   <ul class="dropdown-menu  purpura2">
-                    <li><a class="dropdown-item " href="docentePasswd.jsp">Cambiar Contraseï¿½a</a></li>
+                    <li><a class="dropdown-item " href="docentePasswd.jsp">Cambiar Contraseña</a></li>
                     <li><a class="dropdown-item " href="index.jsp">Salir</a></li>
                   </ul>
                 </div>
@@ -157,9 +157,9 @@
 			</div>
 
               <div class="form-group">
-                <label for="cedula">Cï¿½dula</label>
+                <label for="cedula">Cedula</label>
 					<input type="text" required class="form-control" id="usuario"
-					placeholder="Cï¿½dula del docente" readonly
+					placeholder="Cedula del docente" readonly
 					value="<c:out value="${docente.cedula}"/>">
 				</div>
 
