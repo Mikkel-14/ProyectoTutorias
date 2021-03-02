@@ -55,9 +55,9 @@
 
 
 		        <div class="col-3 purpura2 d-flex flex-column justify-content-start">
-		          <a class="btn py-3 my-4 text-center aOn" href="#">Tutorías</a>
-		          <a class="btn py-3 my-4 text-center " href="listarHorarioTutoriasController">Horarios de tutorías</a>
-		          <a class="btn py-3 my-4 text-center" href="visualizarDatosDocenteController">Información Docente</a>
+		          <a class="btn py-3 my-4 text-center aOn" href="listarTutoriasDocenteController">Tutorías</a>
+		          <a class="btn py-3 my-4 text-center " href="listarHorarioTutoriasController">Horarios tutorias</a>
+		          <a class="btn py-3 my-4 text-center" href="visualizarDatosDocenteController">Informacion Docente</a>
 		        </div>
 		        <div class ="col-9">
 		        	<div class="container-fluid d-flex flex-column justify-content-start" style="height: 100%;">
@@ -74,12 +74,17 @@
 										</tr>
 									</thead>
 									<tbody>
-										<c:forEach var="listaTutorias" items="tutorias">
+										<c:forEach var="tutorias" items="${listaTutorias}">
 											<tr>
 												<td>${tutorias.estudiante.cedula}</td>
 												<c:set var="cadenaEstudiante">${tutorias.estudiante.nombre.concat(' ').concat(tutorias.estudiante.apellido)}</c:set>
                                                 <td>${cadenaEstudiante}</td>
-                                                <td>${tutorias.fecha}</td>
+                                                <c:set var="diaSemana">${tutorias.fecha.toString().split(" ")[0]}</c:set>
+                                                <c:set var="mes">${tutorias.fecha.toString().split(" ")[1]}</c:set>
+                                                <c:set var="numeroDia">${tutorias.fecha.toString().split(" ")[2]}</c:set>
+                                                <c:set var="anio">${tutorias.fecha.toString().split(" ")[5]}</c:set>
+                                                <c:set var="dia">${diaSemana.concat(" ").concat(numeroDia).concat(" ").concat(mes).concat(" ").concat(anio)}</c:set>
+                                                <td>${dia}</td>
 												<td>${tutorias.horaInicio}</td>
 											</tr>
 										</c:forEach>
