@@ -97,12 +97,8 @@
     }
 
     .bordes {
-        position: relative;
         width: 50%;
         padding: 20px;
-        float:right;
-        right:10%;
-        bottom:80%;
     }
   </style>
 </head>
@@ -129,20 +125,21 @@
 
       <div class="row" style="height: 94%;">
 
-            <div class="col-3 purpura2 d-flex flex-column justify-content-start">
+            <div class=" col-3  purpura2 d-flex flex-column justify-content-start">
               <a class="btn py-3 my-4 text-center" href="#">Tutorias</a>
               <a class="btn py-3 my-4 text-center" href="listarHorarioTutoriasController">Horarios Tutorias</a>
               <a class="btn py-3 my-4 text-center aOn" href="#">Informacion Docente</a>
             </div>
-        </div>
+        
 
-        <div class="bordes bg-white rounded-3 container-fluid shadow-sm my-3 col-lg-7 col-md-7 col-sm-10 col-xs-10" >
-            <form action="actualizarDoncenteController" method="GET">
+        <div class=" flex-column  my-3 col-9  position-relative" >
+            <form action="actualizarDoncenteController" method="GET" class="bordes bg-white rounded-3 shadow-sm
+            position-absolute top-50 start-50 translate-middle">
               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
               <button type="submit" class="btn btn-success text-end ">Editar</button></div>
               
               
-              <div class="form-group">
+              <div class="form-group ">
                 <label for="nombre">Nombre</label>
 				<input type="text" required class="form-control" id="nombre"
 				placeholder="Nombre del docente" readonly
@@ -176,6 +173,7 @@
 			  </div>
 			  
             </form>
+        </div>
         </div>
     </div>
 
