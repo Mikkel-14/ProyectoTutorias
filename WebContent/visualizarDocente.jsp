@@ -5,6 +5,7 @@
 
 <!DOCTYPE html>
 <html>
+<c:if test="${(not empty sessionScope.usuario) && (sessionScope.tipo == 'docente')}">
 <head>
     <meta charset="ISO-8859-1">
     <title>Docente: Módulo Visualizar Informacion</title>
@@ -182,5 +183,12 @@
     integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
     crossorigin="anonymous"></script>
 </body>
+</c:if>
+<c:if test="${(empty sessionScope.usuario) || (sessionScope.tipo != 'docente')}">
+
+	<head>
+		<meta http-equiv="refresh" content="2; url=index.jsp"/>
+	</head>
+</c:if>
 
 </html>
