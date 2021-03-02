@@ -2,6 +2,8 @@ package modelo.jpa;
 
 import modelo.dao.DAOFactory;
 import modelo.dao.DepartamentoDAO;
+import modelo.dao.TurnoDAO;
+import modelo.dao.TutoriaDAO;
 import modelo.dao.UsuarioDAO;
 
 public class JPAFactory extends DAOFactory {
@@ -25,6 +27,18 @@ public class JPAFactory extends DAOFactory {
 	@Override
 	public DepartamentoDAO crearDepartamentoDAO() {
 		return new JPADepartamento();
+	}
+
+	@Override
+	public TurnoDAO crearTurnoDAO() {
+	
+		return new JPATurno();
+	}
+
+	@Override
+	public TutoriaDAO crearTutoriaDAO() {
+		
+		return new JPATutoria();
 	}
 
 }

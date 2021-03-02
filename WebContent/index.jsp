@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 	
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ <c:set var = "bandera" value = "false"/>
 
 <!DOCTYPE html>
 <html>
@@ -55,6 +56,7 @@
 	</style>
 </head>
 <body>
+	
 	<div class="container-fluid d-flex flex-column justify-content-center"
 		id="altura" >
 		<form class="bg-white rounded-3 container shadow-sm" action="loginController" method="POST">
@@ -67,22 +69,28 @@
 			</div>
 			<div class="row px-4 mb-4">
 				<input type="text" class="form-control" id="cedula"
-					placeholder="Número de cédula" name="usuario" required>
+					placeholder="Número de cédula" name="usuario" value="<c:out value="${cookie['usuario'].getValue()}"/>" required >
 			</div>
 			<div class="row px-4">
 				<label for="passwd" class="form-label">Contraseña</label>
 			</div>
 			<div class="row px-4 mb-2">
 				<input type="password" class="form-control" id="passwd"
-					placeholder="Contraseña" name="password" required>
+					placeholder="Contraseña" name="password" value="<c:out value="${cookie['password'].getValue()}"/>" required>
 			</div>
-			<div class="row px-4 mb-4">
-				<a href="registrarEstudiante.jsp">¿No tienes cuenta? Regístrate</a>
+			<div class="row px-4 mb-2 ml-20">
+				<div class="col-10 form-switch">
+					<input type="checkbox" id="flexSwitchCheckDefault" class="form-check-input" name="recordarme" <c:if test="${cookie['recordar'].getValue() == 'on'}">checked="checked"</c:if>/>
+					<label class="form-check-label" for="flexSwitchCheckDefault">Recordarme</label>
+				</div>
 			</div>
 			<div class="row mx-auto">
-				<div class="col-5">
+				<div class="col-5 pe-0">
 					<button type="submit" class="btn btn-primary">Iniciar
 						Sesión</button>
+				</div>
+				<div class="col-7 px-0 my-auto mx-0">
+					<a href="registrarEstudiante.jsp">¿No tienes cuenta? Regístrate</a>
 				</div>
 			</div>
 		</form>

@@ -1,7 +1,13 @@
 package modelo.entidad;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.*;
+
+import org.eclipse.persistence.annotations.CascadeOnDelete;
+
+
 
 @Entity
 @NamedQuery(name = "listarDocentes",query = "SELECT dc FROM Docente dc")
@@ -24,8 +30,16 @@ public class Docente implements Serializable {
 	private String apellido;
 	
 	@ManyToOne
-	@JoinColumn(name = "depto_id")
+	@JoinColumn(name = "id")
 	private Departamento departamento;
+	
+	@OneToMany(mappedBy = "docente", cascade = CascadeType.ALL)
+	@CascadeOnDelete
+	private List<Turno> turnos;
+	
+	@OneToMany(mappedBy = "docente", cascade = CascadeType.ALL)
+	@CascadeOnDelete
+	private List<Tutoria> tutorias;
 	
 	public Docente() {}
 
@@ -49,6 +63,17 @@ public class Docente implements Serializable {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.departamento = dpto;
+	}
+	
+
+
+	public Docente(String cedula, String contraseña, String nombre, String apellido, Departamento departamento) {
+		
+		this.cedula = cedula;
+		this.contraseña = contraseña;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.departamento = departamento;
 	}
 
 	public String getCedula() {
@@ -89,6 +114,23 @@ public class Docente implements Serializable {
 
 	public void setDepartamento(Departamento departamento) {
 		this.departamento = departamento;
+	}
+	
+
+	public List<Turno> getTurnos() {
+		return turnos;
+	}
+
+	public void setTurnos(List<Turno> turnos) {
+		this.turnos = turnos;
+	}
+
+	public List<Tutoria> getTutorias() {
+		return tutorias;
+	}
+
+	public void setTutorias(List<Tutoria> tutorias) {
+		this.tutorias = tutorias;
 	}
 
 	@Override

@@ -1,7 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 	<!DOCTYPE html>
 	<html>
+	<c:if test="${(not empty sessionScope.usuario) && (sessionScope.tipo == 'docente')}">
+	
 	<head>
 	    <meta charset="ISO-8859-1">
 	    <title>Docente: Módulo</title>
@@ -82,17 +86,13 @@
 			color: black !important;
 		}
 		
-		.fondo{
-			height: 100% ;
-			background-image: url('./img/2.png'); 
-			background-repeat: no-repeat; 
-			background-size: 50% 55%;
-			position:relative;
-			left:20%;
-			top:20%;
-			opacity:0.6;
-		}
-			
+        .img {
+            text-align: center;
+            bottom:55px !important;
+            right:25% !important;
+            opacity:0.6;
+        }
+
 	  </style>
 	</head>
 
@@ -110,7 +110,7 @@
 	              <div class="btn-group">
 					  <button type="button" class="btn text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></button>
 					  <ul class="dropdown-menu  purpura2">
-					    <li><a class="dropdown-item " href="#">Cambiar Contraseña</a></li>
+					    <li><a class="dropdown-item " href="docentePasswd.jsp">Cambiar Contraseña</a></li>
 					    <li><a class="dropdown-item " href="index.jsp">Salir</a></li>
 					  </ul>
 					</div>
@@ -121,19 +121,26 @@
 	         <!-- una fila con dos columnas: la primera es la navegacion izq
 	        y la segunda el espacio en blanco-->
 		        <div class="col-3 purpura2 d-flex flex-column justify-content-start">
-		          <a class="btn py-3 my-4 text-center" href="#">Actualizar información</a>
-		          <a class="btn py-3 my-4 text-center" href="#">Gestionar Horarios</a>
-		          <a class="btn py-3 my-4 text-center" href="#">Gestionar tutorías</a>
+		          <a class="btn py-3 my-4 text-center" href="listarTutoriasDocenteController">Tutorias</a>
+		          <a class="btn py-3 my-4 text-center" href="listarHorarioTutoriasController">Horarios Tutorias</a>
+		          <a class="btn py-3 my-4 text-center" href="visualizarDatosDocenteController">Informacion Docente</a>
 		        </div>
-		        <div class ="col-9 fondo fs-5"></div>	        			        	
+		        <div class="col-9 img m-auto">
+                    	<img src="./img/2.png">    
+				</div>       			        	
 		</div>		        
 	  </div>
-
-
 
 	    <script
 	    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
 	    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
 	    crossorigin="anonymous"></script>
 	</body>
+</c:if>
+<c:if test="${(empty sessionScope.usuario) || (sessionScope.tipo != 'docente')}">
+
+	<head>
+		<meta http-equiv="refresh" content="2; url=index.jsp"/>
+	</head>
+</c:if>
 	</html>

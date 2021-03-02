@@ -8,9 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import modelo.dao.DAOFactory;
-import modelo.entidad.Departamento;
 import modelo.entidad.Docente;
-import modelo.entidad.Estudiante;
 import modelo.jpa.JPAFactory;
 
 @WebServlet("/actualizarContrasenaDocenteController")
@@ -39,8 +37,8 @@ public class actualizarContrasenaDocenteController extends HttpServlet{
 		Docente docente = (Docente) fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).leer(cedula);
 		if ( nuevaContraseña.equals(nuevaContraseñaVerificar) && cedula.equals(docente.getCedula()) 
 				&& contraseñaActual.equals(docente.getContraseña())){
-			Docente docenteNuevo = new Docente(cedula, nuevaContraseña, docente.getNombre(), docente.getApellido());
-			fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).actualizar(docenteNuevo);
+			docente.setContraseña(nuevaContraseña);
+			fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).actualizar(docente);
 			response.sendRedirect("docentePasswd.jsp");
 		}else{
 			request.setAttribute("mensajeError", "Las contraseñas no coinciden");

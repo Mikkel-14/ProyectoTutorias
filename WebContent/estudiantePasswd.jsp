@@ -18,7 +18,7 @@
 		href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
 		rel="stylesheet">
 	<c:choose>
-			<c:when test="${(empty sessionScope.usuario) && (sessionScope.tipo != 'docente')}">
+			<c:when test="${(empty sessionScope.usuario) && (sessionScope.tipo != 'estudiante')}">
 				<meta http-equiv="refresh" content="0; url=index.jsp"/> 
 				</head>
 			</c:when>
@@ -86,7 +86,7 @@
 <div class = "container-fluid barraTitulo row position-fixed  purpura" >
         
 	<div class = "col-6 col-md-1 titulo m-auto">Tutorias</div>
-	<div class="dropdown col-6 col-md-11 text-end titulo m-auto">Docente
+	<div class="dropdown col-6 col-md-11 text-end titulo m-auto">Estudiante
 	  <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
 	  </a>
 	
@@ -103,12 +103,12 @@
 
 	<div class="row my-3 mx-4" >
 		<div class ="inline" > 
-			<a class="py-1 my-1ext-center text-dark" href="ModuloDocente.jsp">Inicio</a>
+			<a class="py-1 my-1ext-center text-dark" href="moduloEstudiante.jsp">Inicio</a>
 			<a>> Cambiar Contraseña</a>
 		 </div>
 	</div>
 	
-		<form class="bordes bg-white rounded-3 container-fluid shadow-sm my-3 col-lg-7 col-md-7 col-sm-10 col-xs-10"  action="actualizarContrasenaDocenteController" method="POST">
+		<form class="bordes bg-white rounded-3 container-fluid shadow-sm my-3 col-lg-7 col-md-7 col-sm-10 col-xs-10"  action="actualizarContrasenaEstudianteController" method="POST">
 			
 			<div class="row ">
 				<h3>Cambio de contraseña</h3>
@@ -149,5 +149,4 @@
 </body>
 </c:otherwise>
 </c:choose>
-
 </html>
