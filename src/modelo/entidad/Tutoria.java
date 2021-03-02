@@ -10,11 +10,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 @Entity
-@NamedQuery(name = "obtenerTutoriasDocente",query = "SELECT t FROM Tutoria t WHERE t.docente = :docente")
+@NamedQueries({
+@NamedQuery(name = "obtenerTutoriasDocente",query = "SELECT t FROM Tutoria t WHERE t.docente = :docente"),
+@NamedQuery(name = "obtenerTutoriasEstudiante",query = "SELECT t FROM Tutoria t WHERE t.estudiante = :estudiante")})
 public class Tutoria implements Serializable {
 	private static final long serialVersionUID = 1L;
 	

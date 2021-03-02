@@ -119,16 +119,27 @@ public class solicitarTutoriaController extends HttpServlet {
 			DAOFactory fabrica = new JPAFactory();
 			Docente tutor = (Docente)fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).leer(docenteId);
 			Estudiante alumno = (Estudiante) fabrica.crearUsuarioDAO(JPAFactory.ESTUDIANTE).leer(estudianteId);
-			List<Tutoria> tutorias = fabrica.crearTutoriaDAO().listarPorDocente(tutor);
+			List<Tutoria> tutoriasDocente = fabrica.crearTutoriaDAO().listarPorDocente(tutor);
+			List<Tutoria> tutoriasEstudiante = fabrica.crearTutoriaDAO().listarPorEstudiante(alumno);
 			Turno turnoEscogido = fabrica.crearTurnoDAO().leer(Integer.parseInt(idTurno));
 			boolean estaOcupado =false; 
-			if(tutorias != null) {
-				for(Tutoria t:tutorias){
+			if(tutoriasDocente != null) {
+				for(Tutoria t:tutoriasDocente){
 					if(t.getFecha().equals(fechaEscogida) && t.getHoraInicio().equals(turnoEscogido.getHoraInicio())) {
 						estaOcupado = true;
 						break;
 					}
 				}
+				
+			}
+			if(tutoriasEstudiante != null) {
+				for(Tutoria t:tutoriasEstudiante){
+					if(t.getFecha().equals(fechaEscogida) && t.getHoraInicio().equals(turnoEscogido.getHoraInicio())) {
+						estaOcupado = true;
+						break;
+					}
+				}
+				
 			}
 			if(!estaOcupado) {
 				Tutoria t = new Tutoria(turnoEscogido.getHoraInicio(),fechaEscogida,tutor,alumno);
