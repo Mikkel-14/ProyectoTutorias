@@ -1,4 +1,4 @@
-package controlador;
+package controlador.administrador;
 
 public class validación {
 	public static boolean validadorDeCedula(String cedula) {

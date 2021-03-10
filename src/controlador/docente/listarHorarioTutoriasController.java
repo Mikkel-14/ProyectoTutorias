@@ -1,4 +1,4 @@
-package controlador;
+package controlador.docente;
 
 import java.io.IOException;
 import java.util.List;
@@ -12,23 +12,23 @@ import javax.servlet.http.HttpServletResponse;
 import modelo.dao.DAOFactory;
 import modelo.entidad.Docente;
 import modelo.entidad.Turno;
-import modelo.entidad.Tutoria;
 import modelo.jpa.JPAFactory;
 
 /**
- * Servlet implementation class listarTutoriasDocenteController
+ * Servlet implementation class listarHorarioTutoriasController
  */
-@WebServlet("/listarTutoriasDocenteController")
-public class listarTutoriasDocenteController extends HttpServlet {
+@WebServlet("/listarHorarioTutoriasController")
+public class listarHorarioTutoriasController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public listarTutoriasDocenteController() {
+    public listarHorarioTutoriasController() {
         super();
         // TODO Auto-generated constructor stub
     }
 
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		leerTutorias(request, response);
+		leerHorarios(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -36,13 +36,13 @@ public class listarTutoriasDocenteController extends HttpServlet {
 		doGet(request, response);
 	}
 	
-	private void leerTutorias(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+	private void leerHorarios(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		String cedula = (String)req.getSession().getAttribute("usuario");
 		DAOFactory fabrica = new JPAFactory();
 		Docente profesor = (Docente)fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).leer(cedula);
-		List<Tutoria> tutorias = fabrica.crearTutoriaDAO().listarPorDocente(profesor);
-		req.setAttribute("listaTutorias", tutorias);
-		getServletContext().getRequestDispatcher("/listarTutoriasDocente.jsp").forward(req, resp);
+		List<Turno> turnos = fabrica.crearTurnoDAO().listarAsociados(profesor);
+		req.setAttribute("listaTurnos", turnos);
+		getServletContext().getRequestDispatcher("/listarHorarioTutorias.jsp").forward(req, resp);
 	}
 
 }

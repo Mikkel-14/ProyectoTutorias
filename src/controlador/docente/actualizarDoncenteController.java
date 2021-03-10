@@ -1,4 +1,4 @@
-package controlador;
+package controlador.docente;
 
 import java.io.IOException;
 import java.util.List;

@@ -1,4 +1,4 @@
-package controlador;
+package controlador.docente;
 
 import java.io.IOException;
 import java.util.List;
@@ -12,23 +12,23 @@ import javax.servlet.http.HttpServletResponse;
 import modelo.dao.DAOFactory;
 import modelo.entidad.Docente;
 import modelo.entidad.Turno;
+import modelo.entidad.Tutoria;
 import modelo.jpa.JPAFactory;
 
 /**
- * Servlet implementation class listarHorarioTutoriasController
+ * Servlet implementation class listarTutoriasDocenteController
  */
-@WebServlet("/listarHorarioTutoriasController")
-public class listarHorarioTutoriasController extends HttpServlet {
+@WebServlet("/listarTutoriasDocenteController")
+public class listarTutoriasDocenteController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public listarHorarioTutoriasController() {
+    public listarTutoriasDocenteController() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		leerHorarios(request, response);
+		leerTutorias(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -36,13 +36,13 @@ public class listarHorarioTutoriasController extends HttpServlet {
 		doGet(request, response);
 	}
 	
-	private void leerHorarios(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+	private void leerTutorias(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		String cedula = (String)req.getSession().getAttribute("usuario");
 		DAOFactory fabrica = new JPAFactory();
 		Docente profesor = (Docente)fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).leer(cedula);
-		List<Turno> turnos = fabrica.crearTurnoDAO().listarAsociados(profesor);
-		req.setAttribute("listaTurnos", turnos);
-		getServletContext().getRequestDispatcher("/listarHorarioTutorias.jsp").forward(req, resp);
+		List<Tutoria> tutorias = fabrica.crearTutoriaDAO().listarPorDocente(profesor);
+		req.setAttribute("listaTutorias", tutorias);
+		getServletContext().getRequestDispatcher("/listarTutoriasDocente.jsp").forward(req, resp);
 	}
 
 }
