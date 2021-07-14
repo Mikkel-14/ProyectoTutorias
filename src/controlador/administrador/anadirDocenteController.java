@@ -14,8 +14,8 @@ import modelo.entidad.Departamento;
 import modelo.entidad.Docente;
 import modelo.jpa.JPAFactory;
 
-@WebServlet("/añadirDocenteController")
-public class añadirDocenteController extends HttpServlet {
+@WebServlet("/aÃ±adirDocenteController")
+public class aÃ±adirDocenteController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -37,7 +37,7 @@ public class añadirDocenteController extends HttpServlet {
         DAOFactory fabricaA = new JPAFactory();
 		List<Departamento> listaDptos = fabricaA.crearDepartamentoDAO().listar();
         
-        boolean bandera= validación.validadorDeCedula(cedula);
+        boolean bandera= validaciÃ³n.validadorDeCedula(cedula);
         
         if(bandera==true) {
 	        DAOFactory fabrica = new JPAFactory();
@@ -49,20 +49,20 @@ public class añadirDocenteController extends HttpServlet {
 	        	fabrica.crearUsuarioDAO(JPAFactory.DOCENTE).crear(docente);
 				req.setAttribute("estadoSolicitud", true);//mensaje
 				req.setAttribute("listaDptos", listaDptos);
-				getServletContext().getRequestDispatcher("/añadirDocente.jsp").forward(req, resp);
+				getServletContext().getRequestDispatcher("/aÃ±adirDocente.jsp").forward(req, resp);
 	        } else {
 				req.setAttribute("docente", docente);//Docente
 				req.setAttribute("estadoSolicitud", false);//mensaje
 				req.setAttribute("listaDptos", listaDptos);
 				//Navego hacia el JSP
-				getServletContext().getRequestDispatcher("/añadirDocente.jsp").forward(req, resp);
+				getServletContext().getRequestDispatcher("/aÃ±adirDocente.jsp").forward(req, resp);
 	        }
         } else {
         	req.setAttribute("docente", docente);//Docente
 			req.setAttribute("estadoSolicitud", false);//mensaje
 			req.setAttribute("listaDptos", listaDptos);
 			//Navego hacia el JSP
-			getServletContext().getRequestDispatcher("/añadirDocente.jsp").forward(req, resp);	
+			getServletContext().getRequestDispatcher("/aÃ±adirDocente.jsp").forward(req, resp);	
         }
         
 	}
