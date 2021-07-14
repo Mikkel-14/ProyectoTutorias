@@ -11,7 +11,7 @@
 	<head>
 	<meta charset="ISO-8859-1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Añadir Docente</title>
+	<title>AÃ±adir Docente</title>
 	<link
 		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
 		rel="stylesheet"
@@ -48,7 +48,7 @@
 					<a class="btn py-3 my-4 text-center" href="listarDepartamentoController">Departamento</a>
 				</div>
 				<form class="col-9 d-flex flex-column justify-content-center"
-					method="POST" action="añadirDocenteController">
+					method="POST" action="aÃ±adirDocenteController">
 					<div
 						class="container-fluid d-flex flex-column justify-content-start py-3"
 						style="height: 100%;">
@@ -57,13 +57,13 @@
 							<div class="row my-3 mx-5">
 								<h4>Datos del Docente</h4>
 							</div>
-							<!-- Cédula -->
+							<!-- CÃ©dula -->
 							<div class="row w-50 mt-auto mx-auto">
-								<label for="cedula" class="form-label">Cédula</label>
+								<label for="cedula" class="form-label">CÃ©dula</label>
 							</div>
 							<div class="row w-50 mx-auto mb-4">
 								<input type="text" required class="form-control" id="cedula"
-									placeholder="Cédula del docente"
+									placeholder="CÃ©dula del docente"
 									value="<c:out value="${docente.cedula}"/>" name="numCedula">
 							</div>
 	
@@ -112,9 +112,9 @@
 								<c:otherwise>
 								</c:otherwise>
 							</c:choose>
-							<!-- Botón Actualizar -->
+							<!-- BotÃ³n Actualizar -->
 							<div class="row my-3 m-auto">
-								<button type="submit" class="btn btn-primary">Añadir</button>
+								<button type="submit" class="btn btn-primary">AÃ±adir</button>
 							</div>
 						</div>
 					</div>
