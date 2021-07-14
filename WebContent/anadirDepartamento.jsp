@@ -12,7 +12,7 @@
 	<head>
 	<meta charset="ISO-8859-1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Añadir Departamento</title>
+	<title>AÃ±adir Departamento</title>
 	<link
 		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
 		rel="stylesheet"
@@ -87,9 +87,9 @@
 								</c:otherwise>
 							</c:choose>
 	
-							<!-- Botón Actualizar -->
+							<!-- BotÃ³n Actualizar -->
 							<div class="row my-3 m-auto">
-								<button type="submit" class="btn btn-primary">Añadir</button>
+								<button type="submit" class="btn btn-primary">AÃ±adir</button>
 							</div>
 						</div>
 					</div>
