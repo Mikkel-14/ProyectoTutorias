@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <c:if test="${(not empty sessionScope.usuario) && (sessionScope.tipo == 'docente')}">
-
+<!-- comentario -->
 <head>
 	<meta charset="ISO-8859-1">
 	<title>Docente: Listar Turnos</title>
